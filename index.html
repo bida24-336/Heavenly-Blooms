@@ -4,84 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavenly Blooms</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8d7da;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffb6c1;
+            padding: 15px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 150px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <nav>
-        <div class="nav-left">
-            <h1>HEAVENLY BLOOMS</h1>
-        </div>
-        <div class="nav-center">
-            <input type="text" placeholder="Search">
-            
-            <!-- Shop By Dropdown -->
-            <div class="dropdown">
-                <button class="dropbtn">Shop By</button>
-                <div class="dropdown-content">
-                    <a href="#">Dried Flower Arrangements</a>
-                    <a href="#">Bouquet</a>
-                    <div class="sub-dropdown">
-                        <button class="sub-dropbtn">Plants</button>
-                        <div class="sub-dropdown-content">
-                            <a href="#">Indoor</a>
-                            <a href="#">Outdoor</a>
-                            <a href="#">Flowering</a>
-                            <a href="#">Green</a>
-                        </div>
-                    </div>
-                    <a href="#">Flower Boxes</a>
-                </div>
-            </div>
-
-            <!-- Colors Dropdown -->
-            <div class="dropdown">
-                <button class="dropbtn">Colors</button>
-                <div class="dropdown-content">
-                    <a href="#">Red</a>
-                    <a href="#">Pink</a>
-                    <a href="#">White</a>
-                    <a href="#">Yellow</a>
-                    <a href="#">Purple</a>
-                    <a href="#">Mixed Colours</a>
-                    <a href="#">Orange</a>
-                    <a href="#">Blue</a>
-                </div>
-            </div>
-
+    <div class="navbar">
+        <h1>Heavenly Blooms</h1>
+        <div class="nav-links">
             <a href="#about">About Us</a>
-            <a href="#contact">Contact Us</a>
+            <div class="dropdown">
+                <button>Shop By</button>
+                <div class="dropdown-content">
+                    <a href="#dried">Dried Flowers</a>
+                    <a href="#bouquets">Bouquets</a>
+                    <a href="#plants">Plants</a>
+                    <a href="#flower-boxes">Flower Boxes</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>Colors</button>
+                <div class="dropdown-content">
+                    <a href="#red">Red</a>
+                    <a href="#pink">Pink</a>
+                    <a href="#white">White</a>
+                    <a href="#yellow">Yellow</a>
+                    <a href="#purple">Purple</a>
+                    <a href="#mixed">Mixed Colors</a>
+                    <a href="#orange">Orange</a>
+                    <a href="#blue">Blue</a>
+                </div>
+            </div>
             <a href="#faq">FAQ</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#cart">🛒</a>
         </div>
-        <div class="cart"><i class="fas fa-shopping-cart"></i></div>
-    </nav>
-
-    <!-- Image Gallery Section -->
-    <section id="gallery">
-        <h1>Our Flower Collection</h1>
-        <div class="gallery-container">
-            <div class="gallery-item"><img src="flower1.jpg" alt="Flower 1"></div>
-            <div class="gallery-item"><img src="flower2.jpg" alt="Flower 2"></div>
-            <div class="gallery-item"><img src="flower3.jpg" alt="Flower 3"></div>
-            <div class="gallery-item"><img src="flower4.jpg" alt="Flower 4"></div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h1>About Us</h1>
-        <p>We bring joy with our beautiful floral arrangements, crafted with love.</p>
-    </section>
+    </div>
+    <div class="container">
+        <h2>Welcome to Heavenly Blooms</h2>
+        <p>Your one-stop shop for elegant floral arrangements.</p>
+    </div>
 </body>
 </html>
-
-    
-            
-        
-
-
-
-
 
 
 
