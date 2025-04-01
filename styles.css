@@ -1,157 +1,130 @@
+/* Body and page background */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fbe6f7;
+    font-family: Arial, sans-serif;
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
+/* Home page styling */
 .home-page {
-    background: url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px 0;
     text-align: center;
-    color: white;
 }
 
-.home-page .home-content {
-    padding: 50px;
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-.home-page h1 {
-    font-size: 4em;
-    margin: 0;
-    font-weight: bold;
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
-.home-page p {
-    font-size: 1.5em;
-    margin-top: 10px;
+.search-bar {
+    padding: 10px;
+    font-size: 1rem;
+    width: 60%;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
 }
 
+.search-bar::placeholder {
+    color: #fff;
+}
+
+/* Navbar */
 .navbar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar .logo {
-    font-size: 30px;
-    color: #d16a89;
-    font-weight: bold;
-}
-
-.nav-items {
-    display: flex;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
 }
 
 .nav-items a {
-    color: white;
-    font-size: 16px;
-    margin-left: 20px;
+    color: #fff;
     text-decoration: none;
-    padding: 8px 15px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .nav-items a:hover {
-    background-color: #d16a89;
+    background-color: #ff6f61;
 }
 
-main {
-    padding: 40px 20px;
+/* Dropdown */
+.dropdown {
+    position: relative;
 }
 
-.category {
-    margin-bottom: 40px;
+.dropbtn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
-.category h2 {
-    color: #d16a89;
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.image-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-.image-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+.dropdown-content a:hover {
+    background-color: #ff6f61;
 }
 
-footer {
-    background-color: #f1c6d9;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+/* Cart Icon */
+.cart-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
-footer div {
-    color: #d16a89;
-    font-size: 16px;
+.cart-icon:hover {
+    color: #ff6f61;
 }
 
-.contact, .faq, .about {
-    padding: 40px 20px;
-    background-color: #fbe6f7;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 800px;
-}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-.contact h2, .faq h2, .about h2 {
-    color: #d16a89;
-    font-size: 2em;
-    text-align: center;
-}
+    .nav-items a, .dropbtn {
+        width: 100%;
+        padding: 15px;
+    }
 
-.contact p, .faq ul, .about p {
-    color: #333;
-    font-size: 1.2em;
-}
-
-.faq ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.faq li {
-    margin-bottom: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .search-bar {
+        width: 80%;
+        padding: 15px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .image-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 
