@@ -5,109 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavenly Blooms</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Home Page -->
     <header class="home-page">
         <div class="home-content">
+            <img src="tulip-logo.png" alt="Heavenly Blooms Logo" class="logo"> <!-- Tulip Logo -->
             <h1>Heavenly Blooms</h1>
-            <p>Bringing Nature's Beauty to Your Doorstep</p>
+            <p>Your go-to flower shop for unique and handcrafted floral arrangements</p>
+            <input type="text" placeholder="Search for flowers..." class="search-bar">
         </div>
         <nav class="navbar">
             <div class="logo">Heavenly Blooms</div>
             <div class="nav-items">
-                <a href="home.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Shop By</button>
+                    <div class="dropdown-content">
+                        <a href="shop_dried.html">Dried Flower Arrangements</a>
+                        <a href="shop_bouquet.html">Bouquets</a>
+                        <a href="shop_plants.html">Plants</a>
+                        <a href="shop_flowerboxes.html">Flower Boxes</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">About Us</button>
+                    <div class="dropdown-content">
+                        <a href="about.html">Our Story</a>
+                        <a href="team.html">Our Team</a>
+                        <a href="commitment.html">Commitment to Quality</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Contact Us</button>
+                    <div class="dropdown-content">
+                        <a href="contact.html">Contact Information</a>
+                        <a href="location.html">Our Location</a>
+                        <a href="support.html">Customer Support</a>
+                    </div>
+                </div>
                 <a href="faq.html">FAQ</a>
-                <a href="about.html">About Us</a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a> <!-- Cart Icon -->
             </div>
         </nav>
     </header>
 
-    <!-- Main Section for Shop -->
     <main>
-        <section class="category">
-            <h2>Dried Flower Arrangements</h2>
-            <div class="image-grid">
-                <img src="images/dried1.jpg" alt="Dried Flower 1">
-                <img src="images/dried2.jpg" alt="Dried Flower 2">
-                <img src="images/dried3.jpg" alt="Dried Flower 3">
-                <img src="images/dried4.jpg" alt="Dried Flower 4">
-                <img src="images/dried5.jpg" alt="Dried Flower 5">
-                <img src="images/dried6.jpg" alt="Dried Flower 6">
-                <img src="images/dried7.jpg" alt="Dried Flower 7">
-            </div>
-        </section>
-        <section class="category">
-            <h2>Bouquets</h2>
-            <div class="image-grid">
-                <img src="images/bouquet1.jpg" alt="Bouquet 1">
-                <img src="images/bouquet2.jpg" alt="Bouquet 2">
-                <img src="images/bouquet3.jpg" alt="Bouquet 3">
-                <img src="images/bouquet4.jpg" alt="Bouquet 4">
-                <img src="images/bouquet5.jpg" alt="Bouquet 5">
-                <img src="images/bouquet6.jpg" alt="Bouquet 6">
-                <img src="images/bouquet7.jpg" alt="Bouquet 7">
-            </div>
-        </section>
-        <section class="category">
-            <h2>Plants</h2>
-            <div class="image-grid">
-                <img src="images/plant1.jpg" alt="Plant 1">
-                <img src="images/plant2.jpg" alt="Plant 2">
-                <img src="images/plant3.jpg" alt="Plant 3">
-                <img src="images/plant4.jpg" alt="Plant 4">
-                <img src="images/plant5.jpg" alt="Plant 5">
-                <img src="images/plant6.jpg" alt="Plant 6">
-                <img src="images/plant7.jpg" alt="Plant 7">
-            </div>
-        </section>
-        <section class="category">
-            <h2>Flower Boxes</h2>
-            <div class="image-grid">
-                <img src="images/flowerbox1.jpg" alt="Flower Box 1">
-                <img src="images/flowerbox2.jpg" alt="Flower Box 2">
-                <img src="images/flowerbox3.jpg" alt="Flower Box 3">
-                <img src="images/flowerbox4.jpg" alt="Flower Box 4">
-                <img src="images/flowerbox5.jpg" alt="Flower Box 5">
-                <img src="images/flowerbox6.jpg" alt="Flower Box 6">
-                <img src="images/flowerbox7.jpg" alt="Flower Box 7">
-            </div>
+        <section class="intro">
+            <h2>Welcome to Heavenly Blooms!</h2>
+            <p>We are passionate about bringing the best floral arrangements directly to you. Explore our wide variety of flower arrangements and experience the joy of nature’s beauty.</p>
         </section>
     </main>
 
-    <!-- Footer Section -->
     <footer>
         <div>Heavenly Blooms © 2025</div>
     </footer>
 
-    <!-- Contact Us Page -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: support@heavenlyblooms.com</p>
-        <p>Phone: +267 123 456 789</p>
-        <p>Address: Plot 123, Gaborone, Botswana</p>
-    </section>
-
-    <!-- FAQ Page -->
-    <section id="faq" class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-            <li><strong>What is your return policy?</strong> We accept returns within 14 days of purchase. Please refer to our Returns & Refunds page for more information.</li>
-            <li><strong>Do you offer delivery?</strong> Yes, we offer nationwide delivery within Botswana. Delivery charges may apply.</li>
-            <li><strong>Can I customize a bouquet?</strong> Absolutely! Contact us through the Contact Us page and we can work with you on the perfect custom bouquet.</li>
-        </ul>
-    </section>
-
-    <!-- About Us Page -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>Heavenly Blooms is dedicated to providing beautiful, high-quality flowers for every occasion. We believe that flowers have the power to brighten anyone’s day and we work hard to bring that joy to you. From dried flower arrangements to fresh bouquets, we offer a wide variety of floral products that suit every need and taste.</p>
-    </section>
 </body>
 </html>
-
 
 
           
