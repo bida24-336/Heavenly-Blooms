@@ -4,48 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavenly Blooms</title>
-    <style>
-        body {
-            background-color: #f8d7da;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #ffb6c1;
-            padding: 15px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 150px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
         <h1>Heavenly Blooms</h1>
+        <input type="text" placeholder="Search..." class="search-bar">
         <div class="nav-links">
             <a href="#about">About Us</a>
             <div class="dropdown">
@@ -75,12 +39,34 @@
             <a href="#cart">🛒</a>
         </div>
     </div>
+    
     <div class="container">
         <h2>Welcome to Heavenly Blooms</h2>
         <p>Your one-stop shop for elegant floral arrangements.</p>
     </div>
+
+    <div id="about" class="content-section">
+        <h2>Our Story</h2>
+        <p>Heavenly Blooms was founded with a passion for bringing beauty and joy through flowers. Our journey started with a small flower stall, and today, we are proud to serve customers nationwide with fresh, high-quality floral arrangements.</p>
+    </div>
+
+    <div id="team" class="content-section">
+        <h2>Our Team</h2>
+        <p>We are a dedicated team of florists, designers, and customer service professionals who work tirelessly to create stunning floral arrangements and provide exceptional service.</p>
+    </div>
+
+    <div id="quality" class="content-section">
+        <h2>Our Commitment to Quality</h2>
+        <p>At Heavenly Blooms, we source only the freshest flowers from trusted growers. Each arrangement is carefully crafted to ensure longevity and beauty, guaranteeing satisfaction for our valued customers.</p>
+    </div>
+
+    <div id="philosophy" class="content-section">
+        <h2>Our Philosophy</h2>
+        <p>We believe flowers have the power to uplift, comfort, and celebrate life's moments. Our mission is to make floral gifting easy, accessible, and meaningful for everyone.</p>
+    </div>
 </body>
 </html>
+
 
 
 
