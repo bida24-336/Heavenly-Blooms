@@ -4,71 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Heavenly Blooms</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f8c8dc;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px;
+        }
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Heavenly Blooms</div>
-            <div class="nav-items">
-                <a href="home.html">Home</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Shop By</button>
-                    <div class="dropdown-content">
-                        <a href="shop_dried.html">Dried Flower Arrangements</a>
-                        <a href="shop_bouquet.html">Bouquets</a>
-                        <a href="shop_plants.html">Plants</a>
-                        <a href="shop_flowerboxes.html">Flower Boxes</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">About Us</button>
-                    <div class="dropdown-content">
-                        <a href="about.html">Our Story</a>
-                        <a href="team.html">Our Team</a>
-                        <a href="commitment.html">Commitment to Quality</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Contact Us</button>
-                    <div class="dropdown-content">
-                        <a href="contact.html">Contact Information</a>
-                        <a href="location.html">Our Location</a>
-                        <a href="support.html">Customer Support</a>
-                    </div>
-                </div>
-                <a href="faq.html">FAQ</a>
-            </div>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">Heavenly Blooms</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop By</a>
+            <a href="faq.html">FAQ</a>
+            <a href="about.html">About Us</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </nav>
 
     <main>
-        <section>
-            <h2>Contact Information</h2>
-            <p>If you have any questions or concerns, please reach out to us:</p>
-            <ul>
-                <li>Email: @heavenlyblooms.com</li>
-                <li>Phone: +267 76 543 210 (Cell)</li>
-                <li>Landline: +267 234 5678</li>
-                <li>Social Media: @heavenlyblooms</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Our Location</h2>
-            <p>We are located at 123 Floral Street, Flower City, Botswana.</p>
-            <p>Feel free to visit our store for in-person consultations and to pick up your floral arrangements.</p>
-        </section>
-
-        <section>
-            <h2>Customer Support</h2>
-            <p>If you need assistance, our customer support team is available Monday to Friday from 9 AM to 6 PM. Please email us or call for support with your orders, delivery, or any other inquiries.</p>
-        </section>
+        <h1>Contact Us</h1>
+        <p>Have questions? Reach out to us through the form below:</p>
+        <form action="#">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+        <p>Location: [Insert your location]</p>
+        <p>Social Media: [Links to social media]</p>
     </main>
-
-    <footer>
-        <div>Heavenly Blooms © 2025</div>
-    </footer>
-
 </body>
 </html>
+
+  
