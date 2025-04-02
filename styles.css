@@ -4,10 +4,19 @@ body {
     background-image: url('background-image.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: #333; 
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+/* Background Overlay for Readability */
+.home-page {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background to improve contrast */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    margin: auto;
 }
 
 /* Logo Section */
@@ -18,14 +27,16 @@ body {
 }
 
 .logo {
-    max-width: 70px; /* Reduced logo size */
+    max-width: 70px;
     height: auto;
     margin: 10px 0;
 }
 
+/* Business Motto */
 .business-motto {
     font-size: 1.2rem;
     font-weight: bold;
+    color: #444;
     margin-bottom: 20px;
 }
 
@@ -34,20 +45,21 @@ body {
     padding: 10px;
     font-size: 1rem;
     width: 50%;
-    border: 2px solid #fff;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    border: 2px solid #444;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
     border-radius: 5px;
 }
 
 .search-bar::placeholder {
-    color: #fff;
+    color: #666;
 }
 
 /* Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
+    border-radius: 10px;
 }
 
 .nav-items a {
@@ -81,7 +93,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333;
+    background-color: #fff;
     min-width: 180px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     z-index: 1;
@@ -93,7 +105,7 @@ body {
 }
 
 .dropdown-content a {
-    color: #fff;
+    color: #333;
     padding: 10px 15px;
     text-decoration: none;
     display: block;
@@ -101,6 +113,7 @@ body {
 
 .dropdown-content a:hover {
     background-color: #ff6f61;
+    color: #fff;
 }
 
 /* Cart Icon */
@@ -120,10 +133,12 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
     font-size: 0.9rem;
+    color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
 }
+
 
 
 
