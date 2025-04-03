@@ -1,46 +1,117 @@
-/* General Styling */
 body {
-    background-color: #1a1a1a;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F5F5F5;
+    color: #222222;
 }
 
-/* Navigation Bar */
-.navbar {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(to right, #2c2c2c, #444);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
 }
 
-/* Logo */
-.logo img {
-    width: 20px;  /* Reduced logo size */
-    height: auto;
-}
-
-/* Navigation Links */
-.nav-links {
-    list-style: none;
+.logo {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
 }
 
-.nav-links li {
-    position: relative;
-    display: inline-block;
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
 }
 
-.nav-links a {
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
     text-decoration: none;
-    color: white
+    color: #222222;
+}
+
+.icons {
+    display: flex;
+}
+
+.icons span {
+    margin-left: 15px;
+    font-size: 1.2em;
+}
+
+.hero {
+    display: flex;
+    padding: 40px;
+    align-items: center;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.hero-image img {
+    max-width: 400px;
+    margin-right: 20px;
+}
+
+.side-images img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.bestsellers {
+    text-align: center;
+    padding: 40px;
+}
+
+.bestsellers h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-grid img {
+    max-width: 100%;
+}
+
+footer {
+    padding: 20px;
+    text-align: left;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons span {
+    margin-right: 15px;
+    font-size: 1.5em;
+}
 
 
 
