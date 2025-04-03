@@ -6,6 +6,19 @@ body {
     color: #222222;
 }
 
+/* Add the Shelly Volante BT font */
+@font-face {
+    font-family: 'Shelly Volante BT';
+    src: url('ShellyVolanteBT.ttf') format('truetype'); /* Replace with the correct path to your font file */
+    font-weight: bold; /* Make it bold by default */
+    font-style: normal;
+}
+
+.shelly-volante-bold {
+    font-family: 'Shelly Volante BT', sans-serif;
+    font-weight: bold;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -21,6 +34,12 @@ header {
 header .logo img {
     height: 40px;
     margin-right: 10px;
+}
+
+.shop-name {
+    font-size: 1.2em; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold */
+    margin-left: 10px; /* Add some space between the logo and name */
 }
 
 nav ul {
