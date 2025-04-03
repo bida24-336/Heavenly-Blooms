@@ -5,7 +5,6 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 /* Navigation Bar */
@@ -13,14 +12,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 15px 30px;
     background: linear-gradient(to right, #2c2c2c, #444);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Logo */
 .logo img {
-    width: 80px;  /* Adjust the size as needed */
+    width: 20px;  /* Reduced logo size */
     height: auto;
 }
 
@@ -28,106 +27,22 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;
     padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
     position: relative;
+    display: inline-block;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-}
+    color: white
 
-.nav-links a:hover {
-    color: #ffcc00;
-}
 
-/* Dropdown Menu */
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #444;
-    display: none;
-    flex-direction: column;
-    min-width: 160px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.dropdown a {
-    padding: 12px;
-    display: block;
-    transition: background 0.3s;
-}
-
-.dropdown a:hover {
-    background: #ffcc00;
-    color: #000;
-}
-
-.nav-links li:hover .dropdown {
-    display: flex;
-}
-
-/* Search Bar */
-.search-bar {
-    padding: 8px;
-    border: none;
-    border-radius: 20px;
-    width: 200px;
-}
-
-/* Shopping Cart Icon */
-.cart {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Hero Section */
-.hero-section {
-    background: url('background.jfif') no-repeat center center/cover;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.hero-section h1 {
-    font-size: 48px;
-    margin: 0;
-    font-weight: bold;
-}
-
-.hero-section p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-/* Shop Now Button */
-.shop-button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    background: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.shop-button:hover {
-    background: #e6b800;
-}
 
 
 
