@@ -4,117 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavenly Blooms | Home</title>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: linear-gradient(to right, #2c2c2c, #444);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            padding: 0;
-        }
-        .nav-links li {
-            position: relative;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: 500;
-            transition: color 0.3s ease-in-out;
-        }
-        .nav-links a:hover {
-            color: #ffcc00;
-        }
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #444;
-            display: none;
-            flex-direction: column;
-            min-width: 160px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .dropdown a {
-            padding: 12px;
-            display: block;
-            transition: background 0.3s;
-        }
-        .dropdown a:hover {
-            background: #ffcc00;
-            color: #000;
-        }
-        .nav-links li:hover .dropdown {
-            display: flex;
-        }
-        .search-bar {
-            padding: 8px;
-            border: none;
-            border-radius: 20px;
-            width: 200px;
-        }
-        .cart {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .hero-section {
-            background: url('your-image-url.jpg') no-repeat center center/cover;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .hero-section h1 {
-            font-size: 48px;
-            margin: 0;
-            font-weight: bold;
-        }
-        .hero-section p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-        .shop-button {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background: #ffcc00;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .shop-button:hover {
-            background: #e6b800;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Heavenly Blooms</div>
+        <div class="logo">
+            <img src="logo.png" alt="Heavenly Blooms Logo">
+        </div>
         <ul class="nav-links">
             <li><input type="text" class="search-bar" placeholder="Search..."></li>
             <li>
@@ -137,6 +33,7 @@
     </section>
 </body>
 </html>
+
 
 
 
