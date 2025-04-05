@@ -71,11 +71,17 @@
     </div>
   </section>
 
-  <script>
+    <script>
+    // JavaScript function to toggle display of bouquet information
     function showInfo(button) {
-      const info = button.nextElementSibling;
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
-      button.textContent = info.style.display === 'block' ? 'Hide Info' : 'Show Info';
+      const info = button.nextElementSibling; // Get the .bouquet-info div
+      if (info.style.display === 'block') {
+        info.style.display = 'none'; // Hide the info
+        button.textContent = 'Show Info'; // Change button text
+      } else {
+        info.style.display = 'block'; // Show the info
+        button.textContent = 'Hide Info'; // Change button text
+      }
     }
   </script>
 
