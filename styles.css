@@ -1,162 +1,177 @@
-/* ShellyVolante BT Font */
-@font-face {
-  font-family: 'ShelleyVolante';
-  src: url('ShelleyVolanteBT.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Global styles */
+/* Basic Styling */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'ShelleyVolante', cursive; /* Using ShellyVolante for the whole website */
-  background-color: #fff0f5; /* soft baby pink */
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fefefe;
 }
 
+/* Apply Shelly Volante font globally */
+* {
+  font-family: 'Shelly Volante', sans-serif;
+}
+
+/* Header Styling */
 header {
-  background-color: #ffffff;
+  background-color: #333;
+  padding: 1rem;
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.logo {
+header .logo {
   display: flex;
   align-items: center;
 }
 
-.logo img {
-  height: 50px;
-  margin-right: 10px;
+header .logo img {
+  width: 50px;
+  height: auto;
 }
 
-.shop-name {
-  font-size: 2rem;
-  color: #c2185b;
-  font-family: 'ShelleyVolante', cursive;
+header .shop-name {
+  font-size: 24px;
+  margin-left: 10px;
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  gap: 20px;
   padding: 0;
-  margin: 0;
 }
 
-nav a {
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
   text-decoration: none;
-  color: #555;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #c2185b;
+  color: white;
+  font-size: 18px;
 }
 
 .icons {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 10px;
 }
 
-.search-bar {
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  width: 150px;
-  transition: width 0.3s ease;
-}
-
-.search-bar:focus {
-  outline: none;
-  width: 200px;
-  border-color: #c2185b;
-}
-
-.cart-icon {
-  font-size: 20px;
-  cursor: pointer;
-}
-
+/* Hero Section Styling */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 40px 60px;
-  background: linear-gradient(to right, #fce4ec, #f8bbd0);
-  flex-wrap: wrap;
+  padding: 2rem;
 }
 
-.hero-text {
+.hero .hero-text {
   flex: 1;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  color: #880e4f;
+.hero .hero-image {
+  flex: 1;
 }
 
-.hero-text p {
-  font-size: 1.2rem;
-  color: #4a4a4a;
-}
-
-.hero-image img {
+.hero .side-images img {
   width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  margin: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  height: auto;
+  padding: 10px;
 }
 
 .bestsellers {
-  padding: 50px 40px;
-  background-color: #fff;
-  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
 }
 
 .bestsellers h2 {
-  font-size: 2rem;
-  color: #ad1457;
-  margin-bottom: 30px;
+  text-align: center;
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid layout with responsive columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  justify-items: center;
 }
 
-.image-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-  padding: 20px;
-  background-color: #fce4ec;
+.flower {
   text-align: center;
 }
 
+.flower img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+.heart {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.favorite-item {
+  margin: 10px 0;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* About Us Section Styling */
+.about-us {
+  padding: 2rem;
+  font-family: 'Shelly Volante', sans-serif;
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about-us p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Contact Us Section Styling */
+.contact-us {
+  padding: 2rem;
+}
+
+.contact-us h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-us p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Social Icons */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  font-size: 18px;
-  color: #880e4f;
+  gap: 20px;
+  padding: 1rem 0;
 }
 
-.social-icon:hover {
-  color: #c2185b;
+.social-icon {
+  font-size: 24px;
+  color: white;
   cursor: pointer;
 }
 
