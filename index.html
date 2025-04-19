@@ -48,7 +48,7 @@
         <li><a href="#">Bouquets</a></li>
         <li><a href="#">Plants</a></li>
         <li><a href="#">Dried flowers</a></li>
-        <li><a href="#">About Us</a></li> 
+        <li><a href="#" id="about-button">About Us</a></li>
         <li><a href="#">Our Contacts</a></li>
       </ul>
     </nav>
@@ -148,7 +148,18 @@
       list.innerHTML = likedFlowers.length
         ? likedFlowers.map(name => `<div class="favorite-item">${name}</div>`).join("")
         : "<p>No flowers liked yet.</p>";
-    }
+    }  
+
+       const aboutButton = document.getElementById('about-button');
+    const aboutSection = document.getElementById('about-us');
+    
+    aboutButton.addEventListener('click', function () {
+        if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
+            aboutSection.style.display = 'block';
+        } else {
+            aboutSection.style.display = 'none';
+        }
+    });
   </script>
 </body>
 </html>
