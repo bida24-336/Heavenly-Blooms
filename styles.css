@@ -65,122 +65,50 @@ nav a:hover {
   align-items: center;
   gap: 15px;
   margin-top: 10px;
-  font-size: 1.5rem;
+}
+
+.search-icon {
+  font-size: 20px;
   cursor: pointer;
-}
-
-.search-bar {
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  width: 150px;
-  transition: width 0.3s ease;
-}
-
-.search-bar:focus {
-  outline: none;
-  width: 200px;
-  border-color: #c2185b;
 }
 
 .cart-icon {
-  font-size: 22px;
-  color: #555;
+  font-size: 20px;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
-.cart-icon:hover {
-  color: #c2185b;
-}
-
-.favorites-icon {
-  font-size: 22px;
-  color: #555;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.favorites-icon:hover {
-  color: #c2185b;
-}
-
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 60px;
-  background: linear-gradient(to right, #fce4ec, #f8bbd0);
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  color: #880e4f;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  color: #4a4a4a;
-}
-
-.hero-image img,
-.side-images img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  margin: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.side-images {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.bestsellers {
-  padding: 50px 40px;
-  background-color: #fff;
+/* About Us Section */
+#about-us {
+  display: none; /* Hidden by default */
+  padding: 40px;
+  background-color: #fff0f5; /* soft baby pink */
+  color: #333;
   text-align: center;
 }
 
-.bestsellers h2 {
+#about-us h2 {
   font-size: 2rem;
+  color: #ad1457; /* match theme color */
+}
+
+#about-us p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 20px 0;
+}
+
+#about-us h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
   color: #ad1457;
-  margin-bottom: 30px;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.flower {
-  position: relative;
-}
-
-.image-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.heart {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 24px;
-  color: #888;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  user-select: none
 
 
 
