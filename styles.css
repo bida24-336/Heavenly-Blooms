@@ -12,6 +12,7 @@ body {
   color: #333;
 }
 
+/* Header styles */
 header {
   background-color: #ffffff;
   display: flex;
@@ -37,6 +38,7 @@ header {
   color: #c2185b;
 }
 
+/* Navigation bar styles */
 nav ul {
   list-style: none;
   display: flex;
@@ -56,6 +58,7 @@ nav a:hover {
   color: #c2185b;
 }
 
+/* Icons styles */
 .icons {
   display: flex;
   align-items: center;
@@ -69,70 +72,87 @@ nav a:hover {
   border: 1px solid #ccc;
   font-size: 14px;
   width: 150px;
+  transition: width 0.3s ease;
 }
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 0;
+.search-bar:focus {
+  outline: none;
+  width: 200px;
+  border-color: #c2185b;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.side-images img {
-  max-width: 100px;
-  margin-left: 10px;
-}
-
-.bestsellers h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-}
-
-.flower img {
-  width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.flower img:hover {
-  transform: scale(1.05);
-}
-
-.heart {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+/* Cart and favorites icons */
+.cart-icon {
   font-size: 20px;
   cursor: pointer;
 }
 
-.favorite-item {
-  margin: 10px 0;
-  padding: 5px;
-  background-color: #f1f1f1;
-  border-radius: 5px;
+.favorites-icon {
+  font-size: 20px;
+  cursor: pointer;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #f8f8f8;
+/* Hero section styles */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  background: linear-gradient(to right, #fce4ec, #f8bbd0);
+  flex-wrap: wrap;
 }
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #880e4f;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+}
+
+.hero-image img,
+.side-images img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Bestsellers section styles */
+.bestsellers {
+  padding: 50px 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.bestsellers h2 {
+  font-size: 2rem;
+  color: #ad1457;
+  margin-bottom: 30px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.image-grid img {
+  width
+
 
 
 
