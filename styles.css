@@ -37,7 +37,7 @@ header {
 .shop-name {
   font-size: 2rem;
   color: #c2185b;
-  font-family: 'ShelleyVolante', cursive; /* Applying ShellyVolante to the shop name */
+  font-family: 'ShelleyVolante', cursive;
 }
 
 nav ul {
@@ -109,19 +109,12 @@ nav a:hover {
   color: #4a4a4a;
 }
 
-.hero-image img,
-.side-images img {
+.hero-image img {
   width: 100%;
   max-width: 300px;
   border-radius: 12px;
   margin: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.side-images {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
 .bestsellers {
@@ -138,7 +131,7 @@ nav a:hover {
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid layout with responsive columns */
   gap: 20px;
 }
 
@@ -166,7 +159,6 @@ footer {
   color: #c2185b;
   cursor: pointer;
 }
-
 
 
 
