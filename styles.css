@@ -37,10 +37,6 @@ header {
   color: #c2185b;
 }
 
-.shelly-volante-bold {
-  font-family: 'ShelleyVolante', cursive;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -67,47 +63,77 @@ nav a:hover {
   margin-top: 10px;
 }
 
-.search-icon {
-  font-size: 20px;
-  cursor: pointer;
+.search-bar {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 150px;
 }
 
-.cart-icon {
-  font-size: 20px;
-  cursor: pointer;
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
 }
 
-/* About Us Section */
-#about-us {
-  display: none; /* Hidden by default */
-  padding: 40px;
-  background-color: #fff0f5; /* soft baby pink */
-  color: #333;
-  text-align: center;
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-#about-us h2 {
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.side-images img {
+  max-width: 100px;
+  margin-left: 10px;
+}
+
+.bestsellers h2 {
   font-size: 2rem;
-  color: #ad1457; /* match theme color */
+  margin-bottom: 20px;
 }
 
-#about-us p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #555;
-  margin: 20px 0;
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
 }
 
-#about-us h3 {
-  font-size: 1.5rem;
-  margin-top: 20px;
-  color: #ad1457;
+.flower img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.flower img:hover {
+  transform: scale(1.05);
 }
+
+.heart {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favorite-item {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
 
 
 
