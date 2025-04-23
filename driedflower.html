@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dried Flowers - Heavenly Blooms</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f5;
+            color: #3a4a42;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #5a7247;
+        }
+        
+        header {
+            background-color: #f5f0e8;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e0d9cc;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .shop-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #5a7247;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #3a4a42;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #7a8d75;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .category {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e0d9cc;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .flower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .flower-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .flower-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .flower-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .flower-info {
+            padding: 1rem;
+        }
+        
+        .flower-name {
+            font-weight: 500;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .flower-price {
+            color: #5a7247;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: #5a7247;
+            color: #f5f0e8;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: #f5f0e8;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            color: #f5f0e8;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .flower-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Logo.jpg" alt="Heavenly Blooms Logo">
+            <h1 class="shop-name">Heavenly Blooms</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="dried-flowers.html">Dried Flowers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <h2 class="page-title">Our Dried Flower Collection</h2>
+        
+        <!-- Category 1 -->
+        <div class="category">
+            <h3 class="category-title">Dried Bouquets</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet1.jpg" alt="Dried Bouquet 1" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Autumn Sunset Bouquet</div>
+                        <div class="flower-price">P350</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet2.jpg" alt="Dried Bouquet 2" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Desert Dream Collection</div>
+                        <div class="flower-price">P420</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet3.jpg" alt="Dried Bouquet 3" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Botanical Elegance</div>
+                        <div class="flower-price">P380</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet4.jpg" alt="Dried Bouquet 4" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Rustic Charm Bundle</div>
+                        <div class="flower-price">P320</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet5.jpg" alt="Dried Bouquet 5" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Golden Fields Arrangement</div>
+                        <div class="flower-price">P450</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category 2 -->
+        <div class="category">
+            <h3 class="category-title">Dried Flower Wreaths</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <img src="wreath1.jpg" alt="Dried Wreath 1" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Harvest Moon Wreath</div>
+                        <div class="flower-price">P550</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <img src="wreath2.jpg" alt="Dried Wreath 2" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Bohemian Circle</div>
+                        <div class="flower-price">P480</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <img src="wreath3.jpg" alt="Dried Wreath 3" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Eucalyptus Dream</div>
+                        <div class="flower-price">P520</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="wreath4.jpg" alt="Dried Wreath 4" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Wildflower Hoop</div>
+                        <div class="flower-price">P450</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="flower-card">
+                    <img src="wreath5.jpg" alt="Dried Wreath 5" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Lavender Fields Circle</div>
+                        <div class="flower-price">P580</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category 3 -->
+        <div class="category">
+            <h3 class="category-title">Dried Pampas Grass</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <img src="pampas1.jpg" alt="Pampas Grass 1" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Natural Pampas Stems</div>
+                        <div class="flower-price">P180</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <img src="pampas2.jpg" alt="Pampas Grass 2" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Tinted Pink Pampas</div>
+                        <div class="flower-price">P220</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <img src="pampas3.jpg" alt="Pampas Grass 3" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Premium Large Plumes</div>
+                        <div class="flower-price">P280</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="pampas4.jpg" alt="Pampas Grass 4" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Golden Pampas Bundle</div>
+                        <div class="flower-price">P240</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="flower-card">
+                    <img src="pampas5.jpg" alt="Pampas Grass 5" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Mixed Heights Set</div>
+                        <div class="flower-price">P320</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category 4 -->
+        <div class="category">
+            <h3 class="category-title">Dried Flower Boxes</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <img src="box1.jpg" alt="Dried Flower Box 1" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Preserved Rose Box</div>
+                        <div class="flower-price">P650</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <img src="box2.jpg" alt="Dried Flower Box 2" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Botanical Memory Box</div>
+                        <div class="flower-price">P580</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <img src="box3.jpg" alt="Dried Flower Box 3" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Mini Wildflower Collection</div>
+                        <div class="flower-price">P450</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="box4.jpg" alt="Dried Flower Box 4" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Lavender & Eucalyptus Box</div>
+                        <div class="flower-price">P520</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="flower-card">
+                    <img src="box5.jpg" alt="Dried Flower Box 5" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Deluxe Anniversary Box</div>
+                        <div class="flower-price">P750</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
+    </footer>
+</body>
+</html>
