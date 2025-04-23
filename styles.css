@@ -1,24 +1,20 @@
-/* Font import if Shelley Volante BT is locally installed */
-@font-face {
-    font-family: 'Shelley Volante BT';
-    src: local('ShelleyVolanteBT');
-}
-
+/* Font import - Using a more universally available elegant font stack */
 body {
-    font-family: 'Shelley Volante BT', cursive, sans-serif;
-    background-color: beige;
-    color: darkslategray;
+    font-family: 'Garamond', 'Baskerville', 'Times New Roman', serif;
+    background-color: #f8f8f5; /* Soft off-white */
+    color: #3a4a42; /* Natural dark green-gray */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: blush;
+    background-color: #f5f0e8; /* Warm ivory */
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    border-bottom: 1px solid #e0d9cc; /* Subtle natural border */
 }
 
 .logo {
@@ -34,7 +30,8 @@ header {
 .shop-name {
     font-size: 1.8rem;
     font-weight: bold;
-    color: darkgreen;
+    color: #5a7247; /* Muted sage green */
+    font-family: 'Garamond', 'Baskerville', 'Times New Roman', serif;
 }
 
 nav ul {
@@ -47,8 +44,14 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: darkslategray;
-    font-weight: bold;
+    color: #3a4a42; /* Matching body color */
+    font-weight: normal;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #7a8d75; /* Soft muted green */
 }
 
 .icons {
@@ -56,26 +59,31 @@ nav ul li a {
     gap: 1.5rem;
     font-size: 1.5rem;
     cursor: pointer;
+    color: #5a7247; /* Matching shop name color */
 }
 
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: seashell;
+    background-color: #fafaf7; /* Slightly brighter than body */
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+    border-bottom: 1px solid #e0d9cc;
 }
 
 .hero-text h1 {
     font-size: 2.5rem;
-    color: darkolivegreen;
+    color: #4a5c40; /* Deeper natural green */
+    margin-bottom: 1.5rem;
+    font-weight: normal;
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
     margin: 1rem 0;
+    border-radius: 4px;
 }
 
 .side-images {
@@ -89,81 +97,64 @@ nav ul li a {
 .side-images img {
     width: 200px;
     height: auto;
-    border: 2px solid lightgray;
-    border-radius: 10px;
+    border: 1px solid #d1c9b8; /* Natural linen color */
+    border-radius: 8px;
 }
 
 .bestsellers {
-    padding: 2rem;
-    background-color: ivory;
+    padding: 3rem 2rem;
+    background-color: #f5f2eb; /* Warm natural white */
     text-align: center;
 }
 
 .bestsellers h2 {
-    color: darkgreen;
-    margin-bottom: 1.5rem;
+    color: #5a7247; /* Muted sage green */
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: normal;
 }
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
     justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .image-grid .flower {
     position: relative;
-    border: 1px solid lightgray;
-    padding: 0.5rem;
-    border-radius: 10px;
+    border: 1px solid #e0d9cc;
+    padding: 1rem;
+    border-radius: 8px;
     background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid .flower:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .image-grid img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .heart {
     position: absolute;
-    top: 8px;
-    right: 12px;
+    top: 15px;
+    right: 15px;
     font-size: 1.3rem;
-    color: gray;
+    color: #c0c0c0;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .heart.liked {
-    color: red;
-}
-
-footer {
-    background-color: blush;
-    padding: 1rem;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-footer .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.social-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: darkolivegreen;
-}
-
-/* Contact & About Page Background */
-.about-section,
-.contact-section {
-    background-image: url('bg-flower.jpg');
-    background-size: cover;
-    background-position:
-
+    color: #d48a8a
 
 
 
