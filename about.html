@@ -11,7 +11,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Google Fonts (Montserrat for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
+        /* Shelley Volante BT for decorative elements */
         @font-face {
             font-family: 'Shelley Volante BT';
             src: local('ShelleyVolanteBT'), 
@@ -20,11 +24,12 @@
         }
         
         body {
-            font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
+            font-family: 'Montserrat', sans-serif;
             background-color: white;
             color: #3a4a42;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -32,6 +37,10 @@
             font-weight: normal;
             letter-spacing: 1px;
             color: #5a7247;
+        }
+        
+        .shop-name, .highlight-box {
+            font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
         }
         
         header {
@@ -71,8 +80,8 @@
         nav ul li a {
             text-decoration: none;
             color: #3a4a42;
-            font-size: 1.2rem;
-            letter-spacing: 0.5px;
+            font-size: 1.1rem;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
         
@@ -92,22 +101,20 @@
         }
         
         #about-us h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            color: #5a7247;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         
         #about-us h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin: 2rem 0 1rem;
-            color: #5a7247;
         }
         
         #about-us p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
-            color: #3a4a42;
+            font-weight: 400;
         }
         
         .highlight-box {
@@ -116,6 +123,7 @@
             padding: 1.5rem;
             margin: 2rem 0;
             color: #3a4a42;
+            font-style: italic;
         }
         
         .values-list {
@@ -141,6 +149,8 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
+            font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
+            font-size: 1.3rem;
         }
         
         .value-card i {
@@ -174,7 +184,7 @@
             transition: all 0.3s ease;
             border: 1px solid #f5f0e8;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
         .social-icons a:hover {
@@ -183,21 +193,20 @@
             transform: translateY(-3px);
         }
         
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #f5f0e8;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                margin-top: 1rem;
+            }
+            
+            #about-us {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
@@ -266,10 +275,7 @@
             </a>
         </div>
         
-        
-        
         <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
-        
     </footer>
 
     <!-- Bootstrap JS -->
