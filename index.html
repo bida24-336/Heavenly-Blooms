@@ -52,12 +52,22 @@
         <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: 1.2rem; color: #3a4a42;">Contact Us</a></li>
       </ul>
     </nav>
-    <div>
-      <span class="me-3" style="font-size: 1.3rem; cursor: pointer;">🔍</span>
-      <span class="me-3" style="font-size: 1.3rem; cursor: pointer;" title="Cart">🛒</span>
-      <span style="font-size: 1.3rem; cursor: pointer;" title="Favorites" onclick="toggleFavorites()">❤️</span>
+    <div class="cart-icon" id="cartIcon" style="position: relative; cursor: pointer; margin-left: 15px;">
+      <i class="fas fa-shopping-cart" style="font-size: 1.3rem;"></i>
+      <span class="cart-count" id="cartCount" style="position: absolute; top: -10px; right: -10px; background-color: #d48a8a; color: white; border-radius: 50%; padding: 0 5px; font-size: 0.8rem;">0</span>
     </div>
   </header>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal" style="display: none; position: fixed; top: 0; right: 0; width: 350px; height: 100%; background-color: white; box-shadow: -2px 0 5px rgba(0,0,0,0.1); z-index: 1000; padding: 20px; overflow-y: auto;">
+    <div class="cart-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">Your Cart</h3>
+      <button class="close-cart" id="closeCart" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems" style="margin-bottom: 20px;"></div>
+    <div class="cart-total" id="cartTotal" style="font-weight: bold; margin-bottom: 20px;">Total: P0.00</div>
+    <button class="checkout-btn" id="checkoutBtn" style="width: 100%; padding: 10px; background-color: #5a7247; color: white; border: none; border-radius: 4px; cursor: pointer;">Proceed to Checkout</button>
+  </div>
 
   <!-- Hero Section -->
   <section class="container text-center my-5 py-4" style="background-color: #fafaf7; border-radius: 8px;">
@@ -84,30 +94,35 @@
         <div class="position-relative">
           <img src="bs 1.jpg" alt="Best Seller 1" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
           <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 1')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <button class="btn btn-sm mt-2" style="background-color: #5a7247; color: white;" onclick="addToCart('Best Seller 1', 1200)">Add to Cart</button>
         </div>
       </div>
       <div class="col text-center">
         <div class="position-relative">
           <img src="bs 2.jpg" alt="Best Seller 2" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
           <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 2')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <button class="btn btn-sm mt-2" style="background-color: #5a7247; color: white;" onclick="addToCart('Best Seller 2', 1500)">Add to Cart</button>
         </div>
       </div>
       <div class="col text-center">
         <div class="position-relative">
           <img src="bs 3.jpg" alt="Best Seller 3" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
           <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 3')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <button class="btn btn-sm mt-2" style="background-color: #5a7247; color: white;" onclick="addToCart('Best Seller 3', 1800)">Add to Cart</button>
         </div>
       </div>
       <div class="col text-center">
         <div class="position-relative">
           <img src="bs4.jpg" alt="Best Seller 4" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
           <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 4')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <button class="btn btn-sm mt-2" style="background-color: #5a7247; color: white;" onclick="addToCart('Best Seller 4', 2000)">Add to Cart</button>
         </div>
       </div>
       <div class="col text-center">
         <div class="position-relative">
           <img src="bs 5.jpg" alt="Best Seller 5" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
           <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 5')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <button class="btn btn-sm mt-2" style="background-color: #5a7247; color: white;" onclick="addToCart('Best Seller 5', 2200)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -170,6 +185,101 @@
     }
   </script>
 
+  <!-- Cart JS -->
+  <script>
+    // Cart functionality
+    const cartIcon = document.getElementById('cartIcon');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const cartCount = document.getElementById('cartCount');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    let cart = [];
+
+    // Toggle cart modal
+    cartIcon.addEventListener('click', () => {
+      cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+    });
+
+    closeCart.addEventListener('click', () => {
+      cartModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!cartModal.contains(event.target) && event.target !== cartIcon && !cartIcon.contains(event.target)) {
+        cartModal.style.display = 'none';
+      }
+    });
+
+    // Function to add items to cart
+    function addToCart(productName, price) {
+      const existingItem = cart.find(item => item.name === productName);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          name: productName,
+          price: price,
+          quantity: 1
+        });
+      }
+      
+      updateCart();
+      // Show a quick confirmation
+      alert(`${productName} added to cart!`);
+    }
+
+    // Update cart UI
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      let itemCount = 0;
+      
+      cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.style.display = 'flex';
+        itemElement.style.justifyContent = 'space-between';
+        itemElement.style.marginBottom = '10px';
+        itemElement.style.paddingBottom = '10px';
+        itemElement.style.borderBottom = '1px solid #eee';
+        
+        itemElement.innerHTML = `
+          <div>
+            <div style="font-weight: bold;">${item.name}</div>
+            <div style="font-size: 0.9rem; color: #666;">P${item.price.toFixed(2)} x ${item.quantity}</div>
+          </div>
+          <div style="font-weight: bold;">P${(item.price * item.quantity).toFixed(2)}</div>
+        `;
+        
+        cartItems.appendChild(itemElement);
+        total += item.price * item.quantity;
+        itemCount += item.quantity;
+      });
+      
+      cartTotal.textContent = `Total: P${total.toFixed(2)}`;
+      cartCount.textContent = itemCount;
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Your cart is empty</p>';
+      }
+    }
+
+    // Checkout button
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      alert('Proceeding to checkout!');
+      // Here you would typically redirect to a checkout page
+    });
+  </script>
+
   <style>
     .social-icons a {
       color: #f5f0e8;
@@ -201,7 +311,6 @@
   </style>
 </body>
 </html>
-
 
     
 
