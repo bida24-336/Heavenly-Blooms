@@ -9,293 +9,144 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-image: url('bg.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
-            color: #3a4a42;
-            line-height: 1.6;
+        /* ... (keep all your existing styles the same) ... */
+
+        /* Order Feedback Box Styles */
+        .feedback-box-container {
+            position: fixed;
+            top: 150px;
+            right: 20px;
+            z-index: 100;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-            color: #5a7247;
-        }
-        
-        header {
-            background-color: rgba(245, 240, 232, 0.9);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #e0d9cc;
-        }
-        
-        .logo {
+        .feedback-box-tab {
+            background-color: #5a7247;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px 0 0 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            height: 120px;
             display: flex;
             align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo img {
-            height: 60px;
-        }
-        
-        .shop-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: #5a7247;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            padding: 0;
-            margin: 0;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #3a4a42;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            color: #7a8d75;
-        }
-        
-        .contact-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 800px;
-            margin: 3rem auto;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .contact-info {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hours {
-            background-color: #f5f0e8;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-        
-        .hours h3 {
-            margin-top: 0;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .social-icons a {
-            color: #5a7247;
-            font-size: 1.5rem;
+            justify-content: center;
+            transform: translateX(30px);
             transition: transform 0.3s ease;
         }
         
-        .social-icons a:hover {
-            transform: translateY(-3px);
-            color: #7a8d75;
+        .feedback-box-tab:hover {
+            transform: translateX(10px);
         }
         
-        footer {
-            background-color: rgba(90, 114, 71, 0.9);
-            color: #f5f0e8;
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-        }
-        
-        /* Order Feedback Card Styles */
-        .order-feedback-tab {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #5a7247;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px 20px 0 0;
-            cursor: pointer;
-            z-index: 100;
-            transform: rotate(-90deg);
-            transform-origin: right bottom;
-            font-size: 0.9rem;
-            box-shadow: -2px -2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .order-feedback-card {
+        .feedback-box {
             display: none;
-            position: fixed;
-            bottom: 60px;
-            right: 20px;
             background-color: white;
-            padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 100;
             width: 250px;
+            position: absolute;
+            right: 50px;
+            top: 0;
         }
         
-        .order-feedback-card h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
-            color: #5a7247;
-            border-bottom: 1px solid #f5f0e8;
-            padding-bottom: 0.5rem;
+        .feedback-box-header {
+            background-color: #5a7247;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 8px 8px 0 0;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .feedback-box-content {
+            padding: 15px;
         }
         
         .feedback-option {
-            margin: 0.5rem 0;
+            margin: 10px 0;
             display: flex;
             align-items: center;
         }
         
         .feedback-option input {
-            margin-right: 0.5rem;
+            margin-right: 10px;
         }
         
         .thank-you-message {
             display: none;
             color: #5a7247;
             font-weight: 500;
-            margin-top: 1rem;
-            font-size: 0.9rem;
+            margin-top: 10px;
             text-align: center;
+            font-size: 0.9rem;
+            padding: 5px;
+        }
+        
+        .close-feedback {
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         @media (max-width: 768px) {
-            .contact-container {
-                width: 90%;
-                padding: 1.5rem;
+            .feedback-box-container {
+                top: 100px;
             }
             
-            header {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-            }
-            
-            .order-feedback-card {
+            .feedback-box {
                 width: 220px;
-                right: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="Logo.jpg" alt="Heavenly Blooms Logo">
-            <h1 class="shop-name">Heavenly Blooms</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- ... (keep all your existing HTML the same until the feedback section) ... -->
 
-    <section class="contact-container">
-        <h2>Contact Us</h2>
-        <p class="contact-info">For any inquiries, feel free to reach us through the following:</p>
-        
-        <p><strong>Phone:</strong> +267 76 724 111 / +267 77 334 565</p>
-        <p><strong>Email:</strong> heavenlyblooms1@gmail.com</p>
-        
-        <div class="hours">
-            <h3>Working Hours</h3>
-            <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</p>
-            <p><strong>Saturday:</strong> 9:00 AM - 4:00 PM</p>
-            <p><strong>Sunday:</strong> Closed</p>
+    <!-- Order Feedback Box -->
+    <div class="feedback-box-container">
+        <div class="feedback-box-tab" onclick="toggleFeedback()">
+            Order Feedback
         </div>
         
-        <p class="contact-info"><strong>Location:</strong> Heavenly Blooms Shop 25, Airport Junction Shopping Centre, Airport Road, Block 10, Gaborone, Botswana</p>
-        
-        <p class="contact-info">For daily inspiration and updates, follow us on:</p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                <i class="fab fa-x-twitter"></i>
-            </a>
+        <div class="feedback-box" id="feedbackBox">
+            <div class="feedback-box-header">
+                <span>How was your order experience?</span>
+                <span class="close-feedback" onclick="toggleFeedback()">×</span>
+            </div>
+            <div class="feedback-box-content">
+                <form id="feedbackForm">
+                    <div class="feedback-option">
+                        <input type="radio" id="excellent" name="feedback" value="excellent">
+                        <label for="excellent">Excellent</label>
+                    </div>
+                    <div class="feedback-option">
+                        <input type="radio" id="good" name="feedback" value="good">
+                        <label for="good">Good</label>
+                    </div>
+                    <div class="feedback-option">
+                        <input type="radio" id="average" name="feedback" value="average">
+                        <label for="average">Average</label>
+                    </div>
+                    <div class="feedback-option">
+                        <input type="radio" id="poor" name="feedback" value="poor">
+                        <label for="poor">Needs improvement</label>
+                    </div>
+                    <div class="thank-you-message" id="thankYouMessage">
+                        Thank you for your feedback!
+                    </div>
+                </form>
+            </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-        </div>
-        <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
-    </footer>
-
-    <!-- Order Feedback Tab -->
-    <div class="order-feedback-tab" onclick="toggleFeedback()">
-        Order Feedback
-    </div>
-    
-    <!-- Order Feedback Card -->
-    <div class="order-feedback-card" id="feedbackCard">
-        <h3>How was your order experience?</h3>
-        <form id="feedbackForm">
-            <div class="feedback-option">
-                <input type="radio" id="excellent" name="feedback" value="excellent">
-                <label for="excellent">Excellent</label>
-            </div>
-            <div class="feedback-option">
-                <input type="radio" id="good" name="feedback" value="good">
-                <label for="good">Good</label>
-            </div>
-            <div class="feedback-option">
-                <input type="radio" id="average" name="feedback" value="average">
-                <label for="average">Average</label>
-            </div>
-            <div class="feedback-option">
-                <input type="radio" id="poor" name="feedback" value="poor">
-                <label for="poor">Needs improvement</label>
-            </div>
-            <div class="thank-you-message" id="thankYouMessage">
-                Thank you for your feedback!
-            </div>
-        </form>
     </div>
 
     <script>
         function toggleFeedback() {
-            const card = document.getElementById('feedbackCard');
-            card.style.display = card.style.display === 'block' ? 'none' : 'block';
+            const box = document.getElementById('feedbackBox');
+            box.style.display = box.style.display === 'block' ? 'none' : 'block';
         }
         
         document.querySelectorAll('input[name="feedback"]').forEach(radio => {
@@ -306,22 +157,21 @@
                 // Hide the message after 3 seconds
                 setTimeout(() => {
                     thankYouMessage.style.display = 'none';
-                    document.getElementById('feedbackCard').style.display = 'none';
+                    document.getElementById('feedbackBox').style.display = 'none';
                 }, 3000);
             });
         });
         
-        // Close card when clicking outside
+        // Close box when clicking outside
         document.addEventListener('click', function(event) {
-            const card = document.getElementById('feedbackCard');
-            const tab = document.querySelector('.order-feedback-tab');
+            const box = document.getElementById('feedbackBox');
+            const tab = document.querySelector('.feedback-box-tab');
             
-            if (!card.contains(event.target) && !tab.contains(event.target)) {
-                card.style.display = 'none';
+            if (!box.contains(event.target) && !tab.contains(event.target)) {
+                box.style.display = 'none';
             }
         });
     </script>
 </body>
 </html>
-
   
