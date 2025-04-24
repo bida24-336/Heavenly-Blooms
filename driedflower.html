@@ -105,6 +105,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #e0d9cc;
+            position: relative;
         }
         
         .flower-card:hover {
@@ -167,6 +168,146 @@
             color: #5a7247;
         }
         
+        /* Quantity Controls */
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        
+        .quantity-btn {
+            background-color: #f5f0e8;
+            color: #5a7247;
+            border: 1px solid #e0d9cc;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #e0d9cc;
+            margin: 0 5px;
+        }
+        
+        .add-to-cart {
+            background-color: #5a7247;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 0.5rem;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #7a8d75;
+        }
+        
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #d48a8a;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 500;
+        }
+        
+        .cart-item-price {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .cart-total {
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: right;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5a7247;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
         footer {
             background-color: #5a7247;
             color: #f5f0e8;
@@ -219,6 +360,10 @@
             .flower-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
+            
+            .cart-modal {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -233,12 +378,26 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="plants.html">Plants</a></li>
                 <li><a href="bouquets.html">Bouquets</a></li>
-                
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
     </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total" id="cartTotal">Total: P0.00</div>
+        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
 
     <div class="main-container">
         <h2 class="page-title">Our Dried Flower Collection</h2>
@@ -254,7 +413,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Autumn Sunset Bouquet</div>
                         <div class="flower-price">P350</div>
-                        <div class="flower-desc">Warm-toned arrangement with dried wheat, orange roses, and eucalyptus. Perfect for fall decor that lasts all season.</div>
+                        <div class="flower-desc">Warm-toned arrangement with dried wheat, orange roses, and eucalyptus.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Height: 35cm</span>
                             <span class="spec-item">10-12 stems</span>
@@ -263,6 +422,12 @@
                             <span><i class="fas fa-home"></i> Indoor display</span>
                             <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Autumn Sunset Bouquet', 350)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -272,7 +437,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Desert Dream Collection</div>
                         <div class="flower-price">P420</div>
-                        <div class="flower-desc">Earthy tones of dried palms, pampas grass, and bleached ruscus create a boho-chic statement piece.</div>
+                        <div class="flower-desc">Earthy tones of dried palms, pampas grass, and bleached ruscus.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Height: 40cm</span>
                             <span class="spec-item">8-10 stems</span>
@@ -281,6 +446,12 @@
                             <span><i class="fas fa-home"></i> Indoor/outdoor</span>
                             <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Desert Dream Collection', 420)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -291,7 +462,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Botanical Elegance</div>
                         <div class="flower-price">P380</div>
-                        <div class="flower-desc">Sophisticated mix of preserved eucalyptus, dried hydrangeas, and bunny tails in neutral tones.</div>
+                        <div class="flower-desc">Sophisticated mix of preserved eucalyptus, dried hydrangeas, and bunny tails.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Height: 45cm</span>
                             <span class="spec-item">Vase not included</span>
@@ -300,6 +471,12 @@
                             <span><i class="fas fa-home"></i> Indoor display</span>
                             <span><i class="fas fa-clock"></i> Lasts 1.5+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Botanical Elegance', 380)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -309,7 +486,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Rustic Charm Bundle</div>
                         <div class="flower-price">P320</div>
-                        <div class="flower-desc">Natural dried lavender and baby's breath tied with jute twine for a simple farmhouse look.</div>
+                        <div class="flower-desc">Natural dried lavender and baby's breath tied with jute twine.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Height: 30cm</span>
                             <span class="spec-item">5-7 stems</span>
@@ -318,6 +495,12 @@
                             <span><i class="fas fa-home"></i> Avoid humidity</span>
                             <span><i class="fas fa-clock"></i> Lasts 8+ months</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Rustic Charm Bundle', 320)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -333,7 +516,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Harvest Moon Wreath</div>
                         <div class="flower-price">P550</div>
-                        <div class="flower-desc">Circular arrangement of dried wheat, orange roses, and seasonal foliage. Brings warmth to any door.</div>
+                        <div class="flower-desc">Circular arrangement of dried wheat, orange roses, and seasonal foliage.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Diameter: 45cm</span>
                             <span class="spec-item">With hanging loop</span>
@@ -342,6 +525,12 @@
                             <span><i class="fas fa-door-open"></i> Indoor/outdoor</span>
                             <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Harvest Moon Wreath', 550)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -352,7 +541,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Bohemian Circle</div>
                         <div class="flower-price">P480</div>
-                        <div class="flower-desc">Artistic mix of pampas grass, dried palms, and bleached foliage in a modern wreath design.</div>
+                        <div class="flower-desc">Artistic mix of pampas grass, dried palms, and bleached foliage.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Diameter: 40cm</span>
                             <span class="spec-item">Rustic finish</span>
@@ -361,6 +550,12 @@
                             <span><i class="fas fa-door-open"></i> Indoor recommended</span>
                             <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Bohemian Circle', 480)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -370,7 +565,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Eucalyptus Dream</div>
                         <div class="flower-price">P520</div>
-                        <div class="flower-desc">Simple preserved eucalyptus wreath with subtle sage tones and light fragrance.</div>
+                        <div class="flower-desc">Simple preserved eucalyptus wreath with subtle sage tones.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Diameter: 35cm</span>
                             <span class="spec-item">Minimalist design</span>
@@ -379,6 +574,12 @@
                             <span><i class="fas fa-door-open"></i> Indoor/outdoor</span>
                             <span><i class="fas fa-clock"></i> Lasts 1.5+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Eucalyptus Dream', 520)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -388,7 +589,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Wildflower Hoop</div>
                         <div class="flower-price">P450</div>
-                        <div class="flower-desc">Modern hoop design with dried wildflowers and grasses. Perfect for contemporary spaces.</div>
+                        <div class="flower-desc">Modern hoop design with dried wildflowers and grasses.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Diameter: 38cm</span>
                             <span class="spec-item">Metal hoop base</span>
@@ -397,6 +598,12 @@
                             <span><i class="fas fa-home"></i> Indoor display</span>
                             <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Wildflower Hoop', 450)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -412,7 +619,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Preserved Rose Box</div>
                         <div class="flower-price">P650</div>
-                        <div class="flower-desc">Luxury box with 12 preserved roses in your choice of color. Includes keepsake box.</div>
+                        <div class="flower-desc">Luxury box with 12 preserved roses in your choice of color.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Size: 25x25cm</span>
                             <span class="spec-item">12 roses</span>
@@ -421,6 +628,12 @@
                             <span><i class="fas fa-home"></i> Indoor display</span>
                             <span><i class="fas fa-clock"></i> Lasts 3+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Preserved Rose Box', 650)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -440,6 +653,12 @@
                             <span><i class="fas fa-home"></i> Avoid direct sun</span>
                             <span><i class="fas fa-clock"></i> Lasts 5+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Botanical Memory Box', 580)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -458,6 +677,12 @@
                             <span><i class="fas fa-home"></i> Indoor display</span>
                             <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Mini Wildflower Collection', 450)">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -467,7 +692,7 @@
                     <div class="flower-info">
                         <div class="flower-name">Lavender & Eucalyptus Box</div>
                         <div class="flower-price">P520</div>
-                        <div class="flower-desc">Fragrant combination of dried lavender and eucalyptus in a beautiful presentation box.</div>
+                        <div class="flower-desc">Fragrant combination of dried lavender and eucalyptus in a beautiful box.</div>
                         <div class="flower-specs">
                             <span class="spec-item">Size: 18x18cm</span>
                             <span class="spec-item">Retains scent</span>
@@ -476,6 +701,12 @@
                             <span><i class="fas fa-home"></i> Cool, dry place</span>
                             <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
                         </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Lavender & Eucalyptus Box', 520)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -496,5 +727,116 @@
         </div>
         <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Cart functionality
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        let cart = [];
+
+        // Toggle cart modal
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cartModal.contains(event.target) && event.target !== cartIcon && !cartIcon.contains(event.target)) {
+                cartModal.style.display = 'none';
+            }
+        });
+
+        // Update quantity
+        function updateQuantity(button, change) {
+            const container = button.closest('.quantity-controls');
+            const input = container.querySelector('.quantity-input');
+            let newValue = parseInt(input.value) + change;
+            if (newValue < 1) newValue = 1;
+            input.value = newValue;
+        }
+
+        // Add to cart function
+        function addToCart(button, productName, price) {
+            const container = button.closest('.flower-info');
+            const quantityInput = container.querySelector('.quantity-input');
+            const quantity = parseInt(quantityInput.value);
+            const imageSrc = container.closest('.flower-card').querySelector('img').src.split('/').pop();
+
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: price,
+                    quantity: quantity,
+                    image: imageSrc
+                });
+            }
+            
+            updateCart();
+            
+            // Visual feedback
+            button.textContent = "✓ Added";
+            button.style.backgroundColor = "#4CAF50";
+            setTimeout(() => {
+                button.textContent = "Add to Cart";
+                button.style.backgroundColor = "#5a7247";
+            }, 2000);
+        }
+
+        // Update cart display
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let itemCount = 0;
+            
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">P${item.price.toFixed(2)} × ${item.quantity}</div>
+                    </div>
+                    <div>P${(item.price * item.quantity).toFixed(2)}</div>
+                `;
+                
+                cartItems.appendChild(itemElement);
+                total += item.price * item.quantity;
+                itemCount += item.quantity;
+            });
+            
+            cartTotal.textContent = `Total: P${total.toFixed(2)}`;
+            cartCount.textContent = itemCount;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-center text-muted py-3">Your cart is empty</p>';
+            }
+        }
+
+        // Checkout button
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Proceeding to checkout!');
+            // Here you would typically redirect to a checkout page
+        });
+    </script>
 </body>
 </html>
