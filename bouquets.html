@@ -1,464 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Bouquets - Heavenly Blooms</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f8f8f5;
-            color: #3a4a42;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-            color: #5a7247;
-        }
-        
-        header {
-            background-color: #f5f0e8;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #e0d9cc;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo img {
-            height: 60px;
-        }
-        
-        .shop-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: #5a7247;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            padding: 0;
-            margin: 0;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #3a4a42;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            color: #7a8d75;
-        }
-        
-        .main-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .page-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .category {
-            margin-bottom: 3rem;
-        }
-        
-        .category-title {
-            font-size: 1.8rem;
-            border-bottom: 2px solid #e0d9cc;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .bouquet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .bouquet-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        
-        .bouquet-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .bouquet-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .bouquet-info {
-            padding: 1rem;
-        }
-        
-        .bouquet-name {
-            font-weight: 500;
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-        
-        .bouquet-price {
-            color: #5a7247;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .bouquet-description {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.5rem;
-            display: none;
-        }
-        
-        .info-btn {
-            background-color: #5a7247;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-        
-        .info-btn:hover {
-            background-color: #7a8d75;
-        }
-        
-        footer {
-            background-color: #5a7247;
-            color: #f5f0e8;
-            padding: 1.5rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .social-icons a {
-            color: #f5f0e8;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            transform: translateY(-3px);
-            color: #f5f0e8;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .bouquet-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heavenly Blooms</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Shelley Volante BT font -->
+  <style>
+    @font-face {
+      font-family: 'Shelley Volante BT';
+      src: local('ShelleyVolanteBT'), 
+           local('Shelley Volante BT'),
+           url('ShelleyVolanteBT.ttf') format('truetype');
+    }
+    
+    body {
+      font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
+      background-color: #f8f8f5;
+      color: #3a4a42;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="Logo.jpg" alt="Heavenly Blooms Logo">
-            <h1 class="shop-name">Heavenly Blooms</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="dried-flowers.html">Dried Flowers</a></li>
-                <li><a href="bouquets.html">Bouquets</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="main-container">
-        <h2 class="page-title">Our Beautiful Bouquets</h2>
-        
-        <!-- Category 1: Classic Bouquets -->
-        <div class="category">
-            <h3 class="category-title">Classic Bouquets</h3>
-            <div class="bouquet-grid">
-                <!-- Bouquet 1 -->
-                <div class="bouquet-card">
-                    <img src="blushing bloom.jpeg" alt="Blushing Bloom Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Blushing Bloom</div>
-                        <div class="bouquet-price">P280.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Mixed pink roses & baby's breath in a elegant arrangement perfect for any occasion.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 2 -->
-                <div class="bouquet-card">
-                    <img src="Crimson kiss.jpeg" alt="Crimson Kiss Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Crimson Kiss</div>
-                        <div class="bouquet-price">P310.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Deep red roses arranged in a romantic style, ideal for anniversaries and special occasions.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 3 -->
-                <div class="bouquet-card">
-                    <img src="white elegance.jpeg" alt="White Elegance Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">White Elegance</div>
-                        <div class="bouquet-price">P320.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            White lilies & roses in a sophisticated arrangement perfect for weddings and formal events.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 4 -->
-                <div class="bouquet-card">
-                    <img src="lavenderwhisper.jpeg" alt="Lavender Whisper Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Lavender Whisper</div>
-                        <div class="bouquet-price">P300.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Lavender roses & foliage arranged in a soft, romantic style.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 5 -->
-                <div class="bouquet-card">
-                    <img src="golden kiss.jpeg" alt="Golden Sunshine Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Golden Sunshine</div>
-                        <div class="bouquet-price">P290.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Bright yellow roses arranged to bring sunshine to any occasion.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Category 2: Seasonal Specials -->
-        <div class="category">
-            <h3 class="category-title">Seasonal Specials</h3>
-            <div class="bouquet-grid">
-                <!-- Bouquet 1 -->
-                <div class="bouquet-card">
-                    <img src="sunflowers.jpg" alt="Sunshine Love Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Sunshine Love</div>
-                        <div class="bouquet-price">P250.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Sunflowers with greenery in a cheerful summer arrangement.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 2 -->
-                <div class="bouquet-card">
-                    <img src="Autumn glow.jpeg" alt="Autumn Glow Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Autumn Glow</div>
-                        <div class="bouquet-price">P270.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Warm-toned flowers with seasonal foliage perfect for fall.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 3 -->
-                <div class="bouquet-card">
-                    <img src="white frost.jpeg" alt="Winter Frost Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Winter Frost</div>
-                        <div class="bouquet-price">P310.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Cool white and silver winter arrangement with seasonal accents.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 4 -->
-                <div class="bouquet-card">
-                    <img src="Spring awakening.jpeg" alt="Spring Awakening Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Spring Awakening</div>
-                        <div class="bouquet-price">P290.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Fresh spring blooms in a vibrant, colorful arrangement.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 5 -->
-                <div class="bouquet-card">
-                    <img src="Festive sheer.jpeg" alt="Festive Cheer Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Festive Cheer</div>
-                        <div class="bouquet-price">P330.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Rich red and green holiday arrangement with seasonal accents.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Category 3: Premium Arrangements -->
-        <div class="category">
-            <h3 class="category-title">Premium Arrangements</h3>
-            <div class="bouquet-grid">
-                <!-- Bouquet 1 -->
-                <div class="bouquet-card">
-                    <img src="Royal elegance.jpeg" alt="Royal Elegance Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Royal Elegance</div>
-                        <div class="bouquet-price">P450.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Premium long-stemmed roses in an exquisite arrangement.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 2 -->
-                <div class="bouquet-card">
-                    <img src="exotic beauty.jpeg" alt="Exotic Beauty Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Exotic Beauty</div>
-                        <div class="bouquet-price">P490.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Orchids and tropical flowers in a stunning arrangement.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 3 -->
-                <div class="bouquet-card">
-                    <img src="peony paradise.jpeg" alt="Peony Paradise Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Peony Paradise</div>
-                        <div class="bouquet-price">P420.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Luxurious peonies in a lush, romantic arrangement.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 4 -->
-                <div class="bouquet-card">
-                    <img src="bridal bliss.jpeg" alt="Bridal Bliss Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Bridal Bliss</div>
-                        <div class="bouquet-price">P480.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            All-white premium flowers perfect for weddings.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bouquet 5 -->
-                <div class="bouquet-card">
-                    <img src="Grandeur.jpeg" alt="Grandeur Bouquet" class="bouquet-image">
-                    <div class="bouquet-info">
-                        <div class="bouquet-name">Grandeur</div>
-                        <div class="bouquet-price">P520.00</div>
-                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
-                        <div class="bouquet-description">
-                            Our most luxurious mixed flower arrangement with premium blooms.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center p-3 border-bottom" style="background-color: #f5f0e8;">
+    <div class="d-flex align-items-center">
+      <img src="Logo.jpg" alt="Heavenly Blooms Logo" height="60" class="me-3">
+      <h1 class="h4 m-0" style="font-size: 2rem; color: #5a7247;">Heavenly Blooms</h1>
     </div>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a href="bouquets.html" class="nav-link" style="font-size: 1.2rem; color: #3a4a42;">Bouquets</a></li>
+        <li class="nav-item"><a href="plants.html" class="nav-link" style="font-size: 1.2rem; color: #3a4a42;">Plants</a></li>
+        <li class="nav-item"><a href="driedflower.html" class="nav-link" style="font-size: 1.2rem; color: #3a4a42;">Dried Flowers</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link" style="font-size: 1.2rem; color: #3a4a42;">About Us</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: 1.2rem; color: #3a4a42;">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="cart-icon" id="cartIcon" style="position: relative; cursor: pointer; margin-left: 15px;">
+      <i class="fas fa-shopping-cart" style="font-size: 1.3rem;"></i>
+      <span class="cart-count" id="cartCount" style="position: absolute; top: -10px; right: -10px; background-color: #d48a8a; color: white; border-radius: 50%; padding: 0 5px; font-size: 0.8rem;">0</span>
+    </div>
+  </header>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                <i class="fab fa-x-twitter"></i>
-            </a>
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal" style="display: none; position: fixed; top: 0; right: 0; width: 350px; height: 100%; background-color: white; box-shadow: -2px 0 5px rgba(0,0,0,0.1); z-index: 1000; padding: 20px; overflow-y: auto;">
+    <div class="cart-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">Your Cart</h3>
+      <button class="close-cart" id="closeCart" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems" style="margin-bottom: 20px;"></div>
+    <div class="cart-total" id="cartTotal" style="font-weight: bold; margin-bottom: 20px;">Total: P0.00</div>
+    <button class="checkout-btn" id="checkoutBtn" style="width: 100%; padding: 10px; background-color: #5a7247; color: white; border: none; border-radius: 4px; cursor: pointer;">Proceed to Checkout</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="container text-center my-5 py-4" style="background-color: #fafaf7; border-radius: 8px;">
+    <h2 class="mb-3" style="font-size: 2.5rem; color: #4a5c40;">YOUR FAVOURITE BOUQUETS</h2>
+    <p style="font-size: 1.2rem;">Send your love with the help of our local artisan florists.</p>
+    <div class="row g-3 mt-4">
+      <div class="col-md-6">
+        <img src="White Vase.jpg" alt="White Vase" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+        <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+          <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+          <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
         </div>
-        <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
-    </footer>
+        <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                onclick="addToCartWithQuantity('White Vase Arrangement', 2500, this)">Add to Cart</button>
+      </div>
+      <div class="col-md-3">
+        <img src="White and Green.jpg" alt="Green and White Flowers" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+        <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+          <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+          <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+        </div>
+        <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                onclick="addToCartWithQuantity('Green & White Bouquet', 1700, this)">Add to Cart</button>
+      </div>
+      <div class="col-md-3">
+        <img src="pink anthuriums.jpg" alt="Pink Anthuriums" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+        <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+          <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+          <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+        </div>
+        <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                onclick="addToCartWithQuantity('Pink Anthuriums', 1900, this)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        function toggleInfo(button) {
-            const description = button.nextElementSibling;
-            if (description.style.display === 'block') {
-                description.style.display = 'none';
-                button.textContent = 'Show Details';
-            } else {
-                description.style.display = 'block';
-                button.textContent = 'Hide Details';
-            }
-        }
-    </script>
+  <!-- Best Sellers Grid -->
+  <section class="container my-5 py-4">
+    <h3 class="mb-4 text-center" style="font-size: 2rem; color: #5a7247;">Send Our Bestsellers for Every Occasion</h3>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+      <div class="col text-center">
+        <div class="position-relative">
+          <img src="bs 1.jpg" alt="Best Seller 1" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+          <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 1')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+            <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+            <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+            <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+          </div>
+          <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                  onclick="addToCartWithQuantity('Best Seller 1', 1200, this)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="position-relative">
+          <img src="bs 2.jpg" alt="Best Seller 2" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+          <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 2')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+            <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+            <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+            <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+          </div>
+          <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                  onclick="addToCartWithQuantity('Best Seller 2', 1500, this)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="position-relative">
+          <img src="bs 3.jpg" alt="Best Seller 3" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+          <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 3')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+            <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+            <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+            <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+          </div>
+          <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                  onclick="addToCartWithQuantity('Best Seller 3', 1800, this)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="position-relative">
+          <img src="bs4.jpg" alt="Best Seller 4" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+          <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 4')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+            <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+            <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+            <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+          </div>
+          <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                  onclick="addToCartWithQuantity('Best Seller 4', 2000, this)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="position-relative">
+          <img src="bs 5.jpg" alt="Best Seller 5" class="img-fluid rounded" style="border: 1px solid #e0d9cc;">
+          <span class="position-absolute top-0 end-0 m-2 heart" onclick="toggleLike(this, 'Best Seller 5')" style="font-size: 1.5rem; cursor: pointer;">♡</span>
+          <div class="quantity-selector mt-2 d-flex justify-content-center align-items-center">
+            <button class="btn btn-sm quantity-btn minus" onclick="updateQuantity(this, -1)" style="background-color: #5a7247; color: white;">-</button>
+            <input type="number" class="form-control quantity-input text-center mx-1" value="1" min="1" style="width: 50px;">
+            <button class="btn btn-sm quantity-btn plus" onclick="updateQuantity(this, 1)" style="background-color: #5a7247; color: white;">+</button>
+          </div>
+          <button class="btn btn-sm mt-2 w-100" style="background-color: #5a7247; color: white;" 
+                  onclick="addToCartWithQuantity('Best Seller 5', 2200, this)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Favorites Section -->
+  <section class="container my-5" id="favoritesSection" style="display:none; background-color: white; border: 1px solid #e0d9cc; padding: 2rem; border-radius: 8px;">
+    <h4 style="color: #5a7247;">Liked Flowers</h4>
+    <div id="favoritesList" class="mt-3">No flowers liked yet.</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-4" style="background-color: #5a7247; color: #f5f0e8;">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="mx-2">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="mx-2">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="mx-2">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+    </div>
+    <p class="mt-3 mb-0">&copy; 2025 Heavenly Blooms. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Like & Favorites Functionality
+    const likedFlowers = [];
+
+    function toggleLike(heart, flowerName) {
+      const liked = heart.classList.toggle("liked");
+      heart.textContent = liked ? "❤️" : "♡";
+      heart.style.color = liked ? "#d48a8a" : "#3a4a42";
+
+      if (liked) {
+        likedFlowers.push(flowerName);
+      } else {
+        const index = likedFlowers.indexOf(flowerName);
+        if (index > -1) likedFlowers.splice(index, 1);
+      }
+
+      updateFavoritesList();
+    }
+
+    function toggleFavorites() {
+      const section = document.getElementById("favoritesSection");
+      section.style.display = section.style.display === "block" ? "none" : "block";
+    }
+
+    function updateFavoritesList() {
+      const list = document.getElementById("favoritesList");
+      list.innerHTML = likedFlowers.length
+        ? likedFlowers.map(name => `<div class="py-2">${name}</div>`).join("")
+        : "<p>No flowers liked yet.</p>";
+    }
+
+    // Cart Functionality
+    const cartIcon = document.getElementById('cartIcon');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const cartCount = document.getElementById('cartCount');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    let cart = [];
+
+    // Toggle cart modal
+    cartIcon.addEventListener('click', () => {
+      cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+    });
+
+    closeCart.addEventListener('click', () => {
+      cartModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!cartModal.contains(event.target) && event.target !== cartIcon && !cartIcon.contains(event.target)) {
+        cartModal.style.display = 'none';
+      }
+    });
+
+    // Quantity Update Function
+    function updateQuantity(button, change) {
+      const container = button.closest('.quantity-selector');
+      const input = container.querySelector('.quantity-input');
+      let newValue = parseInt(input.value) + change;
+      if (newValue < 1) newValue = 1;
+      input.value = newValue;
+    }
+
+    // Enhanced Add to Cart Function with Quantity
+    function addToCartWithQuantity(productName, price, button) {
+      const container = button.closest('.position-relative') || button.closest('.col-md-6') || button.closest('.col-md-3');
+      const quantityInput = container.querySelector('.quantity-input');
+      const quantity = parseInt(quantityInput.value);
+      const imageSrc = container.querySelector('img').src.split('/').pop();
+
+      const existingItem = cart.find(item => item.name === productName);
+      
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          name: productName,
+          price: price,
+          quantity: quantity,
+          image: imageSrc
+        });
+      }
+      
+      updateCart();
+      
+      // Visual feedback
+      button.textContent = "✓ Added";
+      button.style.backgroundColor = "#4CAF50";
+      setTimeout(() => {
+        button.textContent = "Add to Cart";
+        button.style.backgroundColor = "#5a7247";
+      }, 2000);
+    }
+
+    // Update Cart Display
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      let itemCount = 0;
+      
+      cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item d-flex align-items-center mb-3 pb-2 border-bottom';
+        
+        itemElement.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px; border-radius: 4px; border: 1px solid #e0d9cc;">
+          <div class="flex-grow-1">
+            <div class="fw-bold">${item.name}</div>
+            <div class="text-muted small">P${item.price.toFixed(2)} × ${item.quantity}</div>
+          </div>
+          <div class="fw-bold">P${(item.price * item.quantity).toFixed(2)}</div>
+        `;
+        
+        cartItems.appendChild(itemElement);
+        total += item.price * item.quantity;
+        itemCount += item.quantity;
+      });
+      
+      cartTotal.textContent = `Total: P${total.toFixed(2)}`;
+      cartCount.textContent = itemCount;
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="text-center text-muted py-3">Your cart is empty</p>';
+      }
+    }
+
+    // Checkout button
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      alert('Proceeding to checkout!');
+      // Here you would typically redirect to a checkout page
+    });
+  </script>
+
+  <style>
+    /* Quantity Selector Styles */
+    .quantity-selector {
+      margin: 8px 0;
+    }
+    .quantity-btn {
+      width: 30px;
+      padding: 0;
+      line-height: 1;
+    }
+    .quantity-input {
+      height: 30px;
+      padding: 0 5px;
+    }
+    
+    /* Social Icons */
+    .social-icons a {
+      color: #f5f0e8;
+      background-color: #5a7247;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: 1px solid #f5f0e8;
+      text-decoration: none;
+    }
+    
+    .social-icons a:hover {
+      color: #5a7247;
+      background-color: #f5f0e8;
+      transform: translateY(-3px);
+    }
+    
+    .social-icons i {
+      font-size: 1rem;
+    }
+    
+    /* Heart/Like Button */
+    .heart {
+      transition: all 0.3s ease;
+    }
+  </style>
 </body>
 </html>
