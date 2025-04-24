@@ -155,6 +155,145 @@
             background-color: #7a8d75;
         }
         
+        /* Quantity Selector Styles */
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        
+        .quantity-btn {
+            background-color: #f5f0e8;
+            color: #5a7247;
+            border: 1px solid #e0d9cc;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #e0d9cc;
+            margin: 0 5px;
+        }
+        
+        .add-to-cart {
+            background-color: #5a7247;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #7a8d75;
+        }
+        
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: relative;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #d48a8a;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        /* Cart Modal Styles */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 500;
+        }
+        
+        .cart-item-price {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .cart-total {
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: right;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5a7247;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
         footer {
             background-color: #5a7247;
             color: #f5f0e8;
@@ -196,6 +335,10 @@
             .bouquet-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
+            
+            .cart-modal {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -214,7 +357,22 @@
                 <li><a href="bouquets.html">Bouquets</a></li>
             </ul>
         </nav>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
     </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total" id="cartTotal">Total: P0.00</div>
+        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
 
     <div class="main-container">
         <h2 class="page-title">Our Beautiful Bouquets</h2>
@@ -229,6 +387,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Blushing Bloom</div>
                         <div class="bouquet-price">P280.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Blushing Bloom', 280)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Mixed pink roses & baby's breath in a elegant arrangement perfect for any occasion.
@@ -242,6 +406,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Crimson Kiss</div>
                         <div class="bouquet-price">P310.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Crimson Kiss', 310)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Deep red roses arranged in a romantic style, ideal for anniversaries and special occasions.
@@ -255,6 +425,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">White Elegance</div>
                         <div class="bouquet-price">P320.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'White Elegance', 320)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             White lilies & roses in a sophisticated arrangement perfect for weddings and formal events.
@@ -268,6 +444,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Lavender Whisper</div>
                         <div class="bouquet-price">P300.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Lavender Whisper', 300)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Lavender roses & foliage arranged in a soft, romantic style.
@@ -281,6 +463,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Golden Sunshine</div>
                         <div class="bouquet-price">P290.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Golden Sunshine', 290)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Bright yellow roses arranged to bring sunshine to any occasion.
@@ -300,6 +488,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Sunshine Love</div>
                         <div class="bouquet-price">P250.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Sunshine Love', 250)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Sunflowers with greenery in a cheerful summer arrangement.
@@ -313,6 +507,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Autumn Glow</div>
                         <div class="bouquet-price">P270.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Autumn Glow', 270)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Warm-toned flowers with seasonal foliage perfect for fall.
@@ -326,6 +526,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Winter Frost</div>
                         <div class="bouquet-price">P310.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Winter Frost', 310)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Cool white and silver winter arrangement with seasonal accents.
@@ -339,6 +545,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Spring Awakening</div>
                         <div class="bouquet-price">P290.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Spring Awakening', 290)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Fresh spring blooms in a vibrant, colorful arrangement.
@@ -352,6 +564,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Festive Cheer</div>
                         <div class="bouquet-price">P330.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Festive Cheer', 330)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Rich red and green holiday arrangement with seasonal accents.
@@ -371,6 +589,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Royal Elegance</div>
                         <div class="bouquet-price">P450.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Royal Elegance', 450)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Premium long-stemmed roses in an exquisite arrangement.
@@ -384,6 +608,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Exotic Beauty</div>
                         <div class="bouquet-price">P490.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Exotic Beauty', 490)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Orchids and tropical flowers in a stunning arrangement.
@@ -397,6 +627,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Peony Paradise</div>
                         <div class="bouquet-price">P420.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Peony Paradise', 420)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Luxurious peonies in a lush, romantic arrangement.
@@ -410,6 +646,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Bridal Bliss</div>
                         <div class="bouquet-price">P480.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Bridal Bliss', 480)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             All-white premium flowers perfect for weddings.
@@ -423,6 +665,12 @@
                     <div class="bouquet-info">
                         <div class="bouquet-name">Grandeur</div>
                         <div class="bouquet-price">P520.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(this, 'Grandeur', 520)">Add to Cart</button>
                         <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
                         <div class="bouquet-description">
                             Our most luxurious mixed flower arrangement with premium blooms.
@@ -449,6 +697,7 @@
     </footer>
 
     <script>
+        // Toggle product description
         function toggleInfo(button) {
             const description = button.nextElementSibling;
             if (description.style.display === 'block') {
@@ -459,6 +708,115 @@
                 button.textContent = 'Hide Details';
             }
         }
+
+        // Update quantity
+        function updateQuantity(button, change) {
+            const container = button.closest('.quantity-controls');
+            const input = container.querySelector('.quantity-input');
+            let newValue = parseInt(input.value) + change;
+            if (newValue < 1) newValue = 1;
+            input.value = newValue;
+        }
+
+        // Cart functionality
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        let cart = [];
+
+        // Toggle cart modal
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cartModal.contains(event.target) && event.target !== cartIcon && !cartIcon.contains(event.target)) {
+                cartModal.style.display = 'none';
+            }
+        });
+
+        // Add to cart function
+        function addToCart(button, productName, price) {
+            const container = button.closest('.bouquet-info');
+            const quantityInput = container.querySelector('.quantity-input');
+            const quantity = parseInt(quantityInput.value);
+            const imageSrc = container.closest('.bouquet-card').querySelector('img').src.split('/').pop();
+
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: price,
+                    quantity: quantity,
+                    image: imageSrc
+                });
+            }
+            
+            updateCart();
+            
+            // Visual feedback
+            button.textContent = "✓ Added";
+            button.style.backgroundColor = "#4CAF50";
+            setTimeout(() => {
+                button.textContent = "Add to Cart";
+                button.style.backgroundColor = "#5a7247";
+            }, 2000);
+        }
+
+        // Update cart display
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let itemCount = 0;
+            
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">P${item.price.toFixed(2)} × ${item.quantity}</div>
+                    </div>
+                    <div>P${(item.price * item.quantity).toFixed(2)}</div>
+                `;
+                
+                cartItems.appendChild(itemElement);
+                total += item.price * item.quantity;
+                itemCount += item.quantity;
+            });
+            
+            cartTotal.textContent = `Total: P${total.toFixed(2)}`;
+            cartCount.textContent = itemCount;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-center text-muted py-3">Your cart is empty</p>';
+            }
+        }
+
+        // Checkout button
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Proceeding to checkout!');
+            // Here you would typically redirect to a checkout page
+        });
     </script>
 </body>
 </html>
