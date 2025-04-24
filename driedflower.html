@@ -89,11 +89,12 @@
             border-bottom: 2px solid #e0d9cc;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            color: #5a7247;
         }
         
         .flower-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
         }
         
@@ -102,39 +103,74 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0d9cc;
         }
         
         .flower-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .flower-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .flower-info {
-            padding: 1rem;
+            padding: 1.2rem;
         }
         
         .flower-name {
-            font-weight: 500;
+            font-weight: 600;
             margin: 0.5rem 0;
             font-size: 1.1rem;
+            color: #5a7247;
         }
         
         .flower-price {
-            color: #5a7247;
-            font-weight: 600;
+            color: #3a4a42;
+            font-weight: 700;
             font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .flower-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.8rem 0;
+        }
+        
+        .flower-care {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #7a8d75;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        
+        .flower-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+        }
+        
+        .spec-item {
+            background-color: #f5f5f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #5a7247;
         }
         
         footer {
             background-color: #5a7247;
             color: #f5f0e8;
-            padding: 1.5rem;
+            padding: 2rem;
             text-align: center;
             margin-top: 3rem;
         }
@@ -142,19 +178,30 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-bottom: 1rem;
         }
         
         .social-icons a {
             color: #f5f0e8;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
         }
         
         .social-icons a:hover {
-            transform: translateY(-3px);
-            color: #f5f0e8;
+            color: #d8e0d5;
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(90, 114, 71, 0.9);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
         
         @media (max-width: 768px) {
@@ -170,7 +217,7 @@
             }
             
             .flower-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
     </style>
@@ -184,6 +231,9 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="plants.html">Plants</a></li>
+                <li><a href="bouquets.html">Bouquets</a></li>
+                <li><a href="driedflowers.html">Dried Flowers</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -193,158 +243,239 @@
     <div class="main-container">
         <h2 class="page-title">Our Dried Flower Collection</h2>
         
-        <!-- Category 1 -->
+        <!-- Dried Bouquets -->
         <div class="category">
             <h3 class="category-title">Dried Bouquets</h3>
             <div class="flower-grid">
                 <!-- Product 1 -->
                 <div class="flower-card">
-                    <img src="dried-bouquet1.jpg" alt="Dried Bouquet 1" class="flower-image">
+                    <span class="popular-tag">Best Seller</span>
+                    <img src="dried-bouquet1.jpg" alt="Autumn Sunset Bouquet" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Autumn Sunset Bouquet</div>
                         <div class="flower-price">P350</div>
+                        <div class="flower-desc">Warm-toned arrangement with dried wheat, orange roses, and eucalyptus. Perfect for fall decor that lasts all season.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 35cm</span>
+                            <span class="spec-item">10-12 stems</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Indoor display</span>
+                            <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
                 <div class="flower-card">
-                    <img src="dried-bouquet2.jpg" alt="Dried Bouquet 2" class="flower-image">
+                    <img src="dried-bouquet2.jpg" alt="Desert Dream Collection" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Desert Dream Collection</div>
                         <div class="flower-price">P420</div>
+                        <div class="flower-desc">Earthy tones of dried palms, pampas grass, and bleached ruscus create a boho-chic statement piece.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 40cm</span>
+                            <span class="spec-item">8-10 stems</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Indoor/outdoor</span>
+                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
                 <div class="flower-card">
-                    <img src="dried-bouquet3.jpg" alt="Dried Bouquet 3" class="flower-image">
+                    <span class="popular-tag">New</span>
+                    <img src="dried-bouquet3.jpg" alt="Botanical Elegance" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Botanical Elegance</div>
                         <div class="flower-price">P380</div>
+                        <div class="flower-desc">Sophisticated mix of preserved eucalyptus, dried hydrangeas, and bunny tails in neutral tones.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 45cm</span>
+                            <span class="spec-item">Vase not included</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Indoor display</span>
+                            <span><i class="fas fa-clock"></i> Lasts 1.5+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
                 <div class="flower-card">
-                    <img src="dried-bouquet4.jpg" alt="Dried Bouquet 4" class="flower-image">
+                    <img src="dried-bouquet4.jpg" alt="Rustic Charm Bundle" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Rustic Charm Bundle</div>
                         <div class="flower-price">P320</div>
-                    </div>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="flower-card">
-                    <img src="dried-bouquet5.jpg" alt="Dried Bouquet 5" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Golden Fields Arrangement</div>
-                        <div class="flower-price">P450</div>
+                        <div class="flower-desc">Natural dried lavender and baby's breath tied with jute twine for a simple farmhouse look.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 30cm</span>
+                            <span class="spec-item">5-7 stems</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Avoid humidity</span>
+                            <span><i class="fas fa-clock"></i> Lasts 8+ months</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Category 2 -->
+        <!-- Dried Flower Wreaths -->
         <div class="category">
             <h3 class="category-title">Dried Flower Wreaths</h3>
             <div class="flower-grid">
                 <!-- Product 1 -->
                 <div class="flower-card">
-                    <img src="wreath1.jpg" alt="Dried Wreath 1" class="flower-image">
+                    <img src="wreath1.jpg" alt="Harvest Moon Wreath" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Harvest Moon Wreath</div>
                         <div class="flower-price">P550</div>
+                        <div class="flower-desc">Circular arrangement of dried wheat, orange roses, and seasonal foliage. Brings warmth to any door.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 45cm</span>
+                            <span class="spec-item">With hanging loop</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-door-open"></i> Indoor/outdoor</span>
+                            <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
                 <div class="flower-card">
-                    <img src="wreath2.jpg" alt="Dried Wreath 2" class="flower-image">
+                    <span class="popular-tag">Best Seller</span>
+                    <img src="wreath2.jpg" alt="Bohemian Circle" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Bohemian Circle</div>
                         <div class="flower-price">P480</div>
+                        <div class="flower-desc">Artistic mix of pampas grass, dried palms, and bleached foliage in a modern wreath design.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 40cm</span>
+                            <span class="spec-item">Rustic finish</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-door-open"></i> Indoor recommended</span>
+                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
                 <div class="flower-card">
-                    <img src="wreath3.jpg" alt="Dried Wreath 3" class="flower-image">
+                    <img src="wreath3.jpg" alt="Eucalyptus Dream" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Eucalyptus Dream</div>
                         <div class="flower-price">P520</div>
+                        <div class="flower-desc">Simple preserved eucalyptus wreath with subtle sage tones and light fragrance.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 35cm</span>
+                            <span class="spec-item">Minimalist design</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-door-open"></i> Indoor/outdoor</span>
+                            <span><i class="fas fa-clock"></i> Lasts 1.5+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
                 <div class="flower-card">
-                    <img src="wreath4.jpg" alt="Dried Wreath 4" class="flower-image">
+                    <img src="wreath4.jpg" alt="Wildflower Hoop" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Wildflower Hoop</div>
                         <div class="flower-price">P450</div>
-                    </div>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="flower-card">
-                    <img src="wreath5.jpg" alt="Dried Wreath 5" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Lavender Fields Circle</div>
-                        <div class="flower-price">P580</div>
+                        <div class="flower-desc">Modern hoop design with dried wildflowers and grasses. Perfect for contemporary spaces.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 38cm</span>
+                            <span class="spec-item">Metal hoop base</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Indoor display</span>
+                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-    
-               
-    
-        
-        <!-- Category 4 -->
+        <!-- Dried Flower Boxes -->
         <div class="category">
             <h3 class="category-title">Dried Flower Boxes</h3>
             <div class="flower-grid">
                 <!-- Product 1 -->
                 <div class="flower-card">
-                    <img src="box1.jpg" alt="Dried Flower Box 1" class="flower-image">
+                    <img src="box1.jpg" alt="Preserved Rose Box" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Preserved Rose Box</div>
                         <div class="flower-price">P650</div>
+                        <div class="flower-desc">Luxury box with 12 preserved roses in your choice of color. Includes keepsake box.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 25x25cm</span>
+                            <span class="spec-item">12 roses</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Indoor display</span>
+                            <span><i class="fas fa-clock"></i> Lasts 3+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
                 <div class="flower-card">
-                    <img src="box2.jpg" alt="Dried Flower Box 2" class="flower-image">
+                    <span class="popular-tag">New</span>
+                    <img src="box2.jpg" alt="Botanical Memory Box" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Botanical Memory Box</div>
                         <div class="flower-price">P580</div>
+                        <div class="flower-desc">Shadow box display with carefully arranged dried flowers under glass.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 20x25cm</span>
+                            <span class="spec-item">Glass front</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Avoid direct sun</span>
+                            <span><i class="fas fa-clock"></i> Lasts 5+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
                 <div class="flower-card">
-                    <img src="box3.jpg" alt="Dried Flower Box 3" class="flower-image">
+                    <img src="box3.jpg" alt="Mini Wildflower Collection" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Mini Wildflower Collection</div>
                         <div class="flower-price">P450</div>
+                        <div class="flower-desc">Charming assortment of dried wildflowers in a decorative wooden box.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 15x20cm</span>
+                            <span class="spec-item">20+ blooms</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Indoor display</span>
+                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
                 <div class="flower-card">
-                    <img src="box4.jpg" alt="Dried Flower Box 4" class="flower-image">
+                    <img src="box4.jpg" alt="Lavender & Eucalyptus Box" class="flower-image">
                     <div class="flower-info">
                         <div class="flower-name">Lavender & Eucalyptus Box</div>
                         <div class="flower-price">P520</div>
-                    </div>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="flower-card">
-                    <img src="box5.jpg" alt="Dried Flower Box 5" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Deluxe Anniversary Box</div>
-                        <div class="flower-price">P750</div>
+                        <div class="flower-desc">Fragrant combination of dried lavender and eucalyptus in a beautiful presentation box.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 18x18cm</span>
+                            <span class="spec-item">Retains scent</span>
+                        </div>
+                        <div class="flower-care">
+                            <span><i class="fas fa-home"></i> Cool, dry place</span>
+                            <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
+                        </div>
                     </div>
                 </div>
             </div>
