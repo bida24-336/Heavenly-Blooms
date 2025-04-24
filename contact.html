@@ -122,25 +122,27 @@
             position: relative;
         }
         
-        .feedback-star {
+        /* Order Feedback Card Styles */
+        .order-feedback-tab {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            font-size: 2rem;
-            color: #5a7247;
+            background-color: #5a7247;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px 20px 0 0;
             cursor: pointer;
             z-index: 100;
-            transition: transform 0.3s ease;
+            transform: rotate(-90deg);
+            transform-origin: right bottom;
+            font-size: 0.9rem;
+            box-shadow: -2px -2px 5px rgba(0,0,0,0.1);
         }
         
-        .feedback-star:hover {
-            transform: scale(1.2);
-        }
-        
-        .feedback-popup {
+        .order-feedback-card {
             display: none;
             position: fixed;
-            bottom: 70px;
+            bottom: 60px;
             right: 20px;
             background-color: white;
             padding: 1.5rem;
@@ -150,13 +152,22 @@
             width: 250px;
         }
         
-        .feedback-popup h3 {
+        .order-feedback-card h3 {
             margin-top: 0;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: #5a7247;
+            border-bottom: 1px solid #f5f0e8;
+            padding-bottom: 0.5rem;
         }
         
         .feedback-option {
             margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feedback-option input {
+            margin-right: 0.5rem;
         }
         
         .thank-you-message {
@@ -164,6 +175,8 @@
             color: #5a7247;
             font-weight: 500;
             margin-top: 1rem;
+            font-size: 0.9rem;
+            text-align: center;
         }
         
         @media (max-width: 768px) {
@@ -179,6 +192,11 @@
             
             nav ul {
                 margin-top: 1rem;
+            }
+            
+            .order-feedback-card {
+                width: 220px;
+                right: 10px;
             }
         }
     </style>
@@ -243,26 +261,30 @@
         <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
     </footer>
 
-    <!-- Feedback Star -->
-    <div class="feedback-star" onclick="toggleFeedback()">
-        <i class="fas fa-star"></i>
+    <!-- Order Feedback Tab -->
+    <div class="order-feedback-tab" onclick="toggleFeedback()">
+        Order Feedback
     </div>
     
-    <!-- Feedback Popup -->
-    <div class="feedback-popup" id="feedbackPopup">
-        <h3>How was your experience?</h3>
+    <!-- Order Feedback Card -->
+    <div class="order-feedback-card" id="feedbackCard">
+        <h3>How was your order experience?</h3>
         <form id="feedbackForm">
             <div class="feedback-option">
-                <input type="radio" id="lovedIt" name="feedback" value="lovedIt">
-                <label for="lovedIt">Loved it!</label>
+                <input type="radio" id="excellent" name="feedback" value="excellent">
+                <label for="excellent">Excellent</label>
             </div>
             <div class="feedback-option">
-                <input type="radio" id="okay" name="feedback" value="okay">
-                <label for="okay">It was okay</label>
+                <input type="radio" id="good" name="feedback" value="good">
+                <label for="good">Good</label>
             </div>
             <div class="feedback-option">
-                <input type="radio" id="disappointed" name="feedback" value="disappointed">
-                <label for="disappointed">Disappointed</label>
+                <input type="radio" id="average" name="feedback" value="average">
+                <label for="average">Average</label>
+            </div>
+            <div class="feedback-option">
+                <input type="radio" id="poor" name="feedback" value="poor">
+                <label for="poor">Needs improvement</label>
             </div>
             <div class="thank-you-message" id="thankYouMessage">
                 Thank you for your feedback!
@@ -272,8 +294,8 @@
 
     <script>
         function toggleFeedback() {
-            const popup = document.getElementById('feedbackPopup');
-            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+            const card = document.getElementById('feedbackCard');
+            card.style.display = card.style.display === 'block' ? 'none' : 'block';
         }
         
         document.querySelectorAll('input[name="feedback"]').forEach(radio => {
@@ -284,23 +306,22 @@
                 // Hide the message after 3 seconds
                 setTimeout(() => {
                     thankYouMessage.style.display = 'none';
-                    document.getElementById('feedbackPopup').style.display = 'none';
+                    document.getElementById('feedbackCard').style.display = 'none';
                 }, 3000);
             });
         });
         
-        // Close popup when clicking outside
+        // Close card when clicking outside
         document.addEventListener('click', function(event) {
-            const popup = document.getElementById('feedbackPopup');
-            const star = document.querySelector('.feedback-star');
+            const card = document.getElementById('feedbackCard');
+            const tab = document.querySelector('.order-feedback-tab');
             
-            if (!popup.contains(event.target) && !star.contains(event.target)) {
-                popup.style.display = 'none';
+            if (!card.contains(event.target) && !tab.contains(event.target)) {
+                card.style.display = 'none';
             }
         });
     </script>
 </body>
 </html>
-
 
   
