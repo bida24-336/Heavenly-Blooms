@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dried Flowers - Heavenly Blooms</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f5;
+            color: #3a4a42;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #5a7247;
+        }
+        
+        header {
+            background-color: #f5f0e8;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e0d9cc;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .shop-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #5a7247;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #3a4a42;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #7a8d75;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .category {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e0d9cc;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #5a7247;
+        }
+        
+        .flower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .flower-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0d9cc;
+            position: relative;
+        }
+        
+        .flower-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .flower-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .flower-info {
+            padding: 1.2rem;
+        }
+        
+        .flower-name {
+            font-weight: 600;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            color: #5a7247;
+        }
+        
+        .flower-price {
+            color: #3a4a42;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .flower-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.8rem 0;
+        }
+        
+        .flower-care {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #7a8d75;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        
+        .flower-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+        }
+        
+        .spec-item {
+            background-color: #f5f5f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #5a7247;
+        }
+        
+        .add-to-cart {
+            background-color: #5a7247;
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            width: 100%;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #7a8d75;
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(90, 114, 71, 0.9);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0d9cc;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #3a4a42;
+        }
+        
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cart-item-price {
+            color: #5a7247;
+            font-weight: 600;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #a94442;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .cart-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: right;
+            margin: 1rem 0;
+        }
+        
+        .checkout-btn {
+            background-color: #5a7247;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            width: 100%;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #7a8d75;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #5a7247;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        
+        footer {
+            background-color: #5a7247;
+            color: #f5f0e8;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: #f5f0e8;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #d8e0d5;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .flower-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .cart-modal {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Logo.jpg" alt="Heavenly Blooms Logo">
+            <h1 class="shop-name">Heavenly Blooms</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="plants.html">Plants</a></li>
+                <li><a href="bouquets.html">Bouquets</a></li>
+                <li><a href="driedflowers.html">Dried Flowers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total" id="cartTotal">
+            Total: P0.00
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+
+    <div class="main-container">
+        <h2 class="page-title">Our Dried Flower Collection</h2>
+        
+        <!-- Dried Bouquets -->
+        <div class="category">
+            <h3 class="category-title">Dried Bouquets</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <span class="popular-tag">Best Seller</span>
+                    <img src="dried-bouquet1.jpg" alt="Autumn Sunset Bouquet" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Autumn Sunset Bouquet</div>
+                        <div class="flower-price">P350</div>
+                        <div class="flower-desc">Warm-toned arrangement with dried wheat, orange roses, and eucalyptus.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 35cm</span>
+                            <span class="spec-item">10-12 stems</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Autumn Sunset Bouquet" data-price="350">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet2.jpg" alt="Desert Dream Collection" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Desert Dream Collection</div>
+                        <div class="flower-price">P420</div>
+                        <div class="flower-desc">Earthy tones of dried palms, pampas grass, and bleached ruscus.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 40cm</span>
+                            <span class="spec-item">8-10 stems</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Desert Dream Collection" data-price="420">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <span class="popular-tag">New</span>
+                    <img src="dried-bouquet3.jpg" alt="Botanical Elegance" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Botanical Elegance</div>
+                        <div class="flower-price">P380</div>
+                        <div class="flower-desc">Sophisticated mix of preserved eucalyptus, dried hydrangeas, and bunny tails.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 45cm</span>
+                            <span class="spec-item">Vase not included</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Botanical Elegance" data-price="380">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="dried-bouquet4.jpg" alt="Rustic Charm Bundle" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Rustic Charm Bundle</div>
+                        <div class="flower-price">P320</div>
+                        <div class="flower-desc">Natural dried lavender and baby's breath tied with jute twine.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Height: 30cm</span>
+                            <span class="spec-item">5-7 stems</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Rustic Charm Bundle" data-price="320">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dried Flower Wreaths -->
+        <div class="category">
+            <h3 class="category-title">Dried Flower Wreaths</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <img src="wreath1.jpg" alt="Harvest Moon Wreath" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Harvest Moon Wreath</div>
+                        <div class="flower-price">P550</div>
+                        <div class="flower-desc">Circular arrangement of dried wheat, orange roses, and seasonal foliage.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 45cm</span>
+                            <span class="spec-item">With hanging loop</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Harvest Moon Wreath" data-price="550">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <span class="popular-tag">Best Seller</span>
+                    <img src="wreath2.jpg" alt="Bohemian Circle" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Bohemian Circle</div>
+                        <div class="flower-price">P480</div>
+                        <div class="flower-desc">Artistic mix of pampas grass, dried palms, and bleached foliage.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 40cm</span>
+                            <span class="spec-item">Rustic finish</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Bohemian Circle" data-price="480">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <img src="wreath3.jpg" alt="Eucalyptus Dream" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Eucalyptus Dream</div>
+                        <div class="flower-price">P520</div>
+                        <div class="flower-desc">Simple preserved eucalyptus wreath with subtle sage tones.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 35cm</span>
+                            <span class="spec-item">Minimalist design</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Eucalyptus Dream" data-price="520">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="wreath4.jpg" alt="Wildflower Hoop" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Wildflower Hoop</div>
+                        <div class="flower-price">P450</div>
+                        <div class="flower-desc">Modern hoop design with dried wildflowers and grasses.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Diameter: 38cm</span>
+                            <span class="spec-item">Metal hoop base</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Wildflower Hoop" data-price="450">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dried Flower Boxes -->
+        <div class="category">
+            <h3 class="category-title">Dried Flower Boxes</h3>
+            <div class="flower-grid">
+                <!-- Product 1 -->
+                <div class="flower-card">
+                    <img src="box1.jpg" alt="Preserved Rose Box" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Preserved Rose Box</div>
+                        <div class="flower-price">P650</div>
+                        <div class="flower-desc">Luxury box with 12 preserved roses in your choice of color.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 25x25cm</span>
+                            <span class="spec-item">12 roses</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Preserved Rose Box" data-price="650">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="flower-card">
+                    <span class="popular-tag">New</span>
+                    <img src="box2.jpg" alt="Botanical Memory Box" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Botanical Memory Box</div>
+                        <div class="flower-price">P580</div>
+                        <div class="flower-desc">Shadow box display with carefully arranged dried flowers under glass.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 20x25cm</span>
+                            <span class="spec-item">Glass front</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Botanical Memory Box" data-price="580">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="flower-card">
+                    <img src="box3.jpg" alt="Mini Wildflower Collection" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Mini Wildflower Collection</div>
+                        <div class="flower-price">P450</div>
+                        <div class="flower-desc">Charming assortment of dried wildflowers in a decorative wooden box.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 15x20cm</span>
+                            <span class="spec-item">20+ blooms</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Mini Wildflower Collection" data-price="450">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="flower-card">
+                    <img src="box4.jpg" alt="Lavender & Eucalyptus Box" class="flower-image">
+                    <div class="flower-info">
+                        <div class="flower-name">Lavender & Eucalyptus Box</div>
+                        <div class="flower-price">P520</div>
+                        <div class="flower-desc">Fragrant combination of dried lavender and eucalyptus in a beautiful box.</div>
+                        <div class="flower-specs">
+                            <span class="spec-item">Size: 18x18cm</span>
+                            <span class="spec-item">Retains scent</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Lavender & Eucalyptus Box" data-price="520">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = [];
+            const cartIcon = document.getElementById('cartIcon');
+            const cartModal = document.getElementById('cartModal');
+            const closeCart = document.getElementById('closeCart');
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            
+            // Toggle cart modal
+            cartIcon.addEventListener('click', toggleCart);
+            closeCart.addEventListener('click', toggleCart);
+            
+            // Add to cart functionality
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+            
+            // Checkout button
+            checkoutBtn.addEventListener('click', proceedToCheckout);
+            
+            function toggleCart() {
+                cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+            }
+            
+            function addToCart(e) {
+                const button = e.target;
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                
+                // Add item to cart
+                cart.push({ name, price });
+                
+                // Update cart UI
+                updateCart();
+                
+                // Show confirmation
+                button.textContent = 'Added!';
+                setTimeout(() => {
+                    button.textContent = 'Add to Cart';
+                }, 2000);
+            }
+            
+            function updateCart() {
+                // Clear current items
+                cartItems.innerHTML = '';
+                
+                // Add each item to cart
+                let total = 0;
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">P${item.price.toFixed(2)}</div>
+                        </div>
+                        <button class="remove-item" data-index="${index}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Update total
+                cartTotal.textContent = `Total: P${total.toFixed(2)}`;
+                
+                // Update cart count
+                cartCount.textContent = cart.length;
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', removeFromCart);
+                });
+            }
+            
+            function removeFromCart(e) {
+                const index = e.target.closest('.remove-item').getAttribute('data-index');
+                cart.splice(index, 1);
+                updateCart();
+            }
+            
+            function proceedToCheckout() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                
+                // In a real implementation, this would redirect to a checkout page
+                alert(`Proceeding to checkout with ${cart.length} items. Total: P${calculateTotal().toFixed(2)}`);
+                // Here you would typically clear the cart after checkout
+                // cart.length = 0;
+                // updateCart();
+                // toggleCart();
+            }
+            
+            function calculateTotal() {
+                return cart.reduce((sum, item) => sum + item.price, 0);
+            }
+        });
+    </script>
+</body>
+</html>
