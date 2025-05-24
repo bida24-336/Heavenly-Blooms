@@ -6,18 +6,27 @@
        url('ShelleyVolanteBT.ttf') format('truetype');
 }
 
-/* Google Fonts (from about.html) */
+/* Google Fonts (from about.html and contact.html) */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
 /* Body styles (combined) */
 body {
   font-family: 'Montserrat', sans-serif; /* Primary font for body */
-  background-color: #f8f8f5; /* From index.html, slightly different from about.html's white */
+  background-color: #f8f8f5; /* Default from index.html */
   color: #3a4a42;
-  margin: 0; /* Added from about.html */
-  padding: 0; /* Added from about.html */
-  line-height: 1.7; /* Added from about.html */
+  margin: 0;
+  padding: 0;
+  line-height: 1.7; /* From about.html, slightly different from contact.html's 1.6 */
 }
+
+/* Background image for contact page (specific override) */
+body.contact-page {
+  background-image: url('bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 
 /* Heading styles (combined) */
 h1, h2, h3, h4, h5, h6 {
@@ -30,8 +39,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Specific styles for shop name and highlight box */
 .shop-name {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-weight: 600; /* From about.html */
   font-size: 2.2rem; /* From about.html, overriding generic h1 style */
+  color: #5a7247; /* From contact.html */
 }
 
 .highlight-box {
@@ -42,19 +52,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header styles (combined) */
 header {
-  background-color: #f5f0e8;
-  padding: 1rem 2rem; /* Adjusted from index.html's 'p-3' */
+  background-color: #f5f0e8; /* Default from index.html and about.html */
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Added from about.html for responsiveness */
-  border-bottom: 1px solid #e0d9cc; /* Adjusted from index.html's 'border-bottom' */
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e0d9cc;
+}
+
+/* Header background for contact page (specific override) */
+header.contact-header {
+    background-color: rgba(245, 240, 232, 0.9);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Added from about.html */
+  gap: 1rem;
 }
 
 .logo img {
@@ -65,7 +80,7 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem; /* Adjusted from index.html's 'nav' class spacing */
+  gap: 1.5rem;
   padding: 0;
   margin: 0;
 }
@@ -73,16 +88,55 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #3a4a42;
-  font-size: 1.1rem; /* Slightly adjusted from index.html's '1.2rem' for consistency with Montserrat */
-  font-weight: 500; /* Added from about.html */
+  font-weight: 500;
+  font-size: 1.1rem; /* Consistent across pages */
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #7a8d75; /* Hover color from about.html */
+  color: #7a8d75;
 }
 
-/* About Us Section styles (new) */
+/* Hero Section (from index.html) */
+.hero-section {
+    background-color: #fafaf7;
+    border-radius: 8px;
+}
+
+.hero-section h2 {
+    color: #4a5c40;
+}
+
+.hero-images img {
+    border: 1px solid #e0d9cc;
+}
+
+/* Best Sellers Grid (from index.html) */
+.best-sellers h3 {
+    color: #5a7247;
+}
+
+.best-sellers img {
+    border: 1px solid #e0d9cc;
+}
+
+.heart {
+    transition: all 0.3s ease;
+}
+
+/* Favorites Section (from index.html) */
+#favoritesSection {
+    background-color: white;
+    border: 1px solid #e0d9cc;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#favoritesSection h4 {
+    color: #5a7247;
+}
+
+/* About Us Section styles (from about.html) */
 #about-us {
   padding: 4rem 2rem;
   background-color: white;
@@ -151,43 +205,96 @@ nav ul li a:hover {
   color: #5a7247;
 }
 
+/* Contact Us Section styles (new) */
+.contact-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+    color: #5a7247; /* Ensure heading color */
+}
+
+.contact-info {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hours {
+  background-color: #f5f0e8;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.hours h3 {
+  margin-top: 0;
+}
+
 /* Footer styles (combined) */
 footer {
-  background-color: #5a7247;
+  background-color: #5a7247; /* Default from index.html and about.html */
   color: #f5f0e8;
-  padding: 2rem; /* Adjusted from index.html's 'p-4' */
+  padding: 2rem;
   text-align: center;
+  position: relative; /* From contact.html */
 }
+
+/* Footer background for contact page (specific override) */
+footer.contact-footer {
+    background-color: rgba(90, 114, 71, 0.9);
+}
+
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* Adjusted from index.html's 'mx-2' */
-  margin-bottom: 1.5rem; /* Added from about.html */
+  gap: 1.5rem; /* Consistent across pages */
+  margin-bottom: 1.5rem;
 }
 
 .social-icons a {
-  color: #f5f0e8;
-  background-color: #5a7247;
-  width: 40px; /* Adjusted from index.html's '36px' */
-  height: 40px; /* Adjusted from index.html's '36px' */
+  color: #f5f0e8; /* Default for index/about pages */
+  background-color: #5a7247; /* Default for index/about pages */
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  display: flex; /* Changed from inline-flex for better centering */
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   border: 1px solid #f5f0e8;
   text-decoration: none;
-  font-size: 1.1rem; /* Adjusted from index.html's '1rem' */
+  font-size: 1.1rem;
+}
+
+/* Social icons for contact page (specific override) */
+.contact-container .social-icons a {
+    color: #5a7247; /* Text color for icons within contact container */
+    background-color: transparent; /* No background fill */
+    border: none; /* No border */
+    font-size: 1.5rem; /* Larger icon size */
 }
 
 .social-icons a:hover {
-  color: #5a7247;
-  background-color: #f5f0e8;
+  color: #5a7247; /* Default hover color */
+  background-color: #f5f0e8; /* Default hover background */
   transform: translateY(-3px);
 }
 
-/* Responsive styles (from about.html) */
+/* Social icons hover for contact page (specific override) */
+.contact-container .social-icons a:hover {
+    color: #7a8d75; /* Specific hover color for contact page icons */
+    background-color: transparent; /* Maintain no background fill */
+}
+
+
+/* Responsive styles (combined) */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -202,14 +309,24 @@ footer {
   #about-us {
     padding: 2rem 1rem;
   }
+
+  .contact-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  /* Responsive for index.html hero section */
+  .hero-section .col-md-6,
+  .hero-section .col-md-3 {
+      margin-bottom: 1rem; /* Add some space between images on smaller screens */
+  }
 }
 
-/* Additional responsive styles for index.html's hero section */
-@media (max-width: 768px) {
-    .hero-images .col-md-6,
-    .hero-images .col-md-3 {
-        margin-bottom: 1rem; /* Add some space between images on smaller screens */
-    }
-}
+
+ 
+
+
+
+
  
 
