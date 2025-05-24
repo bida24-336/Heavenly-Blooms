@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dried Flowers - Heavenly Blooms</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -19,6 +21,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="plants.html">Plants</a></li>
                 <li><a href="bouquets.html">Bouquets</a></li>
+                <li><a href="driedflower.html" class="active">Dried Flowers</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -29,6 +32,7 @@
         </div>
     </header>
 
+    <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
             <h3>Your Cart</h3>
@@ -39,304 +43,130 @@
         <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
     </div>
 
-    <div class="main-container">
-        <h2 class="page-title">Our Dried Flower Collection</h2>
+    <section class="plants-category">
+        <h2>Our Dried Flowers Collection</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #3a4a42;">Discover our beautiful selection of dried flowers that bring lasting beauty to your home. Each arrangement is carefully preserved to maintain its natural charm.</p>
         
-        <div class="category">
-            <h3 class="category-title">Dried Bouquets</h3>
-            <div class="flower-grid">
-                <div class="flower-card">
-                    <span class="popular-tag">Best Seller</span>
-                    <img src="Autumn sunset.jpeg" alt="Autumn Sunset Bouquet" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Autumn Sunset Bouquet</div>
-                        <div class="flower-price">P350</div>
-                        <div class="flower-desc">Warm-toned arrangement with dried wheat, orange roses, and eucalyptus.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Height: 35cm</span>
-                            <span class="spec-item">10-12 stems</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Indoor display</span>
-                            <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Autumn Sunset Bouquet', 350)">Add to Cart</button>
+        <h3>Dried Bouquets</h3>
+        <div class="image-grid">
+            <div class="plant-item">
+                <img src="dried-lavender.jpg" alt="Dried Lavender Bouquet">
+                <div class="plant-info">
+                    <p class="plant-name">Dried Lavender</p>
+                    <p class="plant-price">P180</p>
+                    <p class="plant-desc">Fragrant dried lavender stems, perfect for home decor and aromatherapy.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Lavender', 180)">Add to Cart</button>
                 </div>
-                
-                <div class="flower-card">
-                    <img src="Desert dream.jpeg" alt="Desert Dream Collection" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Desert Dream Collection</div>
-                        <div class="flower-price">P420</div>
-                        <div class="flower-desc">Earthy tones of dried palms, pampas grass, and bleached ruscus.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Height: 40cm</span>
-                            <span class="spec-item">8-10 stems</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Indoor/outdoor</span>
-                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Desert Dream Collection', 420)">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <img src="dried-pampas.jpg" alt="Dried Pampas Grass">
+                <div class="plant-info">
+                    <p class="plant-name">Dried Pampas Grass</p>
+                    <p class="plant-price">P220</p>
+                    <p class="plant-desc">Fluffy pampas grass plumes that add texture and elegance to any space.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Pampas Grass', 220)">Add to Cart</button>
                 </div>
-                
-                <div class="flower-card">
-                    <span class="popular-tag">New</span>
-                    <img src="Botanical elegance.jpeg" alt="Botanical Elegance" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Botanical Elegance</div>
-                        <div class="flower-price">P380</div>
-                        <div class="flower-desc">Sophisticated mix of preserved eucalyptus, dried hydrangeas, and bunny tails.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Height: 45cm</span>
-                            <span class="spec-item">Vase not included</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Indoor display</span>
-                            <span><i class="fas fa-clock"></i> Lasts 1.5+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Botanical Elegance', 380)">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <img src="dried-wildflowers.jpg" alt="Dried Wildflower Bouquet">
+                <div class="plant-info">
+                    <p class="plant-name">Wildflower Bouquet</p>
+                    <p class="plant-price">P250</p>
+                    <p class="plant-desc">Colorful mix of dried wildflowers in a rustic arrangement.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Wildflower Bouquet', 250)">Add to Cart</button>
                 </div>
-                
-                <div class="flower-card">
-                    <img src="Rustic charm.jpeg" alt="Rustic Charm Bundle" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Rustic Charm Bundle</div>
-                        <div class="flower-price">P320</div>
-                        <div class="flower-desc">Natural dried lavender and baby's breath tied with jute twine.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Height: 30cm</span>
-                            <span class="spec-item">5-7 stems</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Avoid humidity</span>
-                            <span><i class="fas fa-clock"></i> Lasts 8+ months</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Rustic Charm Bundle', 320)">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <img src="dried-eucalyptus.jpg" alt="Dried Eucalyptus Bundle">
+                <div class="plant-info">
+                    <p class="plant-name">Dried Eucalyptus</p>
+                    <p class="plant-price">P200</p>
+                    <p class="plant-desc">Fragrant eucalyptus branches that retain their beautiful shape and scent.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Eucalyptus', 200)">Add to Cart</button>
                 </div>
             </div>
         </div>
         
-        <div class="category">
-            <h3 class="category-title">Dried Flower Wreaths</h3>
-            <div class="flower-grid">
-                <div class="flower-card">
-                    <img src="harvest moon wreath.jpeg" alt="Harvest Moon Wreath" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Harvest Moon Wreath</div>
-                        <div class="flower-price">P550</div>
-                        <div class="flower-desc">Circular arrangement of dried wheat, orange roses, and seasonal foliage.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Diameter: 45cm</span>
-                            <span class="spec-item">With hanging loop</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-door-open"></i> Indoor/outdoor</span>
-                            <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Harvest Moon Wreath', 550)">Add to Cart</button>
+        <h3>Dried Flower Arrangements</h3>
+        <div class="image-grid">
+            <div class="plant-item">
+                <img src="dried-wreath.jpg" alt="Dried Flower Wreath">
+                <div class="plant-info">
+                    <p class="plant-name">Dried Flower Wreath</p>
+                    <p class="plant-price">P350</p>
+                    <p class="plant-desc">Circular arrangement of mixed dried flowers, perfect for wall decor.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Flower Wreath', 350)">Add to Cart</button>
                 </div>
-                
-                <div class="flower-card">
-                    <span class="popular-tag">Best Seller</span>
-                    <img src="Bohemian circle.jpeg" alt="Bohemian Circle" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Bohemian Circle</div>
-                        <div class="flower-price">P480</div>
-                        <div class="flower-desc">Artistic mix of pampas grass, dried palms, and bleached foliage.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Diameter: 40cm</span>
-                            <span class="spec-item">Rustic finish</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-door-open"></i> Indoor recommended</span>
-                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Bohemian Circle', 480)">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <img src="dried-centerpiece.jpg" alt="Dried Flower Centerpiece">
+                <div class="plant-info">
+                    <p class="plant-name">Dried Centerpiece</p>
+                    <p class="plant-price">P400</p>
+                    <p class="plant-desc">Elegant table centerpiece featuring a mix of dried blooms and grasses.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Centerpiece', 400)">Add to Cart</button>
                 </div>
-                
-                <div class="flower-card">
-                    <img src="Eucalyptus dream.jpeg" alt="Eucalyptus Dream" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Eucalyptus Dream</div>
-                        <div class="flower-price">P520</div>
-                        <div class="flower-desc">Simple preserved eucalyptus wreath with subtle sage tones.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Diameter: 35cm</span>
-                            <span class="spec-item">Minimalist design</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-door-open"></i> Indoor/outdoor</span>
-                            <span><i class="fas fa-clock"></i> Lasts 1.5+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Eucalyptus Dream', 520)">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <img src="dried-bouquet.jpg" alt="Premium Dried Bouquet">
+                <div class="plant-info">
+                    <p class="plant-name">Premium Dried Bouquet</p>
+                    <p class="plant-price">P450</p>
+                    <p class="plant-desc">Luxurious arrangement of high-quality dried flowers in a stylish vase.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Premium Dried Bouquet', 450)">Add to Cart</button>
                 </div>
-                
-                <div class="flower-card">
-                    <img src="Wildflower hoop.jpeg" alt="Wildflower Hoop" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Wildflower Hoop</div>
-                        <div class="flower-price">P450</div>
-                        <div class="flower-desc">Modern hoop design with dried wildflowers and grasses.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Diameter: 38cm</span>
-                            <span class="spec-item">Metal hoop base</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Indoor display</span>
-                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Wildflower Hoop', 450)">Add to Cart</button>
+            </div>
+            <div class="plant-item">
+                <img src="dried-petals.jpg" alt="Dried Flower Petals">
+                <div class="plant-info">
+                    <p class="plant-name">Dried Flower Petals</p>
+                    <p class="plant-price">P120</p>
+                    <p class="plant-desc">Mixed dried petals perfect for crafts, potpourri, or decorative accents.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Flower Petals', 120)">Add to Cart</button>
                 </div>
             </div>
         </div>
-        
-        <div class="category">
-            <h3 class="category-title">Dried Flower Boxes</h3>
-            <div class="flower-grid">
-                <div class="flower-card">
-                    <img src="rose box.jpeg" alt="Preserved Rose Box" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Preserved Rose Box</div>
-                        <div class="flower-price">P650</div>
-                        <div class="flower-desc">Luxury box with 12 preserved roses in your choice of color.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Size: 25x25cm</span>
-                            <span class="spec-item">12 roses</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Indoor display</span>
-                            <span><i class="fas fa-clock"></i> Lasts 3+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Preserved Rose Box', 650)">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="flower-card">
-                    <span class="popular-tag">New</span>
-                    <img src="botanical memory.jpeg" alt="Botanical Memory Box" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Botanical Memory Box</div>
-                        <div class="flower-price">P580</div>
-                        <div class="flower-desc">Shadow box display with carefully arranged dried flowers under glass.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Size: 20x25cm</span>
-                            <span class="spec-item">Glass front</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Avoid direct sun</span>
-                            <span><i class="fas fa-clock"></i> Lasts 5+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Botanical Memory Box', 580)">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="Wild Dried Flower Box.jpeg" alt="Mini Wildflower Collection" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Mini Wildflower Collection</div>
-                        <div class="flower-price">P450</div>
-                        <div class="flower-desc">Charming assortment of dried wildflowers in a decorative wooden box.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Size: 15x20cm</span>
-                            <span class="spec-item">20+ blooms</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Indoor display</span>
-                            <span><i class="fas fa-clock"></i> Lasts 2+ years</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Mini Wildflower Collection', 450)">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="flower-card">
-                    <img src="lavender x eucalyptus.jpeg" alt="Lavender & Eucalyptus Box" class="flower-image">
-                    <div class="flower-info">
-                        <div class="flower-name">Lavender & Eucalyptus Box</div>
-                        <div class="flower-price">P520</div>
-                        <div class="flower-desc">Fragrant combination of dried lavender and eucalyptus in a beautiful box.</div>
-                        <div class="flower-specs">
-                            <span class="spec-item">Size: 18x18cm</span>
-                            <span class="spec-item">Retains scent</span>
-                        </div>
-                        <div class="flower-care">
-                            <span><i class="fas fa-home"></i> Cool, dry place</span>
-                            <span><i class="fas fa-clock"></i> Lasts 1+ year</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(this, 'Lavender & Eucalyptus Box', 520)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <footer>
         <div class="social-icons">
