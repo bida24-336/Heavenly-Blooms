@@ -1,131 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... (keep head section same as previous) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Bouquets - Heavenly Blooms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ... (keep header same) ... -->
+    <header>
+        <div class="logo">
+            <img src="Logo.jpg" alt="Heavenly Blooms Logo">
+            <h1 class="shop-name">Heavenly Blooms</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="dried-flowers.html">Dried Flowers</a></li>
+                <li><a href="bouquets.html">Bouquets</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="bouquets-main">
-        <div class="container">
-            <h2 class="page-title">Our Beautiful Bouquets</h2>
-            
-            <!-- Category 1: Classic Bouquets -->
-            <div class="category">
-                <h3 class="category-title">Classic Bouquets</h3>
-                <div class="bouquet-grid">
-                    <!-- Bouquet 1 -->
-                    <div class="bouquet-card">
-                        <img src="blushing bloom.jpeg" alt="Blushing Bloom Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 2 -->
-                    <div class="bouquet-card">
-                        <img src="Crimson kiss.jpeg" alt="Crimson Kiss Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 3 -->
-                    <div class="bouquet-card">
-                        <img src="white elegance.jpeg" alt="White Elegance Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 4 -->
-                    <div class="bouquet-card">
-                        <img src="lavenderwhisper.jpeg" alt="Lavender Whisper Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 5 -->
-                    <div class="bouquet-card">
-                        <img src="golden kiss.jpeg" alt="Golden Sunshine Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
+    <div class="main-container">
+        <h2 class="page-title">Our Beautiful Bouquets</h2>
+        
+        <div class="category">
+            <h3 class="category-title">Classic Bouquets</h3>
+            <div class="bouquet-grid">
+                <div class="bouquet-card">
+                    <img src="mixed-pink-roses.jpg" alt="Blushing Bloom Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Blushing Bloom</div>
+                        <div class="bouquet-price">P280.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Mixed pink roses & baby's breath in a elegant arrangement perfect for any occasion.
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Category 2: Seasonal Specials -->
-            <div class="category">
-                <h3 class="category-title">Seasonal Specials</h3>
-                <div class="bouquet-grid">
-                    <!-- Bouquet 1 -->
-                    <div class="bouquet-card">
-                        <img src="sunflowers.jpg" alt="Sunshine Love Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 2 -->
-                    <div class="bouquet-card">
-                        <img src="Autumn glow.jpeg" alt="Autumn Glow Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 3 -->
-                    <div class="bouquet-card">
-                        <img src="white frost.jpeg" alt="Winter Frost Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 4 -->
-                    <div class="bouquet-card">
-                        <img src="Spring awakening.jpeg" alt="Spring Awakening Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 5 -->
-                    <div class="bouquet-card">
-                        <img src="Festive sheer.jpeg" alt="Festive Cheer Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
+                
+                <div class="bouquet-card">
+                    <img src="deep-red-roses.jpg" alt="Crimson Kiss Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Crimson Kiss</div>
+                        <div class="bouquet-price">P310.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Deep red roses arranged in a romantic style, ideal for anniversaries and special occasions.
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Category 3: Premium Arrangements -->
-            <div class="category">
-                <h3 class="category-title">Premium Arrangements</h3>
-                <div class="bouquet-grid">
-                    <!-- Bouquet 1 -->
-                    <div class="bouquet-card">
-                        <img src="Royal elegance.jpeg" alt="Royal Elegance Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
+                
+                <div class="bouquet-card">
+                    <img src="white-lilies.jpg" alt="White Elegance Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">White Elegance</div>
+                        <div class="bouquet-price">P320.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            White lilies & roses in a sophisticated arrangement perfect for weddings and formal events.
+                        </div>
                     </div>
-                    
-                    <!-- Bouquet 2 -->
-                    <div class="bouquet-card">
-                        <img src="exotic beauty.jpeg" alt="Exotic Beauty Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="lavender-roses.jpg" alt="Lavender Whisper Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Lavender Whisper</div>
+                        <div class="bouquet-price">P300.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Lavender roses & foliage arranged in a soft, romantic style.
+                        </div>
                     </div>
-                    
-                    <!-- Bouquet 3 -->
-                    <div class="bouquet-card">
-                        <img src="peony paradise.jpeg" alt="Peony Paradise Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 4 -->
-                    <div class="bouquet-card">
-                        <img src="bridal bliss.jpeg" alt="Bridal Bliss Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
-                    </div>
-                    
-                    <!-- Bouquet 5 -->
-                    <div class="bouquet-card">
-                        <img src="Grandeur.jpeg" alt="Grandeur Bouquet" class="bouquet-image">
-                        <!-- ... (rest of card content) ... -->
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="yellow-roses.jpg" alt="Golden Sunshine Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Golden Sunshine</div>
+                        <div class="bouquet-price">P290.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Bright yellow roses arranged to bring sunshine to any occasion.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+        
+        <div class="category">
+            <h3 class="category-title">Seasonal Specials</h3>
+            <div class="bouquet-grid">
+                <div class="bouquet-card">
+                    <img src="sunflowers.jpg" alt="Sunshine Love Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Sunshine Love</div>
+                        <div class="bouquet-price">P250.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Sunflowers with greenery in a cheerful summer arrangement.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="autumn-mix.jpg" alt="Autumn Glow Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Autumn Glow</div>
+                        <div class="bouquet-price">P270.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Warm-toned flowers with seasonal foliage perfect for fall.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="winter-whites.jpg" alt="Winter Frost Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Winter Frost</div>
+                        <div class="bouquet-price">P310.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Cool white and silver winter arrangement with seasonal accents.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="spring-mix.jpg" alt="Spring Awakening Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Spring Awakening</div>
+                        <div class="bouquet-price">P290.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Fresh spring blooms in a vibrant, colorful arrangement.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="holiday-red.jpg" alt="Festive Cheer Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Festive Cheer</div>
+                        <div class="bouquet-price">P330.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Rich red and green holiday arrangement with seasonal accents.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h3 class="category-title">Premium Arrangements</h3>
+            <div class="bouquet-grid">
+                <div class="bouquet-card">
+                    <img src="luxury-roses.jpg" alt="Royal Elegance Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Royal Elegance</div>
+                        <div class="bouquet-price">P450.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Premium long-stemmed roses in an exquisite arrangement.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="orchid-mix.jpg" alt="Exotic Beauty Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Exotic Beauty</div>
+                        <div class="bouquet-price">P490.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Orchids and tropical flowers in a stunning arrangement.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="peony-mix.jpg" alt="Peony Paradise Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Peony Paradise</div>
+                        <div class="bouquet-price">P420.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Luxurious peonies in a lush, romantic arrangement.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="all-white.jpg" alt="Bridal Bliss Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Bridal Bliss</div>
+                        <div class="bouquet-price">P480.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            All-white premium flowers perfect for weddings.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bouquet-card">
+                    <img src="deluxe-mix.jpg" alt="Grandeur Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <div class="bouquet-name">Grandeur</div>
+                        <div class="bouquet-price">P520.00</div>
+                        <button class="info-btn" onclick="toggleInfo(this)">Show Details</button>
+                        <div class="bouquet-description">
+                            Our most luxurious mixed flower arrangement with premium blooms.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- ... (keep footer same) ... -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
+    </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/bouquets.js"></script>
+    <script src="bouquets.js"></script>
 </body>
-</html>                 
-
+</html>
+                 
+              
+                   
