@@ -324,98 +324,165 @@ nav ul li a:hover {
     background-color: #7a8d75;
 }
 
+---
 
-/* Footer styles (combined) */
-footer {
-  background-color: #5a7247; /* Default from index.html and about.html */
-  color: #f5f0e8;
-  padding: 2rem;
-  text-align: center;
-  margin-top: 3rem; /* From bouquets.html */
-  position: relative; /* From contact.html */
+### **New Dried Flower Page Specific Styles**
+
+Here are the new styles for your dried flower product page. I've placed them after the `Bouquets Page Styles` to keep your CSS organized by page context.
+
+```css
+/* --- Dried Flower Product Page Specific Styles (for dried_flower.html) --- */
+.product-detail-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 2rem; /* Add some space from the header */
 }
 
-/* Footer background for contact page (specific override) */
-footer.contact-footer {
-    background-color: rgba(90, 114, 71, 0.9);
-}
-
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem; /* Consistent across pages */
-  margin-bottom: 1.5rem; /* From footer in index/about */
-}
-
-/* Social icons for footer (default styling) */
-footer .social-icons a {
-  color: #f5f0e8;
-  background-color: #5a7247;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  border: 1px solid #f5f0e8;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-/* Social icons for contact page (specific override for main content) */
-.contact-container .social-icons a {
-    color: #5a7247;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-}
-
-/* Social icons hover for all footers */
-footer .social-icons a:hover {
-  color: #5a7247;
-  background-color: #f5f0e8;
-  transform: translateY(-3px);
-}
-
-/* Social icons hover for contact page (specific override for main content) */
-.contact-container .social-icons a:hover {
-    color: #7a8d75;
-    background-color: transparent;
-}
-
-
-/* Responsive styles (combined) */
-@media (max-width: 768px) {
-  header {
+.product-image-gallery {
+    flex: 1 1 400px; /* Allows flexibility and defines a base width */
+    display: flex;
     flex-direction: column;
-    padding: 1rem;
-  }
-  
-  nav ul {
+    align-items: center;
+}
+
+#main-product-image {
+    width: 100%;
+    max-width: 450px; /* Ensure image doesn't get too big */
+    height: auto;
+    border: 1px solid #e0d9cc; /* Using an existing border color for consistency */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 1rem;
-    justify-content: center; /* From bouquets.html */
-  }
-  
-  #about-us {
-    padding: 2rem 1rem;
-  }
+}
 
-  .contact-container {
-    width: 90%;
-    padding: 1.5rem;
-  }
+.thumbnail-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border: 2px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
 
-  /* Responsive for index.html hero section */
-  .hero-section .col-md-6,
-  .hero-section .col-md-3 {
-      margin-bottom: 1rem;
-  }
+.thumbnail-image:hover {
+    border-color: #7a8d75; /* Using an existing hover color for consistency */
+    transform: translateY(-2px);
+}
 
-  /* Responsive for bouquets.html grid */
-  .bouquet-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+.thumbnail-image.active {
+    border-color: #5a7247; /* Active thumbnail border, consistent with primary green */
+    box-shadow: 0 0 0 3px rgba(90, 114, 71, 0.2); /* Subtle glow for active */
+}
+
+.product-info {
+    flex: 2 1 300px; /* Allows flexibility and defines a base width */
+}
+
+.product-info h1 {
+    font-size: 2.5em;
+    color: #5a7247; /* Consistent with other headings */
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.product-info .price {
+    font-family: 'Cormorant Garamond', serif; /* Use heading font for price */
+    font-size: 2em;
+    color: #5a7247; /* Keeping price in a consistent brand color */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    line-height: 1.7; /* Consistent with body line-height */
+    margin-bottom: 1.5rem;
+}
+
+.product-info ul {
+    list-style: disc; /* Or none, if you prefer custom styling */
+    margin-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.product-info ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#add-to-cart-btn {
+    background-color: #5a7247; /* Consistent with other buttons/accents */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Make button full width in its container */
+    max-width: 300px; /* Limit button width */
+    display: block; /* To center with margin auto */
+    margin: 1.5rem auto 0 auto;
+}
+
+#add-to-cart-btn:hover {
+    background-color: #7a8d75; /* Consistent hover color */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for Dried Flower Page */
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items when stacked */
+        gap: 20px; /* Reduce gap on smaller screens */
+    }
+
+    .product-image-gallery,
+    .product-info {
+        flex: 1 1 100%; /* Take full width on small screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+
+    #main-product-image {
+        width: 100%;
+        max-width: 300px; /* Keep main image from being too large on small screens */
+    }
+
+    .thumbnail-images {
+        gap: 5px; /* Reduce gap between thumbnails */
+    }
+
+    .product-info h1 {
+        font-size: 2em; /* Adjust heading size for smaller screens */
+        text-align: center;
+    }
+
+    .product-info .price {
+        font-size: 1.5em; /* Adjust price size */
+        text-align: center;
+    }
+
+    .product-info p, .product-info ul {
+        padding: 0 10px; /* Add some padding to text on small screens */
+        text-align: center;
+    }
+
+    .product-info ul {
+        margin-left: 0; /* Remove left margin for centered list */
+        list-style-position: inside; /* Keep bullets inside for centered text */
+    }
+
+    #add-to-cart-btn {
+        max-width: 250px; /* Adjust button width */
+    }
 }
