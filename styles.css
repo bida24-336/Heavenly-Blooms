@@ -1,3 +1,4 @@
+/* Shelley Volante BT font (from index.html) */
 @font-face {
   font-family: 'Shelley Volante BT';
   src: local('ShelleyVolanteBT'),
@@ -5,30 +6,179 @@
        url('ShelleyVolanteBT.ttf') format('truetype');
 }
 
+/* Google Fonts (from about.html) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+/* Body styles (combined) */
 body {
-  font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
-  background-color: #f8f8f5;
+  font-family: 'Montserrat', sans-serif; /* Primary font for body */
+  background-color: #f8f8f5; /* From index.html, slightly different from about.html's white */
   color: #3a4a42;
+  margin: 0; /* Added from about.html */
+  padding: 0; /* Added from about.html */
+  line-height: 1.7; /* Added from about.html */
 }
 
+/* Heading styles (combined) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
-  font-weight: normal;
-  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif; /* Primary font for headings */
+  font-weight: 500; /* From about.html, overriding index.html's 'normal' */
+  color: #5a7247;
+  letter-spacing: 0.5px; /* From about.html, overriding index.html's '1px' */
+}
+
+/* Specific styles for shop name and highlight box */
+.shop-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.2rem; /* From about.html, overriding generic h1 style */
+}
+
+.highlight-box {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Header styles (combined) */
+header {
+  background-color: #f5f0e8;
+  padding: 1rem 2rem; /* Adjusted from index.html's 'p-3' */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Added from about.html for responsiveness */
+  border-bottom: 1px solid #e0d9cc; /* Adjusted from index.html's 'border-bottom' */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Added from about.html */
+}
+
+.logo img {
+  height: 60px;
+}
+
+/* Navigation styles (combined) */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Adjusted from index.html's 'nav' class spacing */
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #3a4a42;
+  font-size: 1.1rem; /* Slightly adjusted from index.html's '1.2rem' for consistency with Montserrat */
+  font-weight: 500; /* Added from about.html */
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #7a8d75; /* Hover color from about.html */
+}
+
+/* About Us Section styles (new) */
+#about-us {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+#about-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#about-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#about-us h3 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+
+#about-us p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.highlight-box {
+  background-color: #f5f0e8;
+  border-left: 4px solid #5a7247;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  color: #3a4a42;
+  font-size: 1.2rem;
+}
+
+.values-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.value-card {
+  background-color: #f8f8f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  color: #3a4a42;
+  border: 1px solid #e0d9cc;
+}
+
+.value-card h4 {
+  color: #5a7247;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+}
+
+.value-card i {
+  font-size: 1.5rem;
+  color: #5a7247;
+}
+
+/* Footer styles (combined) */
+footer {
+  background-color: #5a7247;
+  color: #f5f0e8;
+  padding: 2rem; /* Adjusted from index.html's 'p-4' */
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Adjusted from index.html's 'mx-2' */
+  margin-bottom: 1.5rem; /* Added from about.html */
 }
 
 .social-icons a {
   color: #f5f0e8;
   background-color: #5a7247;
-  width: 36px;
-  height: 36px;
+  width: 40px; /* Adjusted from index.html's '36px' */
+  height: 40px; /* Adjusted from index.html's '36px' */
   border-radius: 50%;
-  display: inline-flex;
+  display: flex; /* Changed from inline-flex for better centering */
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   border: 1px solid #f5f0e8;
   text-decoration: none;
+  font-size: 1.1rem; /* Adjusted from index.html's '1rem' */
 }
 
 .social-icons a:hover {
@@ -37,10 +187,29 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
 }
 
-.social-icons i {
-  font-size: 1rem;
+/* Responsive styles (from about.html) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  #about-us {
+    padding: 2rem 1rem;
+  }
 }
 
-.heart {
-  transition: all 0.3s ease;
+/* Additional responsive styles for index.html's hero section */
+@media (max-width: 768px) {
+    .hero-images .col-md-6,
+    .hero-images .col-md-3 {
+        margin-bottom: 1rem; /* Add some space between images on smaller screens */
+    }
 }
+ 
+
