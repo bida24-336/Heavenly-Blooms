@@ -16,7 +16,7 @@ body {
   color: #3a4a42;
   margin: 0;
   padding: 0;
-  line-height: 1.7; /* From about.html, slightly different from contact.html's 1.6 */
+  line-height: 1.7; /* From about.html, overriding contact.html and bouquets.html's 1.6 */
 }
 
 /* Background image for contact page (specific override) */
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600; /* From about.html */
   font-size: 2.2rem; /* From about.html, overriding generic h1 style */
-  color: #5a7247; /* From contact.html */
+  color: #5a7247; /* From contact.html and bouquets.html */
 }
 
 .highlight-box {
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header styles (combined) */
 header {
-  background-color: #f5f0e8; /* Default from index.html and about.html */
+  background-color: #f5f0e8; /* Default from index.html, about.html, and bouquets.html */
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -205,7 +205,7 @@ nav ul li a:hover {
   color: #5a7247;
 }
 
-/* Contact Us Section styles (new) */
+/* Contact Us Section styles */
 .contact-container {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
@@ -217,7 +217,7 @@ nav ul li a:hover {
 }
 
 .contact-container h2 {
-    color: #5a7247; /* Ensure heading color */
+    color: #5a7247;
 }
 
 .contact-info {
@@ -236,12 +236,102 @@ nav ul li a:hover {
   margin-top: 0;
 }
 
+/* Bouquets Page Styles (new) */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #e0d9cc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bouquet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.bouquet-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.bouquet-card:hover {
+    transform: translateY(-5px);
+}
+
+.bouquet-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bouquet-info {
+    padding: 1rem;
+}
+
+.bouquet-name {
+    font-weight: 500;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.bouquet-price {
+    color: #5a7247;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.bouquet-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    display: none; /* Hidden by default */
+}
+
+.info-btn {
+    background-color: #5a7247;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.info-btn:hover {
+    background-color: #7a8d75;
+}
+
+
 /* Footer styles (combined) */
 footer {
   background-color: #5a7247; /* Default from index.html and about.html */
   color: #f5f0e8;
   padding: 2rem;
   text-align: center;
+  margin-top: 3rem; /* From bouquets.html */
   position: relative; /* From contact.html */
 }
 
@@ -255,12 +345,13 @@ footer.contact-footer {
   display: flex;
   justify-content: center;
   gap: 1.5rem; /* Consistent across pages */
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; /* From footer in index/about */
 }
 
-.social-icons a {
-  color: #f5f0e8; /* Default for index/about pages */
-  background-color: #5a7247; /* Default for index/about pages */
+/* Social icons for footer (default styling) */
+footer .social-icons a {
+  color: #f5f0e8;
+  background-color: #5a7247;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -273,24 +364,25 @@ footer.contact-footer {
   font-size: 1.1rem;
 }
 
-/* Social icons for contact page (specific override) */
+/* Social icons for contact page (specific override for main content) */
 .contact-container .social-icons a {
-    color: #5a7247; /* Text color for icons within contact container */
-    background-color: transparent; /* No background fill */
-    border: none; /* No border */
-    font-size: 1.5rem; /* Larger icon size */
+    color: #5a7247;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
 }
 
-.social-icons a:hover {
-  color: #5a7247; /* Default hover color */
-  background-color: #f5f0e8; /* Default hover background */
+/* Social icons hover for all footers */
+footer .social-icons a:hover {
+  color: #5a7247;
+  background-color: #f5f0e8;
   transform: translateY(-3px);
 }
 
-/* Social icons hover for contact page (specific override) */
+/* Social icons hover for contact page (specific override for main content) */
 .contact-container .social-icons a:hover {
-    color: #7a8d75; /* Specific hover color for contact page icons */
-    background-color: transparent; /* Maintain no background fill */
+    color: #7a8d75;
+    background-color: transparent;
 }
 
 
@@ -304,6 +396,7 @@ footer.contact-footer {
   nav ul {
     flex-wrap: wrap;
     margin-top: 1rem;
+    justify-content: center; /* From bouquets.html */
   }
   
   #about-us {
@@ -318,7 +411,12 @@ footer.contact-footer {
   /* Responsive for index.html hero section */
   .hero-section .col-md-6,
   .hero-section .col-md-3 {
-      margin-bottom: 1rem; /* Add some space between images on smaller screens */
+      margin-bottom: 1rem;
+  }
+
+  /* Responsive for bouquets.html grid */
+  .bouquet-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
 
