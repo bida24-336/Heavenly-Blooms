@@ -11,15 +11,59 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/feedback.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Feedback Page Specific Styles */
+        .feedback-header {
+            background-color: #5a7247;
+            color: white;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 5px;
+            direction: rtl; /* Right to left for better star selection */
+        }
+        
+        .rating-stars input {
+            display: none;
+        }
+        
+        .rating-stars label {
+            font-size: 2rem;
+            color: #e0d9cc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .rating-stars input:checked ~ label,
+        .rating-stars input:hover ~ label,
+        .rating-stars label:hover,
+        .rating-stars label:hover ~ label {
+            color: #ffc107;
+        }
+        
+        .btn-primary {
+            background-color: #5a7247;
+            border-color: #5a7247;
+        }
+        
+        .btn-primary:hover {
+            background-color: #7a8d75;
+            border-color: #7a8d75;
+        }
+        
+        footer {
+            background-color: rgba(90, 114, 71, 0.9);
+        }
+    </style>
 </head>
 <body>
     <!-- Fixed Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/Logo.jpg" alt="Heavenly Blooms Logo" height="60" class="d-inline-block align-top me-2">
+                <img src="Logo.jpg" alt="Heavenly Blooms Logo" height="60" class="d-inline-block align-top me-2">
                 <span class="shop-name">Heavenly Blooms</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -65,15 +109,15 @@
                             <div class="mb-4">
                                 <label class="form-label d-block">How would you rate your experience?</label>
                                 <div class="rating-stars">
-                                    <input type="radio" id="star5" name="rating" value="5" class="d-none">
+                                    <input type="radio" id="star5" name="rating" value="5">
                                     <label for="star5"><i class="far fa-star"></i></label>
-                                    <input type="radio" id="star4" name="rating" value="4" class="d-none">
+                                    <input type="radio" id="star4" name="rating" value="4">
                                     <label for="star4"><i class="far fa-star"></i></label>
-                                    <input type="radio" id="star3" name="rating" value="3" class="d-none">
+                                    <input type="radio" id="star3" name="rating" value="3">
                                     <label for="star3"><i class="far fa-star"></i></label>
-                                    <input type="radio" id="star2" name="rating" value="2" class="d-none">
+                                    <input type="radio" id="star2" name="rating" value="2">
                                     <label for="star2"><i class="far fa-star"></i></label>
-                                    <input type="radio" id="star1" name="rating" value="1" class="d-none">
+                                    <input type="radio" id="star1" name="rating" value="1">
                                     <label for="star1"><i class="far fa-star"></i></label>
                                 </div>
                             </div>
@@ -131,6 +175,68 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="scripts/feedback.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const feedbackForm = document.getElementById('feedbackForm');
+            const thankYouMessage = document.getElementById('thankYouMessage');
+            
+            feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show the thank you message
+                
+                // Hide the form
+                feedbackForm.classList.add('d-none');
+                // Show the thank you message
+                thankYouMessage.classList.remove('d-none');
+                
+                // Reset form (optional)
+                setTimeout(() => {
+                    feedbackForm.reset();
+                    feedbackForm.classList.remove('d-none');
+                    thankYouMessage.classList.add('d-none');
+                }, 5000); // Reset after 5 seconds (optional)
+            });
+            
+            // Star rating hover effect
+            const stars = document.querySelectorAll('.rating-stars label');
+            stars.forEach(star => {
+                star.addEventListener('mouseover', function() {
+                    const value = this.htmlFor.replace('star', '');
+                    highlightStars(value);
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    const checked = document.querySelector('.rating-stars input:checked');
+                    if (checked) {
+                        highlightStars(checked.value);
+                    } else {
+                        resetStars();
+                    }
+                });
+            });
+            
+            function highlightStars(value) {
+                const stars = document.querySelectorAll('.rating-stars label');
+                stars.forEach(star => {
+                    const starValue = star.htmlFor.replace('star', '');
+                    if (starValue <= value) {
+                        star.querySelector('i').classList.replace('far', 'fas');
+                    } else {
+                        star.querySelector('i').classList.replace('fas', 'far');
+                    }
+                });
+            }
+            
+            function resetStars() {
+                const stars = document.querySelectorAll('.rating-stars label');
+                stars.forEach(star => {
+                    star.querySelector('i').classList.replace('fas', 'far');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
+             
