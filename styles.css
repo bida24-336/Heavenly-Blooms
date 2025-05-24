@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Shelley Volante BT';
   src: local('ShelleyVolanteBT'),
+       local('Shelley Volante BT'),
        url('ShelleyVolanteBT.ttf') format('truetype');
 }
 
@@ -10,42 +11,36 @@ body {
   color: #3a4a42;
 }
 
-.header-bg {
-  background-color: #f5f0e8;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Shelley Volante BT', 'Brush Script MT', cursive;
+  font-weight: normal;
+  letter-spacing: 1px;
 }
 
-.site-title {
-  font-size: 2rem;
-  color: #5a7247;
-}
-
-.nav-link {
-  font-size: 1.2rem;
-  color: #3a4a42;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.cart-icon {
-  position: relative;
-  cursor: pointer;
-  margin-left: 15px;
-}
-
-.cart-icon i {
-  font-size: 1.3rem;
-}
-
-.cart-count {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: #d48a8a;
-  color: white;
+.social-icons a {
+  color: #f5f0e8;
+  background-color: #5a7247;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid #f5f0e8;
+  text-decoration: none;
+}
 
+.social-icons a:hover {
+  color: #5a7247;
+  background-color: #f5f0e8;
+  transform: translateY(-3px);
+}
 
+.social-icons i {
+  font-size: 1rem;
+}
 
- 
+.heart {
+  transition: all 0.3s ease;
+}
