@@ -1,165 +1,96 @@
-/* Font import - Using a more universally available elegant font stack */
+/* General Body Styling */
 body {
-    font-family: 'Garamond', 'Baskerville', 'Times New Roman', serif;
-    background-color: #f8f8f5; /* Soft off-white */
-    color: #3a4a42; /* Natural dark green-gray */
-    margin: 0;
-    padding: 0;
+  background-color: #fce4ec; /* baby pink background */
+  font-family: 'Shelley Volante BT', cursive;
+  margin: 0;
+  padding: 0;
 }
 
+/* Header Styling */
 header {
-    background-color: #f5f0e8; /* Warm ivory */
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    border-bottom: 1px solid #e0d9cc; /* Subtle natural border */
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.logo img {
-    height: 50px;
+header nav a:hover {
+  color: grey;
 }
 
-.shop-name {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #5a7247; /* Muted sage green */
-    font-family: 'Garamond', 'Baskerville', 'Times New Roman', serif;
+/* Search Bar */
+header input[type="text"] {
+  padding: 5px;
+  margin-left: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0;
+/* Dropdown Buttons */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #3a4a42; /* Matching body color */
-    font-weight: normal;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid #ddd;
 }
 
-nav ul li a:hover {
-    color: #7a8d75; /* Soft muted green */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
 }
 
-.icons {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #5a7247; /* Matching shop name color */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fafaf7; /* Slightly brighter than body */
-    text-align: center;
-    padding: 3rem 1rem;
-    border-bottom: 1px solid #e0d9cc;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-.hero-text h1 {
-    font-size: 2.5rem;
-    color: #4a5c40; /* Deeper natural green */
-    margin-bottom: 1.5rem;
-    font-weight: normal;
+/* Cart Icon */
+.cart-icon {
+  float: right;
+  margin-right: 20px;
 }
 
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    margin: 1rem 0;
-    border-radius: 4px;
+/* About Us Section */
+#about {
+  padding: 40px;
+  text-align: center;
+  background-color: #fff0f5;
 }
 
-.side-images {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
+#about h2 {
+  color: #d81b60;
 }
 
-.side-images img {
-    width: 200px;
-    height: auto;
-    border: 1px solid #d1c9b8; /* Natural linen color */
-    border-radius: 8px;
+#about p {
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
 }
 
-.bestsellers {
-    padding: 3rem 2rem;
-    background-color: #f5f2eb; /* Warm natural white */
-    text-align: center;
+/* Footer Styling */
+footer {
+  background-color: #d81b60;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
 }
-
-.bestsellers h2 {
-    color: #5a7247; /* Muted sage green */
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: normal;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.image-grid .flower {
-    position: relative;
-    border: 1px solid #e0d9cc;
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-grid .flower:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.image-grid img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-.heart {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 1.3rem;
-    color: #c0c0c0;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.heart.liked {
-    color: #d48a8a
-
-
-
-
-
-
-
 
