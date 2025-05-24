@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plants - Heavenly Blooms</title>
+    <title>Dried Flowers - Heavenly Blooms</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -21,7 +21,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="plants.html">Plants</a></li>
                 <li><a href="bouquets.html">Bouquets</a></li>
-                <li><a href="driedflower.html">Dried Flowers</a></li>
+                <li><a href="driedflower.html" class="active">Dried Flowers</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -44,261 +44,125 @@
     </div>
 
     <section class="plants-category">
-        <h2>Our Plants Collection</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #3a4a42;">Discover our wide variety of healthy, vibrant plants perfect for your home or garden. Each plant is carefully nurtured to ensure it arrives at your doorstep in perfect condition.</p>
+        <h2>Our Dried Flowers Collection</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #3a4a42;">Discover our beautiful selection of dried flowers that bring lasting beauty to your home. Each arrangement is carefully preserved to maintain its natural charm.</p>
         
-        <h3>Flowering Plants</h3>
+        <h3>Dried Bouquets</h3>
         <div class="image-grid">
             <div class="plant-item">
-                <img src="Roses.jpeg" alt="Rose Plant">
+                <img src="dried-lavender.jpg" alt="Dried Lavender Bouquet">
                 <div class="plant-info">
-                    <p class="plant-name">Rose Plant</p>
-                    <p class="plant-price">P120</p>
-                    <p class="plant-desc">Classic roses with vibrant colors and sweet fragrance. Perfect for gardens and patios.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+                    <p class="plant-name">Dried Lavender</p>
+                    <p class="plant-price">P180</p>
+                    <p class="plant-desc">Fragrant dried lavender stems, perfect for home decor and aromatherapy.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Rose Plant', 120)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Lavender', 180)">Add to Cart</button>
                 </div>
             </div>
             <div class="plant-item">
-                <img src="Tulip.jpeg" alt="Tulip Plant">
+                <img src="dried-pampas.jpg" alt="Dried Pampas Grass">
                 <div class="plant-info">
-                    <p class="plant-name">Tulip Bulbs</p>
-                    <p class="plant-price">P150</p>
-                    <p class="plant-desc">Bright tulip bulbs that bloom in spring. Available in various colors.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Regular water</p>
+                    <p class="plant-name">Dried Pampas Grass</p>
+                    <p class="plant-price">P220</p>
+                    <p class="plant-desc">Fluffy pampas grass plumes that add texture and elegance to any space.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Tulip Bulbs', 150)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Pampas Grass', 220)">Add to Cart</button>
                 </div>
             </div>
             <div class="plant-item">
-                <img src="Lily.jpeg" alt="Lily Plant">
+                <img src="dried-wildflowers.jpg" alt="Dried Wildflower Bouquet">
                 <div class="plant-info">
-                    <p class="plant-name">Lily Plant</p>
-                    <p class="plant-price">P130</p>
-                    <p class="plant-desc">Elegant lilies with large, fragrant flowers. Great for borders or containers.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Partial shade | <i class="fas fa-tint"></i> Keep moist</p>
+                    <p class="plant-name">Wildflower Bouquet</p>
+                    <p class="plant-price">P250</p>
+                    <p class="plant-desc">Colorful mix of dried wildflowers in a rustic arrangement.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Lily Plant', 130)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Wildflower Bouquet', 250)">Add to Cart</button>
                 </div>
             </div>
             <div class="plant-item">
-                <img src="Orchid.jpeg" alt="Orchid Plant">
+                <img src="dried-eucalyptus.jpg" alt="Dried Eucalyptus Bundle">
                 <div class="plant-info">
-                    <p class="plant-name">Orchid Plant</p>
+                    <p class="plant-name">Dried Eucalyptus</p>
                     <p class="plant-price">P200</p>
-                    <p class="plant-desc">Exotic orchids that bloom for months. Perfect for indoor decoration.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Indirect light | <i class="fas fa-tint"></i> Weekly water</p>
+                    <p class="plant-desc">Fragrant eucalyptus branches that retain their beautiful shape and scent.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Orchid Plant', 200)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Eucalyptus', 200)">Add to Cart</button>
                 </div>
             </div>
         </div>
         
-        <h3>Shrubs</h3>
+        <h3>Dried Flower Arrangements</h3>
         <div class="image-grid">
             <div class="plant-item">
-                <img src="Hibiscus.jpeg" alt="Hibiscus Shrub">
+                <img src="dried-wreath.jpg" alt="Dried Flower Wreath">
                 <div class="plant-info">
-                    <p class="plant-name">Hibiscus Shrub</p>
-                    <p class="plant-price">P80</p>
-                    <p class="plant-desc">Tropical hibiscus with large, colorful flowers. Attracts butterflies.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Regular water</p>
+                    <p class="plant-name">Dried Flower Wreath</p>
+                    <p class="plant-price">P350</p>
+                    <p class="plant-desc">Circular arrangement of mixed dried flowers, perfect for wall decor.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Hibiscus Shrub', 80)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Flower Wreath', 350)">Add to Cart</button>
                 </div>
             </div>
             <div class="plant-item">
-                <img src="Lavender.jpeg" alt="Lavender Plant">
+                <img src="dried-centerpiece.jpg" alt="Dried Flower Centerpiece">
                 <div class="plant-info">
-                    <p class="plant-name">Lavender</p>
-                    <p class="plant-price">P90</p>
-                    <p class="plant-desc">Fragrant lavender with purple flowers. Great for borders and aromatherapy.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low water</p>
+                    <p class="plant-name">Dried Centerpiece</p>
+                    <p class="plant-price">P400</p>
+                    <p class="plant-desc">Elegant table centerpiece featuring a mix of dried blooms and grasses.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Lavender', 90)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Centerpiece', 400)">Add to Cart</button>
                 </div>
             </div>
             <div class="plant-item">
-                <img src="Azalea.jpeg" alt="Azalea Shrub">
+                <img src="dried-bouquet.jpg" alt="Premium Dried Bouquet">
                 <div class="plant-info">
-                    <p class="plant-name">Azalea</p>
-                    <p class="plant-price">P100</p>
-                    <p class="plant-desc">Beautiful flowering shrub with vibrant spring blooms. Acid-loving plant.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Partial shade | <i class="fas fa-tint"></i> Keep moist</p>
+                    <p class="plant-name">Premium Dried Bouquet</p>
+                    <p class="plant-price">P450</p>
+                    <p class="plant-desc">Luxurious arrangement of high-quality dried flowers in a stylish vase.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Azalea', 100)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Premium Dried Bouquet', 450)">Add to Cart</button>
                 </div>
             </div>
             <div class="plant-item">
-                <img src="Gardenia.jpeg" alt="Gardenia Plant">
+                <img src="dried-petals.jpg" alt="Dried Flower Petals">
                 <div class="plant-info">
-                    <p class="plant-name">Gardenia</p>
-                    <p class="plant-price">P110</p>
-                    <p class="plant-desc">Fragrant white flowers with glossy leaves. Perfect for warm climates.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Morning sun | <i class="fas fa-tint"></i> Regular water</p>
+                    <p class="plant-name">Dried Flower Petals</p>
+                    <p class="plant-price">P120</p>
+                    <p class="plant-desc">Mixed dried petals perfect for crafts, potpourri, or decorative accents.</p>
                     <div class="quantity-controls">
                         <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Gardenia', 110)">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <h3>Herbs</h3>
-        <div class="image-grid">
-            <div class="plant-item">
-                <img src="Basil.jpeg" alt="Basil Plant">
-                <div class="plant-info">
-                    <p class="plant-name">Basil</p>
-                    <p class="plant-price">P50</p>
-                    <p class="plant-desc">Aromatic basil perfect for cooking. Grows quickly in warm weather.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Daily water</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Basil', 50)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="plant-item">
-                <img src="Mint.jpeg" alt="Mint Plant">
-                <div class="plant-info">
-                    <p class="plant-name">Mint</p>
-                    <p class="plant-price">P40</p>
-                    <p class="plant-desc">Refreshing mint ideal for teas and cocktails. Grows vigorously.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Partial shade | <i class="fas fa-tint"></i> Keep moist</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Mint', 40)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="plant-item">
-                <img src="Thyme.jpeg" alt="Thyme Plant">
-                <div class="plant-info">
-                    <p class="plant-name">Thyme</p>
-                    <p class="plant-price">P60</p>
-                    <p class="plant-desc">Versatile culinary herb with small fragrant leaves. Drought tolerant.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low water</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Thyme', 60)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="plant-item">
-                <img src="Rosemary plant.jpeg" alt="Rosemary Plant">
-                <div class="plant-info">
-                    <p class="plant-name">Rosemary</p>
-                    <p class="plant-price">P70</p>
-                    <p class="plant-desc">Woody herb with needle-like leaves. Great for roasting and grilling.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Let dry between</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Rosemary', 70)">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <h3>Trees</h3>
-        <div class="image-grid">
-            <div class="plant-item">
-                <img src="Mango.jpeg" alt="Mango Tree">
-                <div class="plant-info">
-                    <p class="plant-name">Mango Tree</p>
-                    <p class="plant-price">P500</p>
-                    <p class="plant-desc">Tropical fruit tree that produces sweet mangoes. Grows 3-4m tall.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Deep water weekly</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Mango Tree', 500)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="plant-item">
-                <img src="Avocado.jpeg" alt="Avocado Tree">
-                <div class="plant-info">
-                    <p class="plant-name">Avocado Tree</p>
-                    <p class="plant-price">P550</p>
-                    <p class="plant-desc">Produces creamy avocados. Self-pollinating variety. Grows 3-5m tall.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Regular water</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Avocado Tree', 550)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="plant-item">
-                <img src="Jacaranda.jpeg" alt="Jacaranda Tree">
-                <div class="plant-info">
-                    <p class="plant-name">Jacaranda</p>
-                    <p class="plant-price">P700</p>
-                    <p class="plant-desc">Beautiful purple flowering tree. Grows 10-15m tall. Deciduous.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Jacaranda Tree', 700)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="plant-item">
-                <img src="Pine.jpeg" alt="Pine Tree">
-                <div class="plant-info">
-                    <p class="plant-name">Pine Tree</p>
-                    <p class="plant-price">P600</p>
-                    <p class="plant-desc">Evergreen conifer with soft needles. Grows 5-8m tall. Great for windbreaks.</p>
-                    <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low water</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Pine Tree', 600)">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Flower Petals', 120)">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -322,4 +186,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-      
