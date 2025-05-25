@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Bouquets - Heavenly Blooms</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
     <header>
         <div class="logo">
@@ -29,7 +28,6 @@
         </div>
     </header>
 
-    <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
             <h3>Your Cart</h3>
@@ -40,140 +38,172 @@
         <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
     </div>
 
-    <section class="bouquets-category">
-        <h2>Our Beautiful Bouquets</h2>
+    <div class="main-container"> <h2 class="page-title">Our Beautiful Bouquets</h2>
         <p class="category-description">Discover our exquisite collection of handcrafted floral arrangements perfect for any occasion.</p>
-        
-        <h3>Classic Bouquets</h3>
-        <div class="image-grid">
-            <div class="bouquet-item">
-                <img src="blushing bloom.jpeg" alt="Blushing Bloom Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Blushing Bloom</p>
-                    <p class="bouquet-price">P280</p>
-                    <p class="bouquet-desc">Mixed pink roses & baby's breath in an elegant arrangement</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                    <button class="add-to-cart">Add to Cart</button>
+
+        <div class="category">
+            <h3 class="category-title">Classic Bouquets</h3>
+            <div class="bouquet-grid">
+                <div class="bouquet-card">
+                    <img src="blushing bloom.jpeg" alt="Blushing Bloom Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Blushing Bloom</p>
+                        <p class="bouquet-price">P280</p>
+                        <p class="bouquet-desc">Mixed pink roses & baby's breath in an elegant arrangement</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button> </div>
                 </div>
-            </div>
-            
-            <div class="bouquet-item">
-                <img src="Crimson kiss.jpeg" alt="Crimson Kiss Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Crimson Kiss</p>
-                    <p class="bouquet-price">P310</p>
-                    <p class="bouquet-desc">Deep red roses arranged in a romantic style</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
+
+                <div class="bouquet-card">
+                    <img src="Crimson kiss.jpeg" alt="Crimson Kiss Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Crimson Kiss</p>
+                        <p class="bouquet-price">P310</p>
+                        <p class="bouquet-desc">Deep red roses arranged in a romantic style</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
-            
-            <div class="bouquet-item">
-                <img src="white lilies.jpg" alt="White Elegance Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">White Elegance</p>
-                    <p class="bouquet-price">P320</p>
-                    <p class="bouquet-desc">White lilies & roses in a sophisticated arrangement</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
+
+                <div class="bouquet-card">
+                    <img src="white lilies.jpg" alt="White Elegance Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">White Elegance</p>
+                        <p class="bouquet-price">P320</p>
+                        <p class="bouquet-desc">White lilies & roses in a sophisticated arrangement</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
-            
-            <div class="bouquet-item">
-                <img src="lavenderwhisper.jpeg" alt="Lavender Whisper Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Lavender Whisper</p>
-                    <p class="bouquet-price">P300</p>
-                    <p class="bouquet-desc">Lavender roses & foliage in a romantic style</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
+
+                <div class="bouquet-card">
+                    <img src="lavenderwhisper.jpeg" alt="Lavender Whisper Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Lavender Whisper</p>
+                        <p class="bouquet-price">P300</p>
+                        <p class="bouquet-desc">Lavender roses & foliage in a romantic style</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>
-        </div>
-        
-        <h3>Seasonal Specials</h3>
-        <div class="image-grid">
-            <div class="bouquet-item">
-                <img src="sunflowers.jpg" alt="Sunshine Love Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Sunshine Love</p>
-                    <p class="bouquet-price">P250</p>
-                    <p class="bouquet-desc">Sunflowers with greenery in a cheerful arrangement</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
+
+                <div class="bouquet-card">
+                    <img src="golden kiss.jpeg" alt="Golden Sunshine Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Golden Sunshine</p>
+                        <p class="bouquet-price">P290</p>
+                        <p class="bouquet-desc">Bright yellow roses arranged to bring sunshine to any occasion.</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="bouquet-item">
-                <img src="Autumn glow.jpeg" alt="Autumn Glow Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Autumn Glow</p>
-                    <p class="bouquet-price">P270</p>
-                    <p class="bouquet-desc">Warm-toned flowers with seasonal foliage</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="bouquet-item">
-                <img src="white frost.jpeg" alt="Winter Frost Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Winter Frost</p>
-                    <p class="bouquet-price">P310</p>
-                    <p class="bouquet-desc">Cool white and silver winter arrangement</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="bouquet-item">
-                <img src="Spring awakening.jpeg" alt="Spring Awakening Bouquet">
-                <div class="bouquet-info">
-                    <p class="bouquet-name">Spring Awakening</p>
-                    <p class="bouquet-price">P290</p>
-                    <p class="bouquet-desc">Fresh spring blooms in a vibrant arrangement</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
-        
+
+        <div class="category">
+            <h3 class="category-title">Seasonal Specials</h3>
+            <div class="bouquet-grid">
+                <div class="bouquet-card">
+                    <img src="sunflowers.jpg" alt="Sunshine Love Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Sunshine Love</p>
+                        <p class="bouquet-price">P250</p>
+                        <p class="bouquet-desc">Sunflowers with greenery in a cheerful summer arrangement</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="bouquet-card">
+                    <img src="Autumn glow.jpeg" alt="Autumn Glow Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Autumn Glow</p>
+                        <p class="bouquet-price">P270</p>
+                        <p class="bouquet-desc">Warm-toned flowers with seasonal foliage</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="bouquet-card">
+                    <img src="white frost.jpeg" alt="Winter Frost Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Winter Frost</p>
+                        <p class="bouquet-price">P310</p>
+                        <p class="bouquet-desc">Cool white and silver winter arrangement</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="bouquet-card">
+                    <img src="Spring awakening.jpeg" alt="Spring Awakening Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Spring Awakening</p>
+                        <p class="bouquet-price">P290</p>
+                        <p class="bouquet-desc">Fresh spring blooms in a vibrant arrangement</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="bouquet-card">
+                    <img src="Festive sheer.jpeg" alt="Festive Cheer Bouquet" class="bouquet-image">
+                    <div class="bouquet-info">
+                        <p class="bouquet-name">Festive Cheer</p>
+                        <p class="bouquet-price">P330.00</p>
+                        <p class="bouquet-desc">Rich red and green holiday arrangement with seasonal accents.</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h3>Premium Arrangements</h3>
-        <div class="image-grid">
-            <div class="bouquet-item">
-                <img src="Royal elegance.jpeg" alt="Royal Elegance Bouquet">
+        <div class="bouquet-grid">
+            <div class="bouquet-card">
+                <img src="Royal elegance.jpeg" alt="Royal Elegance Bouquet" class="bouquet-image">
                 <div class="bouquet-info">
                     <p class="bouquet-name">Royal Elegance</p>
                     <p class="bouquet-price">P450</p>
@@ -183,12 +213,12 @@
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus">+</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
-            
-            <div class="bouquet-item">
-                <img src="Orchid.jpeg" alt="Exotic Beauty Bouquet">
+
+            <div class="bouquet-card">
+                <img src="Orchid.jpeg" alt="Exotic Beauty Bouquet" class="bouquet-image">
                 <div class="bouquet-info">
                     <p class="bouquet-name">Exotic Beauty</p>
                     <p class="bouquet-price">P490</p>
@@ -198,12 +228,12 @@
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus">+</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
-            
-            <div class="bouquet-item">
-                <img src="peony paradise.jpeg" alt="Peony Paradise Bouquet">
+
+            <div class="bouquet-card">
+                <img src="peony paradise.jpeg" alt="Peony Paradise Bouquet" class="bouquet-image">
                 <div class="bouquet-info">
                     <p class="bouquet-name">Peony Paradise</p>
                     <p class="bouquet-price">P420</p>
@@ -213,12 +243,12 @@
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus">+</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
-            
-            <div class="bouquet-item">
-                <img src="bridal bliss.jpeg" alt="Bridal Bliss Bouquet">
+
+            <div class="bouquet-card">
+                <img src="bridal bliss.jpeg" alt="Bridal Bliss Bouquet" class="bouquet-image">
                 <div class="bouquet-info">
                     <p class="bouquet-name">Bridal Bliss</p>
                     <p class="bouquet-price">P480</p>
@@ -228,11 +258,26 @@
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="quantity-btn plus">+</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="bouquet-card">
+                <img src="Grandeur.jpeg" alt="Grandeur Bouquet" class="bouquet-image">
+                <div class="bouquet-info">
+                    <p class="bouquet-name">Grandeur</p>
+                    <p class="bouquet-price">P520.00</p>
+                    <p class="bouquet-desc">Our most luxurious mixed flower arrangement with premium blooms.</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer>
         <div class="social-icons">
@@ -240,17 +285,14 @@
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-x-twitter"></i>
             </a>
             <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-instagram"></i>
             </a>
         </div>
         <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
     </footer>
 
-    <script src="cart.js"></script>
-</body>
-</html>  
-              
-                   
+    <script src="js/main.js"></script> </body>
+</html>
