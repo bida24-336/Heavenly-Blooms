@@ -11,12 +11,12 @@
 
 /* Body styles (combined) */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f8f8f5;
+  font-family: 'Montserrat', sans-serif; /* Primary font for body */
+  background-color: #f8f8f5; /* Default from index.html */
   color: #3a4a42;
   margin: 0;
   padding: 0;
-  line-height: 1.7;
+  line-height: 1.7; /* From about.html, overriding contact.html and bouquets.html's 1.6 */
 }
 
 /* Background image for contact page (specific override) */
@@ -27,20 +27,21 @@ body.contact-page {
   background-attachment: fixed;
 }
 
+
 /* Heading styles (combined) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+  font-family: 'Cormorant Garamond', serif; /* Primary font for headings */
+  font-weight: 500; /* From about.html, overriding index.html's 'normal' */
   color: #5a7247;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px; /* From about.html, overriding index.html's '1px' */
 }
 
 /* Specific styles for shop name and highlight box */
 .shop-name {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 2.2rem;
-  color: #5a7247;
+  font-weight: 600; /* From about.html */
+  font-size: 2.2rem; /* From about.html, overriding generic h1 style */
+  color: #5a7247; /* From contact.html and bouquets.html */
 }
 
 .highlight-box {
@@ -51,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header styles (combined) */
 header {
-  background-color: #f5f0e8;
+  background-color: #f5f0e8; /* Default from index.html, about.html, and bouquets.html */
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -75,6 +76,137 @@ header.contact-header {
   height: 60px;
 }
 
+/* Cart Icon and Modal */
+.cart-icon {
+    font-size: 1.8rem;
+    color: #5a7247;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-count {
+    background-color: #e74c3c; /* Red dot for count */
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    padding: 3px 7px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    line-height: 1;
+}
+
+.cart-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cart-modal.show {
+    display: flex; /* Show when 'show' class is added by JS */
+}
+
+.cart-modal > div { /* Content box within modal */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.cart-items {
+    max-height: 300px; /* Scrollable area for cart items */
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #3a4a42;
+}
+
+.remove-item {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.checkout-btn {
+    background-color: #5a7247;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #7a8d75;
+}
+
+
 /* Navigation styles (combined) */
 nav ul {
   list-style: none;
@@ -88,7 +220,7 @@ nav ul li a {
   text-decoration: none;
   color: #3a4a42;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Consistent across pages */
   transition: color 0.3s ease;
 }
 
@@ -246,6 +378,14 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
+    color: #5a7247;
+}
+
+.category-description {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #666;
 }
 
 .category {
@@ -257,434 +397,342 @@ nav ul li a:hover {
     border-bottom: 2px solid #e0d9cc;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
+    color: #5a7247;
 }
 
 .bouquet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted minmax for better spacing */
+    gap: 1.5rem;
 }
 
 .bouquet-card {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0d9cc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex; /* Use flexbox to stack content inside card */
+    flex-direction: column;
 }
 
 .bouquet-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .bouquet-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #f0f0f0;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* This is key for image display! */
+    display: block; /* Removes extra space below image */
 }
 
 .bouquet-info {
-    padding: 1.2rem;
+    padding: 1rem;
+    display: flex; /* Use flexbox for info content */
+    flex-direction: column;
+    flex-grow: 1; /* Allows info section to take available space */
 }
 
 .bouquet-name {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #5a7247;
+    font-family: 'Cormorant Garamond', serif; /* Consistent with headings */
+    font-weight: 500;
     margin: 0.5rem 0;
+    font-size: 1.3rem;
+    color: #3a4a42;
 }
 
 .bouquet-price {
-    font-weight: 700;
-    color: #3a4a42;
-    font-size: 1.2rem;
-}
-
-.bouquet-description {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0.8rem 0;
-    display: block;
-}
-
-.info-btn {
-    background-color: #5a7247;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.info-btn:hover {
-    background-color: #7a8d75;
-}
-
-/* Plants Page Styles */
-.plants-category {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.plants-category h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 2.5rem;
-    position: relative;
-}
-
-.plants-category h2::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 2px;
-    background-color: #5a7247;
-    margin: 0.5rem auto;
-}
-
-.plants-category h3 {
-    font-size: 1.8rem;
-    margin: 2rem 0 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e0d9cc;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.plant-item {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0d9cc;
-}
-
-.plant-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.plant-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.plant-info {
-    padding: 1.2rem;
-}
-
-.plant-info p {
-    margin: 0.5rem 0;
-}
-
-.plant-name {
+    color: #e74c3c; /* Distinct color for price */
     font-weight: 600;
-    font-size: 1.1rem;
-    color: #5a7247;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
-.plant-price {
-    font-weight: 700;
-    color: #3a4a42;
-    font-size: 1.2rem;
-}
-
-.plant-desc {
+.bouquet-desc { /* Changed from .bouquet-description */
+    font-size: 0.95rem;
     color: #666;
-    font-size: 0.9rem;
-    margin: 0.8rem 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allow description to take space before controls */
 }
 
-.plant-care {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #7a8d75;
-    font-size: 0.85rem;
-    margin-top: 0.8rem;
-}
-
-/* Quantity Controls */
 .quantity-controls {
     display: flex;
     align-items: center;
-    margin: 1rem 0;
+    justify-content: center; /* Center the quantity controls */
+    gap: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .quantity-btn {
-    background-color: #f5f0e8;
-    color: #5a7247;
-    border: 1px solid #e0d9cc;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #5a7247;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #7a8d75;
 }
 
 .quantity-input {
     width: 40px;
-    height: 30px;
     text-align: center;
     border: 1px solid #e0d9cc;
-    margin: 0 5px;
+    border-radius: 4px;
+    padding: 5px 0;
+    -moz-appearance: textfield; /* Hide arrows for Firefox */
 }
 
-.add-to-cart {
-    background-color: #5a7247;
+/* Hide spin buttons for Chrome/Safari */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.add-to-cart-btn { /* Changed from .add-to-cart */
+    background-color: #6EB457; /* A more vibrant green for cart action */
     color: white;
     border: none;
-    padding: 0.5rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    margin-top: 0.5rem;
-}
-
-.add-to-cart:hover {
-    background-color: #7a8d75;
-}
-
-/* Cart Icon */
-.cart-icon {
-    position: relative;
-    margin-left: 1rem;
-    cursor: pointer;
-}
-
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #d48a8a;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-}
-
-/* Cart Modal */
-.cart-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 350px;
-    height: 100%;
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.close-cart {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
-}
-
-.cart-item img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 10px;
-    border-radius: 4px;
-}
-
-.cart-item-info {
-    flex-grow: 1;
-}
-
-.cart-item-name {
-    font-weight: 500;
-}
-
-.cart-item-price {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.cart-total {
-    font-weight: bold;
-    margin: 20px 0;
-    text-align: right;
-}
-
-.checkout-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #5a7247;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Dried Flowers Page Styles */
-.dried-flowers-category {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.dried-flowers-category h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 2.5rem;
-    position: relative;
-}
-
-.dried-flowers-category h2::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 2px;
-    background-color: #5a7247;
-    margin: 0.5rem auto;
-}
-
-.dried-flowers-category h3 {
-    font-size: 1.8rem;
-    margin: 2rem 0 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e0d9cc;
-}
-
-.dried-flower-item {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0d9cc;
-}
-
-.dried-flower-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.dried-flower-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.dried-flower-info {
-    padding: 1.2rem;
-}
-
-.dried-flower-name {
-    font-weight: 600;
     font-size: 1.1rem;
-    color: #5a7247;
+    width: 100%;
+    margin-top: auto; /* Pushes button to bottom of flex container */
+    transition: background-color 0.3s ease;
 }
 
-.dried-flower-price {
-    font-weight: 700;
-    color: #3a4a42;
-    font-size: 1.2rem;
+.add-to-cart-btn:hover {
+    background-color: #5A9945;
 }
 
-.dried-flower-desc {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0.8rem 0;
-}
 
-footer {
-    background-color: rgba(90, 114, 71, 0.9);
-    color: #f5f0e8;
-    padding: 1.5rem;
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.social-icons {
+/* Dried Flower Page Specific Styles (already provided in previous response) */
+.product-detail-container {
     display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 2rem; /* Add some space from the header */
+}
+
+.product-image-gallery {
+    flex: 1 1 400px; /* Allows flexibility and defines a base width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-product-image {
+    width: 100%;
+    max-width: 450px; /* Ensure image doesn't get too big */
+    height: auto;
+    border: 1px solid #e0d9cc; /* Using an existing border color for consistency */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: 10px;
     justify-content: center;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.thumbnail-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border: 2px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.thumbnail-image:hover {
+    border-color: #7a8d75; /* Using an existing hover color for consistency */
+    transform: translateY(-2px);
+}
+
+.thumbnail-image.active {
+    border-color: #5a7247; /* Active thumbnail border, consistent with primary green */
+    box-shadow: 0 0 0 3px rgba(90, 114, 71, 0.2); /* Subtle glow for active */
+}
+
+.product-info {
+    flex: 2 1 300px; /* Allows flexibility and defines a base width */
+}
+
+.product-info h1 {
+    font-size: 2.5em;
+    color: #5a7247; /* Consistent with other headings */
+    margin-top: 0;
     margin-bottom: 1rem;
 }
 
-.social-icons a {
-    color: #f5f0e8;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
+.product-info .price {
+    font-family: 'Cormorant Garamond', serif; /* Use heading font for price */
+    font-size: 2em;
+    color: #5a7247; /* Keeping price in a consistent brand color */
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.social-icons a:hover {
-    color: #d8e0d5;
+.product-info p {
+    line-height: 1.7; /* Consistent with body line-height */
+    margin-bottom: 1.5rem;
 }
 
+.product-info ul {
+    list-style: disc; /* Or none, if you prefer custom styling */
+    margin-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.product-info ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#add-to-cart-btn {
+    background-color: #5a7247; /* Consistent with other buttons/accents */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Make button full width in its container */
+    max-width: 300px; /* Limit button width */
+    display: block; /* To center with margin auto */
+    margin: 1.5rem auto 0 auto;
+}
+
+#add-to-cart-btn:hover {
+    background-color: #7a8d75; /* Consistent hover color */
+    transform: translateY(-2px);
+}
+
+
+/* Footer styles (combined) */
+footer {
+  background-color: #5a7247; /* Default from index.html and about.html */
+  color: #f5f0e8;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem; /* From bouquets.html */
+  position: relative; /* From contact.html */
+}
+
+/* Footer background for contact page (specific override) */
+footer.contact-footer {
+    background-color: rgba(90, 114, 71, 0.9);
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Consistent across pages */
+  margin-bottom: 1.5rem; /* From footer in index/about */
+}
+
+/* Social icons for footer (default styling) */
+footer .social-icons a {
+  color: #f5f0e8;
+  background-color: #5a7247;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid #f5f0e8;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Social icons for contact page (specific override for main content) */
+.contact-container .social-icons a {
+    color: #5a7247;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+}
+
+/* Social icons hover for all footers */
+footer .social-icons a:hover {
+  color: #5a7247;
+  background-color: #f5f0e8;
+  transform: translateY(-3px);
+}
+
+/* Social icons hover for contact page (specific override for main content) */
+.contact-container .social-icons a:hover {
+    color: #7a8d75;
+    background-color: transparent;
+}
+
+
+/* Responsive styles (combined) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 1rem;
-    }
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    justify-content: center; /* From bouquets.html */
+  }
+
+  /* Adjustments for cart icon on mobile */
+  .cart-icon {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .cart-count {
+      top: -5px;
+      right: -5px;
+      padding: 2px 5px;
+  }
     
-    nav ul {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .plants-category, .dried-flowers-category {
-        padding: 1.5rem;
-    }
-    
-    .image-grid, .bouquet-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .cart-modal {
-        width: 100%;
-    }
+  #about-us {
+    padding: 2rem 1rem;
+  }
+
+  .contact-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  /* Responsive for index.html hero section */
+  .hero-section .col-md-6,
+  .hero-section .col-md-3 {
+      margin-bottom: 1rem;
+  }
+
+  /* Responsive for bouquets.html grid */
+  .bouquet-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjusted for smaller screens */
+      gap: 1rem;
+  }
+
+  .bouquet-card {
+      /* Ensure images maintain aspect ratio */
+      height: auto;
+  }
 }
