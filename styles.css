@@ -1,21 +1,22 @@
-/* Base Styles */
+/* Unified Natural Color Scheme */
 :root {
-    --primary-color: #FF85A2; /* Playful pink */
-    --secondary-color: #A0E7E5; /* Mint teal */
-    --accent-color: #FFD166; /* Sunny yellow */
-    --dark-color: #4A4E69; /* Deep navy */
-    --light-color: #F7F7FF; /* Off-white */
+    --primary-color: #4a7c59; /* Forest green */
+    --secondary-color: #a0c1b8; /* Soft sage */
+    --accent-color: #b8a27a; /* Earthy tan */
+    --dark-color: #3a4a42; /* Dark green */
+    --light-color: #f9f7f5; /* Warm off-white */
     --text-color: #3a4a42;
     --light-text: #6c757d;
     --border-color: #e0d9cc;
     --white: #ffffff;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
 
-/* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Pacifico&display=swap');
+/* Unified Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
+/* Unified Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,13 +24,13 @@
 }
 
 body {
-    font-family: 'Comic Neue', 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--light-color);
     color: var(--text-color);
     line-height: 1.6;
 }
 
-/* Header Styles */
+/* Unified Header Styles */
 header {
     background-color: var(--white);
     box-shadow: var(--shadow);
@@ -49,67 +50,74 @@ header {
 }
 
 .logo img {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .shop-name {
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.8rem;
     color: var(--primary-color);
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    letter-spacing: 0.5px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 nav a {
     text-decoration: none;
     color: var(--dark-color);
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    transition: var(--transition);
+    font-weight: 500;
     font-size: 1.1rem;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+    position: relative;
 }
 
 nav a:hover {
-    background-color: var(--secondary-color);
-    color: white;
+    color: var(--primary-color);
 }
 
 nav a.active {
-    background-color: var(--primary-color);
-    color: white;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-/* Main Content Container */
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Unified Main Content Container */
 .main-container {
     padding: 3rem 5%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Plants/Bouquets Section Styles */
-.plants-category, .bouquet-category {
-    padding: 2rem 0;
-}
-
-.plants-category h2, .bouquet-category h2 {
+/* Unified Page Headings */
+.page-title {
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
-.plants-category > p, .bouquet-category > p {
+.category-description {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 3rem;
@@ -118,7 +126,7 @@ nav a.active {
     line-height: 1.8;
 }
 
-.plants-category h3, .bouquet-category h3 {
+.section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     color: var(--primary-color);
@@ -128,14 +136,16 @@ nav a.active {
     font-weight: 600;
 }
 
-.image-grid, .bouquet-grid {
+/* Unified Grid Layout */
+.product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2.5rem;
     margin: 2rem 0 4rem;
 }
 
-.plant-item, .bouquet-card {
+/* Unified Product Card */
+.product-card {
     background-color: var(--white);
     border-radius: 8px;
     overflow: hidden;
@@ -145,12 +155,12 @@ nav a.active {
     flex-direction: column;
 }
 
-.plant-item:hover, .bouquet-card:hover {
+.product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.plant-item img, .bouquet-image {
+.product-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -158,14 +168,14 @@ nav a.active {
     border-bottom: 1px solid var(--border-color);
 }
 
-.plant-info, .bouquet-info {
+.product-info {
     padding: 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.plant-name, .bouquet-name {
+.product-name {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 1.3rem;
@@ -173,14 +183,14 @@ nav a.active {
     color: var(--text-color);
 }
 
-.plant-price, .bouquet-price {
+.product-price {
     color: var(--accent-color);
     font-weight: 700;
     font-size: 1.2rem;
     margin: 0 0 1rem;
 }
 
-.plant-desc, .bouquet-desc {
+.product-desc {
     color: var(--light-text);
     margin: 0 0 1.5rem;
     font-size: 0.95rem;
@@ -188,58 +198,15 @@ nav a.active {
     flex: 1;
 }
 
-/* Contact Page Specific Styles */
-.contact-page {
-    background: linear-gradient(135deg, #FFEEF2 0%, #E5F9FF 100%);
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-}
-
-.contact-container h2 {
-    color: var(--primary-color);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-info {
-    margin: 1.5rem 0;
-    font-size: 1.1rem;
-}
-
-.hours {
-    background-color: var(--secondary-color);
-    padding: 1.5rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-}
-
-.hours h3 {
-    color: white;
-    margin-bottom: 1rem;
-}
-
-.hours p {
-    margin: 0.5rem 0;
-}
-
-/* About Page Specific Styles */
-#about-us {
+/* About Page Specific (with unified styling) */
+.about-section {
     padding: 4rem 0;
     background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
     background-size: cover;
     position: relative;
 }
 
-#about-us::before {
+.about-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -249,7 +216,7 @@ nav a.active {
     background: rgba(255, 255, 255, 0.85);
 }
 
-#about-us .container {
+.about-container {
     position: relative;
     z-index: 1;
     max-width: 1000px;
@@ -257,20 +224,7 @@ nav a.active {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: var(--shadow);
-}
-
-#about-us h2 {
-    color: var(--primary-color);
-    font-family: 'Pacifico', cursive;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-#about-us h3 {
-    color: var(--dark-color);
-    margin: 2rem 0 1rem;
-    font-size: 1.8rem;
+    margin: 0 auto;
 }
 
 .highlight-box {
@@ -292,7 +246,7 @@ nav a.active {
     left: 1rem;
 }
 
-.values-list {
+.values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -325,13 +279,36 @@ nav a.active {
     font-size: 1.5rem;
 }
 
-/* Footer Styles */
-footer {
-    background-color: var(--dark-color);
-    color: white;
+/* Contact Page Specific (with unified styling) */
+.contact-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
     text-align: center;
-    padding: 3rem;
-    margin-top: 3rem;
+}
+
+.info-box {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.info-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Unified Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 5%;
+    margin-top: 4rem;
 }
 
 .social-icons {
@@ -342,43 +319,39 @@ footer {
 }
 
 .social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--white);
+    font-size: 1.3rem;
     transition: var(--transition);
 }
 
 .social-icons a:hover {
-    transform: scale(1.2) rotate(10deg);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
 }
 
-.social-icons a:nth-child(1):hover { background-color: #4267B2; } /* Facebook */
-.social-icons a:nth-child(2):hover { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); } /* Instagram */
-.social-icons a:nth-child(3):hover { background-color: #1DA1F2; } /* Twitter */
+.copyright {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
 
-/* Responsive Styles */
+/* Unified Responsive Styles */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 1.5rem;
         gap: 1.5rem;
     }
-    
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
     }
-    
-    .values-list, .image-grid, .bouquet-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    #about-us .container, .contact-container {
-        padding: 2rem;
+
+    .product-grid,
+    .values-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
     }
 }
 
@@ -387,29 +360,20 @@ footer {
         font-size: 1.5rem;
     }
     
-    #about-us h2, .contact-container h2 {
+    .page-title {
         font-size: 2rem;
     }
     
-    #about-us h3 {
+    .section-title {
         font-size: 1.5rem;
     }
     
-    .plant-item img, .bouquet-image {
+    .product-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-image {
         height: 200px;
     }
 }
-  
-
-  
-
-
-
-
-
-
-
-
-  
-
-
