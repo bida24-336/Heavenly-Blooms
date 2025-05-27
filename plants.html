@@ -27,28 +27,13 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="cart-icon" id="cartIcon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count" id="cartCount">0</span>
-        </div>
     </header>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Cart items will be added here dynamically -->
-        </div>
-        <div class="cart-total" id="cartTotal">Total: P0.00</div>
-        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
-    </div>
 
     <section class="plants-category">
         <h2>Our Plants Collection</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #3a4a42;">Discover our wide variety of healthy, vibrant plants perfect for your home or garden. Each plant is carefully nurtured to ensure it arrives at your doorstep in perfect condition.</p>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #3a4a42;">
+            Discover our wide variety of healthy, vibrant plants perfect for your home or garden. Each plant is carefully nurtured to ensure it arrives at your doorstep in perfect condition.
+        </p>
         
         <h3>Flowering Plants</h3>
         <div class="image-grid">
@@ -59,18 +44,12 @@
                     <p class="plant-price">P120</p>
                     <p class="plant-desc">Classic roses with vibrant colors and sweet fragrance. Perfect for gardens and patios.</p>
                     <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
-            <!-- Other plant items follow the same structure -->
+            <!-- Add more plant items here following the same structure -->
         </div>
-        
-        <!-- Other plant categories (Shrubs, Herbs, Trees) follow the same structure -->
+
+        <!-- Additional categories like Shrubs, Herbs, Trees can be added below -->
     </section>
 
     <footer>
@@ -87,191 +66,6 @@
         </div>
         <p>&copy; 2025 Heavenly Blooms. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Cart functionality remains the same as in your original file
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize cart
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartCount = document.getElementById('cartCount');
-            let cartItems = document.getElementById('cartItems');
-            let cartTotal = document.getElementById('cartTotal');
-            let cartModal = document.getElementById('cartModal');
-            let cartIcon = document.getElementById('cartIcon');
-            let closeCart = document.getElementById('closeCart');
-            let checkoutBtn = document.getElementById('checkoutBtn');
-            
-            // Update cart count
-            function updateCartCount() {
-                let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                cartCount.textContent = totalItems;
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-            
-            // Update cart display
-            function updateCartDisplay() {
-                cartItems.innerHTML = '';
-                let total = 0;
-                
-                if (cart.length === 0) {
-                    cartItems.innerHTML = '<p>Your cart is empty</p>';
-                    cartTotal.textContent = 'Total: P0.00';
-                    return;
-                }
-                
-                cart.forEach((item, index) => {
-                    const itemTotal = item.price * item.quantity;
-                    total += itemTotal;
-                    
-                    const cartItemElement = document.createElement('div');
-                    cartItemElement.className = 'cart-item';
-                    cartItemElement.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}">
-                        <div class="cart-item-info">
-                            <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">P${item.price.toFixed(2)}</div>
-                            <div class="cart-item-quantity">
-                                <button class="quantity-btn minus" data-index="${index}">-</button>
-                                <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-index="${index}">
-                                <button class="quantity-btn plus" data-index="${index}">+</button>
-                            </div>
-                            <button class="remove-item" data-index="${index}">Remove</button>
-                        </div>
-                    `;
-                    cartItems.appendChild(cartItemElement);
-                });
-                
-                cartTotal.textContent = `Total: P${total.toFixed(2)}`;
-                
-                // Add event listeners to cart item buttons
-                document.querySelectorAll('.cart-item .minus').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const index = parseInt(this.getAttribute('data-index'));
-                        if (cart[index].quantity > 1) {
-                            cart[index].quantity--;
-                            updateCartDisplay();
-                            updateCartCount();
-                        }
-                    });
-                });
-                
-                document.querySelectorAll('.cart-item .plus').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const index = parseInt(this.getAttribute('data-index'));
-                        cart[index].quantity++;
-                        updateCartDisplay();
-                        updateCartCount();
-                    });
-                });
-                
-                document.querySelectorAll('.cart-item .quantity-input').forEach(input => {
-                    input.addEventListener('change', function() {
-                        const index = parseInt(this.getAttribute('data-index'));
-                        const newQuantity = parseInt(this.value) || 1;
-                        cart[index].quantity = newQuantity;
-                        updateCartDisplay();
-                        updateCartCount();
-                    });
-                });
-                
-                document.querySelectorAll('.remove-item').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const index = parseInt(this.getAttribute('data-index'));
-                        cart.splice(index, 1);
-                        updateCartDisplay();
-                        updateCartCount();
-                    });
-                });
-            }
-            
-            // Add to cart functionality
-            document.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', function() {
-                    const plantItem = this.closest('.plant-item');
-                    const name = plantItem.querySelector('.plant-name').textContent;
-                    const price = parseFloat(plantItem.querySelector('.plant-price').textContent.replace('P', ''));
-                    const quantity = parseInt(plantItem.querySelector('.quantity-input').value);
-                    const image = plantItem.querySelector('img').src;
-                    
-                    // Check if item already exists in cart
-                    const existingItem = cart.find(item => item.name === name);
-                    if (existingItem) {
-                        existingItem.quantity += quantity;
-                    } else {
-                        cart.push({
-                            name: name,
-                            price: price,
-                            quantity: quantity,
-                            image: image
-                        });
-                    }
-                    
-                    updateCartCount();
-                    updateCartDisplay();
-                    
-                    // Show feedback
-                    const feedback = document.createElement('div');
-                    feedback.textContent = `${quantity} ${name} added to cart!`;
-                    feedback.style.position = 'fixed';
-                    feedback.style.bottom = '20px';
-                    feedback.style.right = '20px';
-                    feedback.style.backgroundColor = '#4a7c59';
-                    feedback.style.color = 'white';
-                    feedback.style.padding = '10px 20px';
-                    feedback.style.borderRadius = '5px';
-                    feedback.style.zIndex = '1000';
-                    document.body.appendChild(feedback);
-                    
-                    setTimeout(() => {
-                        feedback.style.opacity = '0';
-                        feedback.style.transition = 'opacity 0.5s';
-                        setTimeout(() => document.body.removeChild(feedback), 500);
-                    }, 2000);
-                });
-            });
-            
-            // Quantity controls in product listings
-            document.querySelectorAll('.quantity-btn.minus').forEach(button => {
-                button.addEventListener('click', function() {
-                    const input = this.nextElementSibling;
-                    if (parseInt(input.value) > 1) {
-                        input.value = parseInt(input.value) - 1;
-                    }
-                });
-            });
-            
-            document.querySelectorAll('.quantity-btn.plus').forEach(button => {
-                button.addEventListener('click', function() {
-                    const input = this.previousElementSibling;
-                    input.value = parseInt(input.value) + 1;
-                });
-            });
-            
-            // Cart modal controls
-            cartIcon.addEventListener('click', () => {
-                cartModal.style.display = 'flex';
-            });
-            
-            closeCart.addEventListener('click', () => {
-                cartModal.style.display = 'none';
-            });
-            
-            checkoutBtn.addEventListener('click', () => {
-                alert('Proceeding to checkout!');
-                // In a real application, you would redirect to a checkout page
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', (event) => {
-                if (event.target === cartModal) {
-                    cartModal.style.display = 'none';
-                }
-            });
-            
-            // Initialize cart display
-            updateCartCount();
-            updateCartDisplay();
-        });
-    </script>
 </body>
 </html>
+
