@@ -1,9 +1,9 @@
-/* Unified Natural Color Scheme */
+/* =================== ROOT COLOR + FONT =================== */
 :root {
     --primary-color: #4a7c59; /* Forest green */
     --secondary-color: #a0c1b8; /* Soft sage */
     --accent-color: #b8a27a; /* Earthy tan */
-    --dark-color: #3a4a42; /* Dark green */
+    --dark-color: #3a4a42; /* Deep green for text */
     --light-color: #f9f7f5; /* Warm off-white */
     --text-color: #3a4a42;
     --light-text: #6c757d;
@@ -13,10 +13,10 @@
     --transition: all 0.3s ease;
 }
 
-/* Unified Font Import */
+/* =================== FONTS =================== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
-/* Unified Base Styles */
+/* =================== BASE RESET =================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,7 +30,7 @@ body {
     line-height: 1.6;
 }
 
-/* Unified Header Styles */
+/* =================== HEADER =================== */
 header {
     background-color: var(--white);
     box-shadow: var(--shadow);
@@ -62,9 +62,9 @@ header {
     font-weight: 600;
     font-size: 1.8rem;
     color: var(--primary-color);
-    letter-spacing: 0.5px;
 }
 
+/* =================== NAVIGATION =================== */
 nav ul {
     display: flex;
     list-style: none;
@@ -77,7 +77,6 @@ nav a {
     font-weight: 500;
     font-size: 1.1rem;
     transition: var(--transition);
-    padding: 0.5rem 0;
     position: relative;
 }
 
@@ -93,111 +92,102 @@ nav a.active {
 nav a.active::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: var(--accent-color);
 }
 
-/* Unified Product Grid Layout */
-.product-section {
-    padding: 3rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.product-grid {
+/* =================== GRID IMAGE LAYOUT (Universal) =================== */
+.grid-gallery,
+.product-grid,
+.values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2.5rem;
-    margin: 2rem 0;
+    gap: 2rem;
+    padding: 3rem 5%;
 }
 
-.product-card {
-    background-color: var(--white);
+.grid-gallery img,
+.product-image,
+.value-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
     border-radius: 8px;
-    overflow: hidden;
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
+    background-color: var(--white);
+}
+
+/* =================== PRODUCT + VALUE CARD =================== */
+.product-card,
+.value-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
 }
 
-.product-card:hover {
+.product-card:hover,
+.value-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.product-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.product-info {
+.product-info,
+.value-info {
     padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
-.product-name {
+.product-name,
+.value-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 1.3rem;
-    margin: 0 0 0.5rem;
     color: var(--text-color);
+    margin-bottom: 0.5rem;
 }
 
 .product-price {
     color: var(--accent-color);
     font-weight: 700;
     font-size: 1.2rem;
-    margin: 0 0 1rem;
+    margin-bottom: 1rem;
 }
 
-.product-desc {
-    color: var(--light-text);
-    margin: 0 0 1.5rem;
+.product-desc,
+.value-desc {
     font-size: 0.95rem;
+    color: var(--light-text);
     line-height: 1.6;
 }
 
-/* Unified Page Headings */
+/* =================== SECTION TITLES =================== */
 .page-title {
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.category-description {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    color: var(--light-text);
-    font-size: 1.1rem;
-    line-height: 1.8;
+    margin-bottom: 2rem;
 }
 
 .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     color: var(--primary-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
     margin: 3rem 0 1.5rem;
-    font-weight: 600;
 }
 
-/* About Page Specific */
+/* =================== ABOUT PAGE =================== */
 .about-section {
-    padding: 4rem 0;
+    padding: 4rem 5%;
     background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
     background-size: cover;
     position: relative;
@@ -207,81 +197,39 @@ nav a.active::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     background: rgba(255, 255, 255, 0.85);
 }
 
 .about-container {
     position: relative;
     z-index: 1;
-    max-width: 1000px;
     background: white;
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: var(--shadow);
+    max-width: 1000px;
     margin: 0 auto;
+    box-shadow: var(--shadow);
 }
 
 .highlight-box {
-    background-color: var(--accent-color);
+    background: var(--accent-color);
+    color: var(--white);
     padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
+    border-radius: 12px;
     font-style: italic;
-    font-size: 1.2rem;
     position: relative;
+    margin: 2rem 0;
 }
 
-.highlight-box::before {
-    content: '"';
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: -1rem;
-    left: 1rem;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border-top: 5px solid var(--primary-color);
-}
-
-.value-card:hover {
-    transform: translateY(-10px);
-}
-
-.value-card h4 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.value-card i {
-    font-size: 1.5rem;
-}
-
-/* Contact Page Specific */
+/* =================== CONTACT PAGE =================== */
 .contact-container {
     max-width: 800px;
     margin: 3rem auto;
     padding: 2rem;
-    background: white;
+    background: var(--white);
     border-radius: 20px;
     box-shadow: var(--shadow);
     text-align: center;
@@ -292,14 +240,10 @@ nav a.active::after {
     padding: 1.5rem;
     border-radius: 15px;
     margin: 2rem 0;
+    color: var(--white);
 }
 
-.info-box h3 {
-    color: white;
-    margin-bottom: 1rem;
-}
-
-/* Unified Footer */
+/* =================== FOOTER =================== */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -326,29 +270,22 @@ footer {
     transform: translateY(-3px);
 }
 
-.copyright {
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
-
-/* Unified Responsive Styles */
+/* =================== RESPONSIVE =================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 1.5rem;
         gap: 1.5rem;
     }
 
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
     }
 
+    .grid-gallery,
     .product-grid,
     .values-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
     }
 }
 
@@ -356,21 +293,23 @@ footer {
     .shop-name {
         font-size: 1.5rem;
     }
-    
+
     .page-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
+    .grid-gallery,
     .product-grid,
     .values-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .product-image {
         height: 200px;
     }
 }
+
