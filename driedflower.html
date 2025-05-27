@@ -26,22 +26,7 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="cart-icon" id="cartIcon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count" id="cartCount">0</span>
-        </div>
-    </header>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
-        </div>
-        <div class="cart-items" id="cartItems"></div>
-        <div class="cart-total" id="cartTotal">Total: P0.00</div>
-        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
-    </div>
+       
 
     <section class="plants-category">
         <h2>Our Dried Flowers Collection</h2>
@@ -55,12 +40,7 @@
                     <p class="plant-name">Dried Lavender</p>
                     <p class="plant-price">P180</p>
                     <p class="plant-desc">Fragrant dried lavender stems, perfect for home decor and aromatherapy.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Lavender', 180)">Add to Cart</button>
+                
                 </div>
             </div>
             <div class="plant-item">
@@ -69,12 +49,7 @@
                     <p class="plant-name">Dried Pampas Grass</p>
                     <p class="plant-price">P220</p>
                     <p class="plant-desc">Fluffy pampas grass plumes that add texture and elegance to any space.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Pampas Grass', 220)">Add to Cart</button>
+                    
                 </div>
             </div>
             <div class="plant-item">
@@ -83,12 +58,7 @@
                     <p class="plant-name">Wildflower Bouquet</p>
                     <p class="plant-price">P250</p>
                     <p class="plant-desc">Colorful mix of dried wildflowers in a rustic arrangement.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Wildflower Bouquet', 250)">Add to Cart</button>
+                   
                 </div>
             </div>
             <div class="plant-item">
@@ -97,12 +67,7 @@
                     <p class="plant-name">Dried Eucalyptus</p>
                     <p class="plant-price">P200</p>
                     <p class="plant-desc">Fragrant eucalyptus branches that retain their beautiful shape and scent.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Eucalyptus', 200)">Add to Cart</button>
+                   
                 </div>
             </div>
         </div>
@@ -115,12 +80,7 @@
                     <p class="plant-name">Dried Flower Wreath</p>
                     <p class="plant-price">P350</p>
                     <p class="plant-desc">Circular arrangement of mixed dried flowers, perfect for wall decor.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Flower Wreath', 350)">Add to Cart</button>
+                    
                 </div>
             </div>
             <div class="plant-item">
@@ -129,12 +89,7 @@
                     <p class="plant-name">Dried Centerpiece</p>
                     <p class="plant-price">P400</p>
                     <p class="plant-desc">Elegant table centerpiece featuring a mix of dried blooms and grasses.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Centerpiece', 400)">Add to Cart</button>
+                   
                 </div>
             </div>
             <div class="plant-item">
@@ -143,12 +98,7 @@
                     <p class="plant-name">Premium Dried Bouquet</p>
                     <p class="plant-price">P450</p>
                     <p class="plant-desc">Luxurious arrangement of high-quality dried flowers in a stylish vase.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Premium Dried Bouquet', 450)">Add to Cart</button>
+                    
                 </div>
             </div>
             <div class="plant-item">
@@ -157,12 +107,7 @@
                     <p class="plant-name">Dried Flower Petals</p>
                     <p class="plant-price">P120</p>
                     <p class="plant-desc">Mixed dried petals perfect for crafts, potpourri, or decorative accents.</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
-                    </div>
-                    <button class="add-to-cart" onclick="addToCart(this, 'Dried Flower Petals', 120)">Add to Cart</button>
+                    
                 </div>
             </div>
         </div>
