@@ -3,12 +3,14 @@
     --primary-color: #4a7c59;
     --primary-light: #7a8d75;
     --secondary-color: #f8f9fa;
-    --accent-color: #e74c3c;
-    --text-color: #333;
+    --accent-color: #b8a27a; /* Changed to more earthy tone */
+    --text-color: #3a4a42;
     --light-text: #6c757d;
-    --background-light: #f8f8f5;
+    --background-light: #f9f7f5; /* Warmer off-white */
     --border-color: #e0d9cc;
     --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -26,9 +28,9 @@ body {
 
 /* Header Styles */
 header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 1rem 2rem;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 5%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -40,46 +42,63 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .logo img {
     height: 50px;
-    margin-right: 15px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .shop-name {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
+    font-size: 1.8rem;
     color: var(--primary-color);
-    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 1.5rem;
+    gap: 1.8rem;
 }
 
 nav ul li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+    position: relative;
 }
 
 nav ul li a:hover {
     color: var(--primary-color);
 }
 
+nav ul li a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
 /* Plants Section Styles */
 .plants-category {
-    padding: 2rem;
-    max-width: 1200px;
+    padding: 3rem 5%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -88,37 +107,49 @@ nav ul li a:hover {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.plants-category > p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--light-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .plants-category h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    margin-top: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    margin: 3rem 0 1.5rem;
+    font-weight: 600;
 }
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 2.5rem;
+    margin: 2rem 0 4rem;
 }
 
 .plant-item {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
 }
 
 .plant-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .plant-item img {
@@ -126,6 +157,7 @@ nav ul li a:hover {
     height: 250px;
     object-fit: cover;
     display: block;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .plant-info {
@@ -136,132 +168,93 @@ nav ul li a:hover {
 }
 
 .plant-name {
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0 0 0.5rem;
+    color: var(--text-color);
 }
 
 .plant-price {
     color: var(--accent-color);
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     margin: 0 0 1rem;
 }
 
 .plant-desc {
     color: var(--light-text);
-    margin: 0 0 1rem;
-    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     flex: 1;
-}
-
-.plant-care {
-    display: flex;
-    align-items: center;
-    color: var(--light-text);
-    font-size: 0.8rem;
-    margin: 0 0 1rem;
-}
-
-.plant-care i {
-    margin-right: 0.3rem;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
-}
-
-.quantity-btn {
-    background-color: #f1f1f1;
-    border: none;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.quantity-input {
-    width: 50px;
-    text-align: center;
-    height: 30px;
-    border: 1px solid #ddd;
-    margin: 0 0.5rem;
-}
-
-.add-to-cart {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    width: 100%;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    margin-top: auto;
-}
-
-.add-to-cart:hover {
-    background-color: #3a6a4a;
 }
 
 /* Footer Styles */
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white);
     text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
+    padding: 3rem 5%;
+    margin-top: 4rem;
 }
 
 .social-icons {
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    transition: color 0.3s;
+    color: var(--white);
+    font-size: 1.3rem;
+    transition: var(--transition);
 }
 
 .social-icons a:hover {
-    color: #d1d1d1;
+    color: #e0d6c0;
+    transform: translateY(-3px);
 }
 
 footer p {
-    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 1rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
     }
 
     nav ul {
-        margin-top: 1rem;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem;
+        gap: 1rem;
     }
 
     .image-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
     }
 }
 
 @media (max-width: 480px) {
+    .plants-category h2 {
+        font-size: 2rem;
+    }
+
+    .plants-category h3 {
+        font-size: 1.5rem;
+    }
+
     .image-grid {
         grid-template-columns: 1fr;
     }
 }
-
 
 
 
