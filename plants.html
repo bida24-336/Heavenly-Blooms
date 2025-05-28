@@ -1,134 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Plants - Heavenly Blooms</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plants - Heavenly Blooms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <img src="Logo.jpg" alt="Heavenly Blooms Logo"/>
-      <h1 class="shop-name">Heavenly Blooms</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="plants.html">Plants</a></li>
-        <li><a href="bouquets.html">Bouquets</a></li>
-        <li><a href="driedflower.html">Dried Flowers</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>
+    <div class="logo">
+      <img src="Logo.jpg" alt="Heavenly Blooms Logo"/>
+      <h1 class="shop-name">Heavenly Blooms</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plants.html" class="active">Plants</a></li>
+        <li><a href="bouquets.html">Bouquets</a></li>
+        <li><a href="driedflower.html">Dried Flowers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="plants-category">
-    <h2>Our Plants Collection</h2>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #3a4a42;">
-      Discover our wide variety of healthy, vibrant plants perfect for your home or garden. Each plant is carefully nurtured to ensure it arrives at your doorstep in perfect condition.
-    </p>
+  <section class="product-section">
+    <h2 class="page-title">Our Plants Collection</h2>
+    <p class="category-description">
+      Discover our wide variety of healthy, vibrant plants perfect for your home or garden. Each plant is carefully nurtured to ensure it arrives at your doorstep in perfect condition.
+    </p>
 
-    <!-- Flowering Plants -->
-    <h3>Flowering Plants</h3>
-    <div class="image-grid">
-      <div class="plant-item">
-        <img src="Roses.jpeg" alt="Rose Plant"/>
-        <div class="plant-info">
-          <p class="plant-name">Rose Plant</p>
-          <p class="plant-price">P120</p>
-          <p class="plant-desc">Classic roses with vibrant colors and sweet fragrance. Perfect for gardens and patios.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
-        </div>
-      </div>
+        <h3>Flowering Plants</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Roses.jpeg" alt="Rose Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Rose Plant</p>
+          <p class="product-price">P120</p>
+          <p class="product-desc">Classic roses with vibrant colors and sweet fragrance. Perfect for gardens and patios.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+        </div>
+      </div>
 
-      <div class="plant-item">
-        <img src="Tulip.jpeg" alt="Tulip Plant"/>
-        <div class="plant-info">
-          <p class="plant-name">Tulip Bulbs</p>
-          <p class="plant-price">P150</p>
-          <p class="plant-desc">Bright tulip bulbs that bloom in spring. Available in various colors.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
-        </div>
-      </div>
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Tulip.jpeg" alt="Tulip Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Tulip Bulbs</p>
+          <p class="product-price">P150</p>
+          <p class="product-desc">Bright tulip bulbs that bloom in spring. Available in various colors.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+        </div>
+      </div>
 
-      <div class="plant-item">
-        <img src="Lily.jpeg" alt="Lily Plant"/>
-        <div class="plant-info">
-          <p class="plant-name">Lily Plant</p>
-          <p class="plant-price">P130</p>
-          <p class="plant-desc">Elegant lilies with large, fragrant flowers. Great for borders or containers.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Partial Shade | <i class="fas fa-tint"></i> Keep Moist</p>
-        </div>
-      </div>
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Lily.jpeg" alt="Lily Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Lily Plant</p>
+          <p class="product-price">P130</p>
+          <p class="product-desc">Elegant lilies with large, fragrant flowers. Great for borders or containers.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Partial Shade | <i class="fas fa-tint"></i> Keep Moist</p>
+        </div>
+      </div>
 
-      <!-- Updated Product Card -->
-      <div class="plant-item">
-        <img src="flower.jpg" alt="Rose Bouquet" />
-        <div class="plant-info">
-          <p class="plant-name">Rose Bouquet</p>
-          <p class="plant-price">P250</p>
-          <p class="plant-desc">Fresh pink roses wrapped in elegance.</p>
-        </div>
-      </div>
-    </div>
+            <div class="product-card">
+        <div class="product-image-container">
+          <img src="flower.jpg" alt="Rose Bouquet" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Rose Bouquet</p>
+          <p class="product-price">P250</p>
+          <p class="product-desc">Fresh pink roses wrapped in elegance.</p>
+                    <p class="plant-care"></p>
+        </div>
+      </div>
+    </div>
 
-    <!-- Herbs -->
-    <h3>Herbs</h3>
-    <div class="image-grid">
-      <div class="plant-item">
-        <img src="Rosemary plant.jpeg" alt="Rosemary Plant"/>
-        <div class="plant-info">
-          <p class="plant-name">Rosemary Plant</p>
-          <p class="plant-price">P80</p>
-          <p class="plant-desc">Woody herb with needle-like leaves. Great for roasting and grilling.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low Water</p>
-        </div>
-      </div>
+        <h3>Herbs</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Rosemary plant.jpeg" alt="Rosemary Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Rosemary Plant</p>
+          <p class="product-price">P80</p>
+          <p class="product-desc">Woody herb with needle-like leaves. Great for roasting and grilling.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low Water</p>
+        </div>
+      </div>
 
-      <div class="plant-item">
-        <img src="Mint.jpeg" alt="Mint Plant"/>
-        <div class="plant-info">
-          <p class="plant-name">Mint Plant</p>
-          <p class="plant-price">P50</p>
-          <p class="plant-desc">Refreshing mint ideal for teas and cocktails. Grows vigorously.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Partial sun | <i class="fas fa-tint"></i> Keep moist</p>
-        </div>
-      </div>
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Mint.jpeg" alt="Mint Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Mint Plant</p>
+          <p class="product-price">P50</p>
+          <p class="product-desc">Refreshing mint ideal for teas and cocktails. Grows vigorously.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Partial sun | <i class="fas fa-tint"></i> Keep moist</p>
+        </div>
+      </div>
 
-      <div class="plant-item">
-        <img src="Basil.jpeg" alt="Basil Plant"/>
-        <div class="plant-info">
-          <p class="plant-name">Basil Plant</p>
-          <p class="plant-price">P90</p>
-          <p class="plant-desc">Aromatic basil perfect for cooking.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Daily water</p>
-        </div>
-      </div>
-    </div>
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Basil.jpeg" alt="Basil Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Basil Plant</p>
+          <p class="product-price">P90</p>
+          <p class="product-desc">Aromatic basil perfect for cooking.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Daily water</p>
+        </div>
+      </div>
+    </div>
 
-    <!-- Trees -->
-    <h3>Trees</h3>
-    <div class="image-grid">
-      <div class="plant-item">
-        <img src="Avocado.jpeg" alt="Avocado Tree"/>
-        <div class="plant-info">
-          <p class="plant-name">Avocado Tree</p>
-          <p class="plant-price">P6000</p>
-          <p class="plant-desc">Produces creamy avocados. Self-pollinating variety. Grows up to 3–5m tall.</p>
-          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
-        </div>
-      </div>
+        <h3>Trees</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Avocado.jpeg" alt="Avocado Tree" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Avocado Tree</p>
+          <p class="product-price">P6000</p>
+          <p class="product-desc">Produces creamy avocados. Self-pollinating variety. Grows up to 3–5m tall.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+        </div>
+      </div>
 
-      <div class="plant-item">
-        <img src="Pine.jpeg" alt="Pine Tree"/>
-        <div class="plant-info
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Pine.jpeg" alt="Pine Tree" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Pine Tree</p>
+          <p class="product-price">P5000</p>
+          <p class="product-desc">Classic evergreen suitable for landscaping and privacy. Tolerates various climates.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low water once established</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <footer>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p class="copyright">&copy; 2025 Heavenly Blooms. All rights reserved.</p>
+  </footer>
+</body>
+</html>  
 
