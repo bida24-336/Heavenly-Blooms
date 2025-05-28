@@ -10,13 +10,13 @@
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --icon-color: #8c7851; /* Color for Font Awesome icons */
+    --icon-color: #8c7851; 
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
-/* Universal box-sizing for all elements */
-* {
+
+ {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -82,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--primary-color); /* Updated for uniformity */
+    background-color: var(--primary-color); 
     color: var(--white);
 }
 
@@ -221,7 +221,7 @@ nav a.active {
 }
 
 footer {
-    background-color: var(--primary-color); /* Already consistent with primary-color */
+    background-color: var(--primary-color); 
     color: var(--white);
     text-align: center;
     padding: 2rem 5%;
