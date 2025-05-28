@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (currentPath.includes('dried_flower.html')) {
+    if (currentPath.includes('driedflowers.html') || currentPath.includes('dried_flower.html')) {
         console.log('Running scripts for the dried flowers product page.');
 
         const mainProductImage = document.getElementById('main-product-image');
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
-        // The 'add to cart' functionality for dried flowers has been removed as requested.
     }
 
     if (currentPath.includes('bouquets.html')) {
@@ -77,8 +76,67 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault();
                 alert('Message sent successfully!');
                 console.log('Contact form submitted!');
-                contactForm.reset(); // Corrected the typo 't' to 'contactForm.reset()'
+                contactForm.reset();
             });
         }
     }
+
+    // === START of Feedback Page JavaScript ===
+    if (currentPath.includes('feedback.html')) {
+        console.log('Running scripts for the feedback page.');
+        const feedbackForm = document.getElementById('feedbackForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                feedbackForm.classList.add('d-none'); // Hide the form
+                thankYouMessage.classList.remove('d-none'); // Show the thank you message
+
+                setTimeout(() => {
+                    feedbackForm.reset(); // Reset form fields
+                    feedbackForm.classList.remove('d-none'); // Show the form again
+                    thankYouMessage.classList.add('d-none'); // Hide thank you message
+                }, 5000); // Reset after 5 seconds
+            });
+        }
+
+        // Star rating hover effect
+        const stars = document.querySelectorAll('.rating-stars label');
+        stars.forEach(star => {
+            star.addEventListener('mouseover', function() {
+                const value = this.htmlFor.replace('star', '');
+                highlightStars(value);
+            });
+
+            star.addEventListener('mouseout', function() {
+                const checked = document.querySelector('.rating-stars input:checked');
+                if (checked) {
+                    highlightStars(checked.value);
+                } else {
+                    resetStars();
+                }
+            });
+        });
+
+        function highlightStars(value) {
+            const stars = document.querySelectorAll('.rating-stars label');
+            stars.forEach(star => {
+                const starValue = star.htmlFor.replace('star', '');
+                if (starValue <= value) {
+                    star.querySelector('i').classList.replace('far', 'fas');
+                } else {
+                    star.querySelector('i').classList.replace('fas', 'far');
+                }
+            });
+        }
+
+        function resetStars() {
+            const stars = document.querySelectorAll('.rating-stars label');
+            stars.forEach(star => {
+                star.querySelector('i').classList.replace('fas', 'far');
+            });
+        }
+    }
+    // === END of Feedback Page JavaScript ===
 });
