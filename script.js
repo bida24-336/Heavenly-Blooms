@@ -255,4 +255,165 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
     });
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plants - Heavenly Blooms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="Logo.jpg" alt="Heavenly Blooms Logo"/>
+      <h1 class="shop-name">Heavenly Blooms</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plants.html" class="active">Plants</a></li>
+        <li><a href="bouquets.html">Bouquets</a></li>
+        <li><a href="driedflower.html">Dried Flowers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <section class="product-section">
+    <h2 class="page-title">Our Plants Collection</h2>
+    <p class="category-description">
+      Discover our wide variety of healthy, vibrant plants perfect for your home or garden. Each plant is carefully nurtured to ensure it arrives at your doorstep in perfect condition.
+    </p>
+
+        <h3>Flowering Plants</h3>
+        <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Roses.jpeg" alt="Rose Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Rose Plant</p>
+          <p class="product-price">P120</p>
+          <p class="product-desc">Classic roses with vibrant colors and sweet fragrance. Perfect for gardens and patios.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Tulip.jpeg" alt="Tulip Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Tulip Bulbs</p>
+          <p class="product-price">P150</p>
+          <p class="product-desc">Bright tulip bulbs that bloom in spring. Available in various colors.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Lily.jpeg" alt="Lily Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Lily Plant</p>
+          <p class="product-price">P130</p>
+          <p class="product-desc">Elegant lilies with large, fragrant flowers. Great for borders or containers.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Partial Shade | <i class="fas fa-tint"></i> Keep Moist</p>
+        </div>
+      </div>
+
+        
+
+        <h3>Herbs</h3>
+        <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Rosemary plant.jpeg" alt="Rosemary Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Rosemary Plant</p>
+          <p class="product-price">P80</p>
+          <p class="product-desc">Woody herb with needle-like leaves. Great for roasting and grilling.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low Water</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Mint.jpeg" alt="Mint Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Mint Plant</p>
+          <p class="product-price">P50</p>
+          <p class="product-desc">Refreshing mint ideal for teas and cocktails. Grows vigorously.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Partial sun | <i class="fas fa-tint"></i> Keep moist</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Basil.jpeg" alt="Basil Plant" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Basil Plant</p>
+          <p class="product-price">P90</p>
+          <p class="product-desc">Aromatic basil perfect for cooking.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Daily water</p>
+        </div>
+      </div>
+    </div>
+
+        <h3>Trees</h3>
+        <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Avocado.jpeg" alt="Avocado Tree" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Avocado Tree</p>
+          <p class="product-price">P6 00</p>
+          <p class="product-desc">Produces creamy avocados. Self-pollinating variety. Grows up to 3–5m tall.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Moderate water</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="Pine.jpeg" alt="Pine Tree" class="product-image"/>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Pine Tree</p>
+          <p class="product-price">P500</p>
+          <p class="product-desc">Classic evergreen suitable for landscaping and privacy. Tolerates various climates.</p>
+          <p class="plant-care"><i class="fas fa-sun"></i> Full sun | <i class="fas fa-tint"></i> Low water once established</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+    </div>
+    <p class="copyright">&copy; 2024 Heavenly Blooms. All rights reserved.</p>
+  </footer>
+</body>
+</html>  
+
 });
