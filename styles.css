@@ -1,4 +1,4 @@
-/* Universal Reset - add this at the very top of your CSS */
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -82,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--primary-color); /* Navigation hover set to primary color */
+    background-color: var(--primary-color); 
     color: var(--white);
 }
 
@@ -216,13 +216,13 @@ nav a.active {
     margin-right: 3px;
 }
 
-/* This rule specifically hides plant care info for products named "Rose Bouquet" */
+
 .product-card:has(.product-name:contains("Rose Bouquet")) .plant-care {
     display: none;
 }
 
 footer {
-    background-color: var(--primary-color) !important; /* Added !important for strong override */
+    background-color: var(--primary-color) !important; 
     color: var(--white);
     text-align: center;
     padding: 2rem 5%;
