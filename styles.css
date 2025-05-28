@@ -11,6 +11,7 @@
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --icon-color: #8c7851; /* Color for Font Awesome icons */
 }
 
 /* Unified Font Import */
@@ -118,6 +119,16 @@ nav a.active {
     line-height: 1.6;
 }
 
+/* Category Headings */
+.product-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
 /* Corrected Product Grid Layout */
 .product-grid {
     display: grid;
@@ -162,9 +173,10 @@ nav a.active {
 .product-info {
     padding: 1.5rem;
     text-align: center;
-    flex: 1;
+    flex: 1; /* Allows the info section to grow and fill available space */
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Pushes the plant-care to the bottom */
 }
 
 .product-name {
@@ -188,6 +200,34 @@ nav a.active {
     line-height: 1.6;
     margin-bottom: 1rem;
 }
+
+/* Styling for plant care information */
+.plant-care {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: var(--light-text);
+    margin-top: auto; /* Pushes this element to the bottom */
+    display: flex;
+    justify-content: center; /* Center the icons/text */
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 15px;
+}
+
+.plant-care i {
+    color: var(--icon-color);
+    margin-right: 3px;
+}
+
+/* Hide plant-care for the Rose Bouquet card */
+/* This targets any product-card that contains a product-name with "Rose Bouquet" text */
+.product-card:has(.product-name:contains("Rose Bouquet")) .plant-care {
+    display: none;
+}
+
 
 /* Footer */
 footer {
@@ -245,10 +285,14 @@ footer {
     }
     
     .product-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column on very small screens */
     }
     
     .product-image-container {
         height: 200px;
+    }
+    .plant-care {
+        flex-direction: column; /* Stack care icons vertically on very small screens */
+        gap: 5px;
     }
 }
