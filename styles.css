@@ -1,10 +1,9 @@
-
 :root {
-    --primary-color: #4a7c59; 
-    --secondary-color: #a0c1b8; 
-    --accent-color: #b8a27a; 
-    --dark-color: #3a4a42; 
-    --light-color: #f9f7f5; 
+    --primary-color: #4a7c59;
+    --secondary-color: #a0c1b8;
+    --accent-color: #b8a27a;
+    --dark-color: #3a4a42;
+    --light-color: #f9f7f5;
     --text-color: #3a4a42;
     --light-text: #6c757d;
     --border-color: #e0d9cc;
@@ -14,11 +13,10 @@
     --icon-color: #8c7851; /* Color for Font Awesome icons */
 }
 
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
-
- {
+/* Universal box-sizing for all elements */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -30,7 +28,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
 }
-
 
 header {
     background-color: var(--white);
@@ -85,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color); /* Updated for uniformity */
     color: var(--white);
 }
 
@@ -119,7 +116,6 @@ nav a.active {
     line-height: 1.6;
 }
 
-
 .product-section h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2em;
@@ -128,7 +124,6 @@ nav a.active {
     margin-bottom: 1.5rem;
     text-align: center;
 }
-
 
 .product-grid {
     display: grid;
@@ -201,7 +196,6 @@ nav a.active {
     margin-bottom: 1rem;
 }
 
-
 .plant-care {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
@@ -222,14 +216,12 @@ nav a.active {
     margin-right: 3px;
 }
 
-
 .product-card:has(.product-name:contains("Rose Bouquet")) .plant-care {
     display: none;
 }
 
-
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Already consistent with primary-color */
     color: var(--white);
     text-align: center;
     padding: 2rem 5%;
@@ -258,7 +250,6 @@ footer {
     font-size: 0.9rem;
     opacity: 0.9;
 }
-
 
 @media (max-width: 768px) {
     header {
@@ -295,4 +286,3 @@ footer {
         gap: 5px;
     }
 }
-
