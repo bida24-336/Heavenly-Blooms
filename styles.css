@@ -1,10 +1,10 @@
-/* Unified Natural Color Scheme */
+
 :root {
-    --primary-color: #4a7c59; /* Forest green */
-    --secondary-color: #a0c1b8; /* Soft sage */
-    --accent-color: #b8a27a; /* Earthy tan */
-    --dark-color: #3a4a42; /* Dark green */
-    --light-color: #f9f7f5; /* Warm off-white */
+    --primary-color: #4a7c59; 
+    --secondary-color: #a0c1b8; 
+    --accent-color: #b8a27a; 
+    --dark-color: #3a4a42; 
+    --light-color: #f9f7f5; 
     --text-color: #3a4a42;
     --light-text: #6c757d;
     --border-color: #e0d9cc;
@@ -14,11 +14,11 @@
     --icon-color: #8c7851; /* Color for Font Awesome icons */
 }
 
-/* Unified Font Import */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
-/* Unified Base Styles */
-* {
+
+ {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -31,7 +31,7 @@ body {
     line-height: 1.6;
 }
 
-/* Unified Header & Navigation */
+
 header {
     background-color: var(--white);
     box-shadow: var(--shadow);
@@ -119,7 +119,7 @@ nav a.active {
     line-height: 1.6;
 }
 
-/* Category Headings */
+
 .product-section h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2em;
@@ -129,7 +129,7 @@ nav a.active {
     text-align: center;
 }
 
-/* Corrected Product Grid Layout */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -201,7 +201,7 @@ nav a.active {
     margin-bottom: 1rem;
 }
 
-/* Styling for plant care information */
+
 .plant-care {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
@@ -222,13 +222,12 @@ nav a.active {
     margin-right: 3px;
 }
 
-/* Hide plant-care for the Rose Bouquet card */
-/* This targets any product-card that contains a product-name with "Rose Bouquet" text */
+
 .product-card:has(.product-name:contains("Rose Bouquet")) .plant-care {
     display: none;
 }
 
-/* Footer */
+
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -260,7 +259,7 @@ footer {
     opacity: 0.9;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
