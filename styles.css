@@ -173,10 +173,10 @@ nav a.active {
 .product-info {
     padding: 1.5rem;
     text-align: center;
-    flex: 1; /* Allows the info section to grow and fill available space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes the plant-care to the bottom */
+    justify-content: space-between;
 }
 
 .product-name {
@@ -206,9 +206,9 @@ nav a.active {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     color: var(--light-text);
-    margin-top: auto; /* Pushes this element to the bottom */
+    margin-top: auto;
     display: flex;
-    justify-content: center; /* Center the icons/text */
+    justify-content: center;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
@@ -227,7 +227,6 @@ nav a.active {
 .product-card:has(.product-name:contains("Rose Bouquet")) .plant-care {
     display: none;
 }
-
 
 /* Footer */
 footer {
@@ -283,16 +282,18 @@ footer {
     .page-title {
         font-size: 2rem;
     }
-    
+
     .product-grid {
-        grid-template-columns: 1fr; /* Single column on very small screens */
+        grid-template-columns: 1fr;
     }
-    
+
     .product-image-container {
         height: 200px;
     }
+
     .plant-care {
-        flex-direction: column; /* Stack care icons vertically on very small screens */
+        flex-direction: column;
         gap: 5px;
     }
 }
+
